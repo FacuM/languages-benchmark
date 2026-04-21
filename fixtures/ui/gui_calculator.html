@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Benchmark GUI Calculator</title>
+  <style>
+    body { font-family: system-ui, sans-serif; margin: 24px; background: #f6f8fa; color: #1f2328; }
+    .card { max-width: 420px; padding: 16px; border: 1px solid #d0d7de; border-radius: 12px; background: white; }
+    .display { font-size: 28px; font-weight: 700; margin-bottom: 12px; }
+    .keys { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+    button { padding: 10px; border-radius: 8px; border: 1px solid #d0d7de; background: #f6f8fa; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Calculator</h1>
+    <div id="display" class="display">0</div>
+    <div class="keys">
+      <button>7</button><button>8</button><button>9</button><button>+</button>
+      <button>4</button><button>5</button><button>6</button><button>-</button>
+      <button>1</button><button>2</button><button>3</button><button>*</button>
+      <button>0</button><button>.</button><button>=</button><button>/</button>
+    </div>
+  </div>
+  <script>
+    window.benchCalculator = function(count) {
+      let acc = 0;
+      const display = document.getElementById("display");
+      for (let i = 1; i <= count; i += 1) {
+        acc = (((acc + i) * 3) - (i % 7)) % 1000003;
+        display.textContent = String(acc);
+      }
+      return acc;
+    };
+  </script>
+</body>
+</html>

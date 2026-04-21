@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "languages-benchmark"
+version = "0.1.0"
+description = "Docker-first multi-language benchmark runner"
+readme = "README.md"
+requires-python = ">=3.11"
+license = {text = "MIT"}
+dependencies = [
+  "PyYAML>=6.0",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.0",
+]
+
+[tool.setuptools]
+packages = ["runner"]
+
+[tool.pytest.ini_options]
+addopts = "-q"
+testpaths = ["tests"]

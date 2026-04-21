@@ -1,0 +1,317 @@
+{
+  "source_run_id": "20260422T134145Z",
+  "expected_outputs": {
+    "sort_integers:s": {
+      "digest": "2d4dae131242",
+      "preview": "566598"
+    },
+    "sort_integers:m": {
+      "digest": "72b8a61fe15d",
+      "preview": "127671"
+    },
+    "sort_integers:l": {
+      "digest": "ddb1f009e7a8",
+      "preview": "61722"
+    },
+    "matrix_multiplication:s": {
+      "digest": "de89d1beb6ae",
+      "preview": "653345"
+    },
+    "matrix_multiplication:m": {
+      "digest": "89d09b2675ff",
+      "preview": "5179849"
+    },
+    "matrix_multiplication:l": {
+      "digest": "a669cc74fc5d",
+      "preview": "17784056"
+    },
+    "simple_web_server:s": {
+      "digest": "22f1a6d92267",
+      "preview": "900"
+    },
+    "simple_web_server:m": {
+      "digest": "997f68b79ee0",
+      "preview": "3600"
+    },
+    "simple_web_server:l": {
+      "digest": "8cf005daf293",
+      "preview": "9000"
+    },
+    "csv_parsing:s": {
+      "digest": "ac1024e30ac3",
+      "preview": "9964974"
+    },
+    "csv_parsing:m": {
+      "digest": "cad73ad4bffd",
+      "preview": "50033678"
+    },
+    "csv_parsing:l": {
+      "digest": "3731d73bf8d3",
+      "preview": "100112691"
+    },
+    "linear_regression:s": {
+      "digest": "421f5d383444",
+      "preview": "9983806"
+    },
+    "linear_regression:m": {
+      "digest": "9c21331ae173",
+      "preview": "9996280"
+    },
+    "linear_regression:l": {
+      "digest": "ff862d747945",
+      "preview": "9998560"
+    },
+    "rest_api:s": {
+      "digest": "0ff7e2487118",
+      "preview": "5310"
+    },
+    "rest_api:m": {
+      "digest": "f746ae300261",
+      "preview": "86040"
+    },
+    "rest_api:l": {
+      "digest": "4a07ca68244e",
+      "preview": "539100"
+    },
+    "file_io_large:s": {
+      "digest": "1e31a2c51808",
+      "preview": "50207724265"
+    },
+    "file_io_large:m": {
+      "digest": "ae2b279922d2",
+      "preview": "250594893028"
+    },
+    "file_io_large:l": {
+      "digest": "d2ed0bbe2c21",
+      "preview": "501738729308"
+    },
+    "binary_search_tree:s": {
+      "digest": "4fda16c4115f",
+      "preview": "50062169"
+    },
+    "binary_search_tree:m": {
+      "digest": "48db771f2616",
+      "preview": "806728510"
+    },
+    "binary_search_tree:l": {
+      "digest": "edbc0a20c7ce",
+      "preview": "5007255743"
+    },
+    "prime_sieve:s": {
+      "digest": "a44bb4d076ad",
+      "preview": "5133"
+    },
+    "prime_sieve:m": {
+      "digest": "7d3cce2b0e1f",
+      "preview": "11734"
+    },
+    "prime_sieve:l": {
+      "digest": "9342debf6bd5",
+      "preview": "22044"
+    },
+    "tic_tac_toe:s": {
+      "digest": "b3bd0d4ccfcc",
+      "preview": "249684"
+    },
+    "tic_tac_toe:m": {
+      "digest": "3046fcfe73f6",
+      "preview": "1240628"
+    },
+    "tic_tac_toe:l": {
+      "digest": "ca7521aaaa23",
+      "preview": "2489992"
+    },
+    "chat_application:s": {
+      "digest": "e18b971fb266",
+      "preview": "780"
+    },
+    "chat_application:m": {
+      "digest": "8473d094d884",
+      "preview": "3300"
+    },
+    "chat_application:l": {
+      "digest": "c5b33d04f844",
+      "preview": "8580"
+    },
+    "basic_blockchain:s": {
+      "digest": "2f6418a43a43",
+      "preview": "2772269579"
+    },
+    "basic_blockchain:m": {
+      "digest": "76596d42c0a6",
+      "preview": "2019723500"
+    },
+    "basic_blockchain:l": {
+      "digest": "4f669965c328",
+      "preview": "1349894952"
+    },
+    "web_scraper:s": {
+      "digest": "a350f43a181d",
+      "preview": "1980"
+    },
+    "web_scraper:m": {
+      "digest": "1a7200d4113b",
+      "preview": "16990"
+    },
+    "web_scraper:l": {
+      "digest": "0dac4b6549df",
+      "preview": "104200"
+    },
+    "image_resizing:s": {
+      "digest": "674ca46abc1e",
+      "preview": "392833"
+    },
+    "image_resizing:m": {
+      "digest": "664a1376f609",
+      "preview": "1570381"
+    },
+    "image_resizing:l": {
+      "digest": "073e693a30a9",
+      "preview": "3494416"
+    },
+    "sentiment_analysis:s": {
+      "digest": "f1bbaed6eebd",
+      "preview": "7499"
+    },
+    "sentiment_analysis:m": {
+      "digest": "148744f24146",
+      "preview": "29999"
+    },
+    "sentiment_analysis:l": {
+      "digest": "66944880e34f",
+      "preview": "74999"
+    },
+    "sqlite_crud:s": {
+      "digest": "1ca032e4df02",
+      "preview": "1640"
+    },
+    "sqlite_crud:m": {
+      "digest": "483f093a5680",
+      "preview": "20960"
+    },
+    "sqlite_crud:l": {
+      "digest": "0b30c339ebb5",
+      "preview": "124400"
+    },
+    "producer_consumer:s": {
+      "digest": "15fadc455991",
+      "preview": "2389872086"
+    },
+    "producer_consumer:m": {
+      "digest": "d5227b55eb03",
+      "preview": "1607111531"
+    },
+    "producer_consumer:l": {
+      "digest": "3fa3d2f544ba",
+      "preview": "3920525990"
+    },
+    "socket_programming:s": {
+      "digest": "bfa9b234f734",
+      "preview": "310"
+    },
+    "socket_programming:m": {
+      "digest": "3e2d84595920",
+      "preview": "1330"
+    },
+    "socket_programming:l": {
+      "digest": "2580435e03bb",
+      "preview": "3490"
+    },
+    "gui_calculator:s": {
+      "digest": "8212ba5ccbab",
+      "preview": "367300"
+    },
+    "gui_calculator:m": {
+      "digest": "173b1dc7697d",
+      "preview": "915282"
+    },
+    "gui_calculator:l": {
+      "digest": "54673e600034",
+      "preview": "84181"
+    },
+    "cli_file_search:s": {
+      "digest": "2a62cf402cd3",
+      "preview": "61"
+    },
+    "cli_file_search:m": {
+      "digest": "c942bc47f4c9",
+      "preview": "228"
+    },
+    "cli_file_search:l": {
+      "digest": "ab8e9a58c47a",
+      "preview": "600"
+    },
+    "data_visualization:s": {
+      "digest": "debe935fc864",
+      "preview": "139234"
+    },
+    "data_visualization:m": {
+      "digest": "28270a0112a0",
+      "preview": "2156572"
+    },
+    "data_visualization:l": {
+      "digest": "273dc79a708b",
+      "preview": "3526369"
+    },
+    "basic_web_application:s": {
+      "digest": "2098fc01f406",
+      "preview": "13015"
+    },
+    "basic_web_application:m": {
+      "digest": "bb3fa0b450a3",
+      "preview": "227295"
+    },
+    "basic_web_application:l": {
+      "digest": "b0e7e28de522",
+      "preview": "1439895"
+    },
+    "api_client:s": {
+      "digest": "a61ac4de221f",
+      "preview": "58330"
+    },
+    "api_client:m": {
+      "digest": "3dbf56f9ca2b",
+      "preview": "361322"
+    },
+    "api_client:l": {
+      "digest": "a4b361990443",
+      "preview": "1006917"
+    },
+    "decision_tree:s": {
+      "digest": "09449ab6ee1e",
+      "preview": "194400561"
+    },
+    "decision_tree:m": {
+      "digest": "8fdb4e675688",
+      "preview": "990549112"
+    },
+    "decision_tree:l": {
+      "digest": "07b93b5234aa",
+      "preview": "2026280554"
+    },
+    "third_party_api:s": {
+      "digest": "b186c59140cc",
+      "preview": "62783"
+    },
+    "third_party_api:m": {
+      "digest": "73dd9a060f02",
+      "preview": "269036"
+    },
+    "third_party_api:l": {
+      "digest": "c1a40227a213",
+      "preview": "531858"
+    },
+    "ai_service_integration:s": {
+      "digest": "bb7ccf341f26",
+      "preview": "5236"
+    },
+    "ai_service_integration:m": {
+      "digest": "bba3be97a8a8",
+      "preview": "20153"
+    },
+    "ai_service_integration:l": {
+      "digest": "17fd386a64d8",
+      "preview": "47365"
+    }
+  }
+}

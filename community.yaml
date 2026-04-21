@@ -1,0 +1,22 @@
+community:
+  php:
+    active_contributors: 78
+    update_cadence: 72
+  python:
+    active_contributors: 96
+    update_cadence: 95
+  java:
+    active_contributors: 89
+    update_cadence: 91
+  cpp:
+    active_contributors: 80
+    update_cadence: 78
+  node:
+    active_contributors: 97
+    update_cadence: 97
+  go:
+    active_contributors: 84
+    update_cadence: 88
+  rust:
+    active_contributors: 90
+    update_cadence: 92

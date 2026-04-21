@@ -1,0 +1,12 @@
+weights:
+  cpu: 0.14
+  wall: 0.14
+  memory: 0.10
+  loc: 0.06
+  ease: 0.08
+  community: 0.08
+  scalability: 0.12
+  debugging: 0.06
+  docs: 0.06
+  libraries: 0.06
+  concurrency: 0.10

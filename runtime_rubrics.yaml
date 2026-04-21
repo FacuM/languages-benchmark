@@ -1,0 +1,100 @@
+ratings:
+  php-5.6:
+    ease: 5
+    debugging: 6
+    docs: 6
+    libraries: 6
+    concurrency: 4
+    reviewed_at: "2026-04-22"
+    evidence:
+      summary: "Legacy PHP 5.6 remains understandable for small scripts, but its age materially hurts maintainability, library fit, and modern concurrency ergonomics compared with supported PHP releases."
+  php-7.2:
+    ease: 6
+    debugging: 6
+    docs: 7
+    libraries: 8
+    concurrency: 4
+    reviewed_at: "2026-04-22"
+    evidence:
+      summary: "PHP 7.2 is much more usable than 5.6 but still predates newer language/runtime improvements and sits outside the healthiest part of the current ecosystem."
+  php-7.4:
+    ease: 7
+    debugging: 7
+    docs: 8
+    libraries: 9
+    concurrency: 5
+    reviewed_at: "2026-04-22"
+    evidence:
+      summary: "PHP 7.4 is a practical modern baseline for PHP-style ergonomics and ecosystem fit, even though the newest releases are now the primary focus."
+  php-8.4:
+    ease: 7
+    debugging: 7
+    docs: 8
+    libraries: 9
+    concurrency: 5
+    reviewed_at: "2026-04-22"
+    evidence:
+      summary: "Modern PHP 8.x stays productive for web work with strong library support, but concurrency is still not central to mainstream PHP development."
+  python-2.7:
+    ease: 7
+    debugging: 7
+    docs: 7
+    libraries: 8
+    concurrency: 6
+    reviewed_at: "2026-04-22"
+    evidence:
+      summary: "Python 2.7 is historically important but no longer the best-maintained or best-documented path, so it scores below current Python 3 runtimes on ecosystem and maintainability axes."
+  python-3.8:
+    ease: 9
+    debugging: 8
+    docs: 9
+    libraries: 10
+    concurrency: 7
+    reviewed_at: "2026-04-22"
+    evidence:
+      summary: "Python 3.8 keeps the standard Python ergonomics and ecosystem strengths, though it is no longer the newest supported branch."
+  python-3.11:
+    ease: 9
+    debugging: 8
+    docs: 10
+    libraries: 10
+    concurrency: 7
+    reviewed_at: "2026-04-22"
+    evidence:
+      summary: "Python 3.11 represents a strong current-era Python developer experience with excellent docs and ecosystem fit."
+  python-3.12:
+    ease: 9
+    debugging: 8
+    docs: 10
+    libraries: 10
+    concurrency: 7
+    reviewed_at: "2026-04-22"
+    evidence:
+      summary: "Python 3.12 is the default modern Python benchmark baseline here and keeps the same strong readability and ecosystem story as Python 3.11."
+  node-22:
+    ease: 8
+    debugging: 8
+    docs: 9
+    libraries: 10
+    concurrency: 8
+    reviewed_at: "2026-04-22"
+    evidence:
+      summary: "Node.js remains the strongest general-purpose baseline for backend JavaScript thanks to mature docs, tooling, npm, and practical async concurrency."
+  bun-1.3.12:
+    ease: 8
+    debugging: 7
+    docs: 8
+    libraries: 8
+    concurrency: 8
+    reviewed_at: "2026-04-22"
+    evidence:
+      summary: "Bun is highly productive and fast-moving, but its debugger/docs/ecosystem fit are still less universally mature than Node's."
+  deno-2.7.6:
+    ease: 8
+    debugging: 7
+    docs: 9
+    libraries: 8
+    concurrency: 8
+    reviewed_at: "2026-04-22"
+    evidence:
+      summary: "Deno has a strong modern documentation story and a clean runtime model, but its package-compatibility reality is still narrower than Node's broader ecosystem."

@@ -1,0 +1,197 @@
+ratings:
+  php:
+    ease: 7
+    debugging: 7
+    docs: 8
+    libraries: 9
+    concurrency: 5
+    reviewed_at: "2026-04-22"
+    evidence:
+      summary: "PHP remains easy to ship for everyday web work, has strong official/manual coverage and a massive package ecosystem, but its built-in concurrency story is still much weaker and less central than in runtimes designed around threads, workers, or goroutines."
+      rationale:
+        ease: "PHP keeps a relatively small surface area for standard application code and has a familiar request-response programming model, but long-term maintainability can vary more across codebases because the ecosystem spans multiple major styles and framework conventions."
+        debugging: "The core language plus Xdebug give PHP a mature enough debugging workflow, but the debugging/tooling story is less uniformly strong than in Java or Python-heavy environments."
+        docs: "The official manual is broad, stable, and still one of PHP's strongest assets, though documentation quality outside the core manual varies by framework and package."
+        libraries: "Packagist and Composer provide a very large and production-proven package ecosystem, especially for web/backend development."
+        concurrency: "Modern PHP has Fibers and event-driven libraries, but concurrency is still less idiomatic and less built into the mainstream development model than in Go, Java, or Rust."
+      sources:
+        - label: "PHP Documentation"
+          url: "https://www.php.net/docs.php"
+          kind: "official"
+        - label: "PHP Fibers manual"
+          url: "https://www.php.net/manual/en/language.fibers.php"
+          kind: "official"
+        - label: "Xdebug documentation"
+          url: "https://xdebug.org/docs/"
+          kind: "official"
+        - label: "Packagist"
+          url: "https://packagist.org/"
+          kind: "official"
+  python:
+    ease: 9
+    debugging: 8
+    docs: 10
+    libraries: 10
+    concurrency: 7
+    reviewed_at: "2026-04-22"
+    evidence:
+      summary: "Python remains one of the easiest languages to read and teach, has outstanding official documentation and the largest general-purpose package ecosystem in the set, but its mainstream concurrency story is still shaped by tradeoffs such as the GIL and the need to choose among threads, processes, and async."
+      rationale:
+        ease: "Python's syntax and standard library conventions strongly favor readability and low ceremony, which makes simple implementations and maintenance comparatively easy."
+        debugging: "Python has solid built-in debugging support and excellent IDE/tool support, though the runtime model is not as debugger-centric as Java."
+        docs: "The official Python docs are deep, broad, and well organized across the language reference, standard library, tutorials, and HOWTO material."
+        libraries: "PyPI is the dominant ecosystem for general-purpose scripting, data tooling, ML, web, and automation libraries."
+        concurrency: "Python supports threads, processes, asyncio, and futures well enough for most workloads, but the model is split across multiple approaches and CPU-bound parallelism still carries more caveats than in Go or Java."
+      sources:
+        - label: "Python documentation"
+          url: "https://docs.python.org/3/"
+          kind: "official"
+        - label: "pdb"
+          url: "https://docs.python.org/3/library/pdb.html"
+          kind: "official"
+        - label: "PyPI"
+          url: "https://pypi.org/"
+          kind: "official"
+        - label: "concurrent.futures"
+          url: "https://docs.python.org/3/library/concurrent.futures.html"
+          kind: "official"
+  java:
+    ease: 7
+    debugging: 9
+    docs: 9
+    libraries: 10
+    concurrency: 10
+    reviewed_at: "2026-04-22"
+    evidence:
+      summary: "Java remains more verbose than scripting-oriented languages, but it has first-class debugger architecture, very mature official documentation, the deepest enterprise library story in the set, and one of the strongest concurrency platforms available."
+      rationale:
+        ease: "Java still carries more ceremony than Python, Go, or Node.js for small tasks, even though modern Java has improved significantly."
+        debugging: "The platform ships with a formal debugger architecture and standard debugger tooling, which makes the debugging story exceptionally mature."
+        docs: "Oracle's platform docs and API references are extensive and highly structured."
+        libraries: "The JVM ecosystem and Maven Central make Java one of the broadest and most mature library ecosystems in software."
+        concurrency: "Java's standard concurrency stack is exceptionally strong and explicit, with mature threading, executors, futures, structured primitives, and long-standing tooling support."
+      sources:
+        - label: "Java SE 21 documentation"
+          url: "https://docs.oracle.com/en/java/javase/21/"
+          kind: "official"
+        - label: "The jdb Command"
+          url: "https://docs.oracle.com/en/java/javase/21/docs/specs/man/jdb.html"
+          kind: "official"
+        - label: "Java concurrency"
+          url: "https://docs.oracle.com/en/java/javase/21/core/concurrency.html"
+          kind: "official"
+        - label: "Maven Central"
+          url: "https://search.maven.org/"
+          kind: "official"
+  cpp:
+    ease: 4
+    debugging: 8
+    docs: 7
+    libraries: 8
+    concurrency: 8
+    reviewed_at: "2026-04-22"
+    evidence:
+      summary: "C++ offers huge performance and control, plus strong native tooling and a rich library landscape, but its language complexity and the lack of one single official learning/documentation hub make it harder to learn and maintain than the others."
+      rationale:
+        ease: "C++ remains the hardest language in the benchmark set for everyday readability and maintainability because of its language complexity, value-category rules, templates, memory model, and broad feature surface."
+        debugging: "Native debugging with GDB and IDE integrations is strong, even if optimized C++ can still be difficult to inspect."
+        docs: "C++ lacks a single official, centralized documentation experience comparable to Python or Java; cppreference is excellent, but it is a canonical community resource rather than an official language publisher."
+        libraries: "C++ has deep standard-library and third-party ecosystems, and package-manager support has improved materially with tools like vcpkg."
+        concurrency: "The standard library includes mature threading and synchronization primitives, though writing correct concurrent C++ remains more expert-heavy than in Go or Java."
+      sources:
+        - label: "cppreference"
+          url: "https://en.cppreference.com/"
+          kind: "canonical"
+        - label: "C++ concurrency support library"
+          url: "https://en.cppreference.com/w/cpp/thread"
+          kind: "canonical"
+        - label: "Debugging with GDB"
+          url: "https://sourceware.org/gdb/current/onlinedocs/gdb"
+          kind: "official"
+        - label: "vcpkg packages"
+          url: "https://vcpkg.io/en/packages.html"
+          kind: "official"
+  node:
+    ease: 8
+    debugging: 8
+    docs: 9
+    libraries: 10
+    concurrency: 8
+    reviewed_at: "2026-04-22"
+    evidence:
+      summary: "Node.js stays highly productive for small-to-medium services and tooling, has excellent official docs, and sits on top of npm's enormous package registry, while offering practical concurrency via the event loop, worker threads, and the broader async ecosystem."
+      rationale:
+        ease: "Node.js keeps implementation friction low for web, tooling, and API-style work, though async-heavy code can still become harder to reason about at scale."
+        debugging: "Node ships documented debugger support and is well supported by mainstream tooling and IDE workflows."
+        docs: "The official Node.js API documentation is extensive and consistently maintained."
+        libraries: "npm remains one of the largest and most accessible package ecosystems in software."
+        concurrency: "Node's concurrency story is good in practice through async I/O and worker threads, but it is still less direct for CPU-bound parallel work than Go or Java."
+      sources:
+        - label: "Node.js API documentation"
+          url: "https://nodejs.org/api/"
+          kind: "official"
+        - label: "Node.js debugger"
+          url: "https://nodejs.org/api/debugger.html"
+          kind: "official"
+        - label: "Worker threads"
+          url: "https://nodejs.org/api/worker_threads.html"
+          kind: "official"
+        - label: "npm About"
+          url: "https://www.npmjs.com/about"
+          kind: "official"
+  go:
+    ease: 8
+    debugging: 7
+    docs: 9
+    libraries: 8
+    concurrency: 10
+    reviewed_at: "2026-04-22"
+    evidence:
+      summary: "Go keeps the language small and readable, documents the language and ecosystem clearly, and has arguably the most direct built-in concurrency ergonomics in the set; its library ecosystem is broad, though not as vast as Python, Node, or Java."
+      rationale:
+        ease: "Go is intentionally small, readable, and convention-heavy, which lowers implementation and maintenance overhead for many backend and systems tasks."
+        debugging: "Go's debugging story is solid but not best-in-class; the project documentation itself points out caveats around GDB and recommends purpose-built tooling like Delve."
+        docs: "Go's official documentation hub and package discovery experience are clear, opinionated, and unusually approachable."
+        libraries: "Go has a strong standard library and a healthy module ecosystem, but the overall breadth is still smaller than the largest ecosystems in this benchmark."
+        concurrency: "Goroutines and channels remain one of Go's defining strengths, making concurrency unusually central, ergonomic, and well documented."
+      sources:
+        - label: "Go documentation"
+          url: "https://go.dev/doc"
+          kind: "official"
+        - label: "Go Packages"
+          url: "https://pkg.go.dev/about"
+          kind: "official"
+        - label: "Debugging Go Code with GDB"
+          url: "https://go.dev/doc/gdb"
+          kind: "official"
+        - label: "Share Memory By Communicating"
+          url: "https://go.dev/doc/codewalk/sharemem/"
+          kind: "official"
+  rust:
+    ease: 6
+    debugging: 7
+    docs: 9
+    libraries: 9
+    concurrency: 9
+    reviewed_at: "2026-04-22"
+    evidence:
+      summary: "Rust has a steeper learning curve than the other non-C++ languages here, but compensates with excellent official documentation, a fast-growing crates ecosystem, and a strong native-threading/concurrency story built around memory safety."
+      rationale:
+        ease: "Rust is harder to learn and maintain than Python, Go, Node.js, or Java because ownership, borrowing, and lifetime constraints demand more upfront precision."
+        debugging: "Rust has good native-debugging support and dedicated debugger-visualizer features, but the debugging workflow is still less turnkey than Java's and can be more demanding than Python's."
+        docs: "Rust's official docs ecosystem is unusually rich, spanning the Book, Reference, std docs, rustdoc output, and other first-party books."
+        libraries: "crates.io provides a broad and fast-moving ecosystem that is now strong across systems, CLI, async, web, and serialization workloads."
+        concurrency: "Rust's standard library and language guarantees make concurrent code comparatively powerful and safe, even if the learning curve is higher than in Go."
+      sources:
+        - label: "The Rust Programming Language"
+          url: "https://doc.rust-lang.org/stable/book/ch00-00-introduction.html"
+          kind: "official"
+        - label: "Rust documentation overview"
+          url: "https://doc.rust-lang.org/"
+          kind: "official"
+        - label: "std::thread"
+          url: "https://doc.rust-lang.org/std/thread/index.html"
+          kind: "official"
+        - label: "crates.io"
+          url: "https://crates.io/"
+          kind: "official"

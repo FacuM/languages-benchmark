@@ -1,0 +1,43 @@
+{
+  "generated_from": "results/20260423T042840Z/scored_results.json",
+  "generated_run_id": "20260423T042840Z",
+  "canonical_results": "results/20260423T042840Z/scored_results.json",
+  "version_matrix_results": "results/20260423T043938Z/scored_results.json",
+  "runtime_metadata_source": "results/20260423T043938Z/scored_results.json",
+  "javascript_runtime_source": "results/20260423T043938Z/scored_results.json",
+  "host": {
+    "hostname": "cachyos-x8664-hp16la",
+    "platform": "Linux-6.19.11-1-cachyos-x86_64-with-glibc2.43",
+    "system": "Linux",
+    "release": "6.19.11-1-cachyos",
+    "machine": "x86_64",
+    "python_version": "3.14.4",
+    "cpu_count": 8,
+    "cpu_model": "Intel(R) Core(TM) i5-10300H CPU @ 2.50GHz",
+    "engine_binary": "docker",
+    "engine_version": "Docker version 29.4.0, build 9d7ad9ff18"
+  },
+  "git": {
+    "commit": "61cb41f4fd1703931ef034db67bf05ad97ba45f3",
+    "commit_short": "61cb41f",
+    "branch": "master",
+    "dirty": true
+  },
+  "profile": {
+    "preset": null,
+    "tasks": "all",
+    "langs": "php-8.4,python-3.12,java-21,cpp-14,node-22,go-1.23,rust-1.82",
+    "sizes": [
+      "s",
+      "m",
+      "l"
+    ],
+    "iterations": 1,
+    "warmups": 0,
+    "jobs": 1,
+    "engine": "docker",
+    "baseline_runtime": "python-3.12",
+    "execution_mode": "container"
+  },
+  "previous_manifest": null
+}

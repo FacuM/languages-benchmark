@@ -1,0 +1,414 @@
+tasks:
+- id: sort_integers
+  name: Sorting a large array of integers
+  kind: compute
+  executable: true
+  smoke: true
+  sizes:
+  - s
+  - m
+  - l
+  contract:
+    mode: single
+    fixture: fixtures/generated/sort/{size}.txt
+  tags:
+  - compute
+  - algorithm
+  - cpu
+- id: matrix_multiplication
+  name: Performing matrix multiplication
+  kind: compute
+  executable: true
+  smoke: false
+  sizes:
+  - s
+  - m
+  - l
+  contract:
+    mode: single
+    fixture: fixtures/generated/matrix/{size}.txt
+  tags:
+  - compute
+  - numeric
+  - cpu
+- id: simple_web_server
+  name: Implementing a simple web server
+  kind: service
+  executable: true
+  smoke: false
+  sizes:
+  - s
+  - m
+  - l
+  contract:
+    mode: service
+  tags:
+  - service
+  - web
+  - networking
+  - startup-sensitive
+- id: csv_parsing
+  name: Processing a large dataset (CSV file parsing)
+  kind: compute
+  executable: true
+  smoke: true
+  sizes:
+  - s
+  - m
+  - l
+  contract:
+    mode: single
+    fixture: fixtures/generated/csv/{size}.csv
+  tags:
+  - compute
+  - io
+  - data
+- id: linear_regression
+  name: Implementing a basic machine learning algorithm (linear regression)
+  kind: compute
+  executable: true
+  smoke: false
+  sizes:
+  - s
+  - m
+  - l
+  contract:
+    mode: single
+    fixture: fixtures/generated/linear_regression/{size}.csv
+  tags:
+  - compute
+  - ml
+  - numeric
+- id: rest_api
+  name: Implementing a simple REST API
+  kind: service
+  executable: true
+  smoke: false
+  sizes:
+  - s
+  - m
+  - l
+  contract:
+    mode: service
+  tags:
+  - service
+  - web
+  - api
+  - startup-sensitive
+- id: file_io_large
+  name: Performing file I/O operations on a large file
+  kind: compute
+  executable: true
+  smoke: false
+  sizes:
+  - s
+  - m
+  - l
+  contract:
+    mode: single
+    fixture: fixtures/generated/file_io/{size}.txt
+  tags:
+  - compute
+  - io
+  - filesystem
+- id: binary_search_tree
+  name: Implementing a basic data structure (binary search tree)
+  kind: compute
+  executable: true
+  smoke: false
+  sizes:
+  - s
+  - m
+  - l
+  contract:
+    mode: single
+    fixture: fixtures/generated/bst/{size}.txt
+  tags:
+  - compute
+  - data-structure
+  - memory
+- id: prime_sieve
+  name: Implementing a simple algorithm (prime number generation)
+  kind: compute
+  executable: true
+  smoke: false
+  sizes:
+  - s
+  - m
+  - l
+  contract:
+    mode: single
+  tags:
+  - compute
+  - algorithm
+  - cpu
+- id: tic_tac_toe
+  name: Implementing a basic game (tic-tac-toe)
+  kind: compute
+  executable: true
+  smoke: false
+  sizes:
+  - s
+  - m
+  - l
+  contract:
+    mode: single
+    fixture: fixtures/generated/tic_tac_toe/{size}.txt
+  tags:
+  - compute
+  - control-flow
+  - game
+- id: chat_application
+  name: Implementing a simple chat application
+  kind: service
+  executable: true
+  smoke: false
+  sizes:
+  - s
+  - m
+  - l
+  contract:
+    mode: service
+  tags:
+  - service
+  - networking
+  - tcp
+  - startup-sensitive
+- id: basic_blockchain
+  name: Implementing a basic blockchain
+  kind: compute
+  executable: true
+  smoke: false
+  sizes:
+  - s
+  - m
+  - l
+  contract:
+    mode: single
+    fixture: fixtures/generated/blockchain/{size}.txt
+  tags:
+  - compute
+  - stateful
+  - hashing
+- id: web_scraper
+  name: Implementing a simple web scraper
+  kind: integration
+  executable: true
+  smoke: false
+  sizes:
+  - s
+  - m
+  - l
+  contract:
+    mode: single
+    target: fixtures/mock_site/{size}/index.html
+  tags:
+  - integration
+  - html
+  - io
+- id: image_resizing
+  name: Implementing a basic image processing task (resizing an image)
+  kind: compute
+  executable: true
+  smoke: false
+  sizes:
+  - s
+  - m
+  - l
+  contract:
+    mode: single
+    fixture: fixtures/generated/image/{size}.ppm
+  tags:
+  - compute
+  - image
+  - numeric
+- id: sentiment_analysis
+  name: Implementing a simple natural language processing task (sentiment analysis)
+  kind: compute
+  executable: true
+  smoke: false
+  sizes:
+  - s
+  - m
+  - l
+  contract:
+    mode: single
+    fixture: fixtures/generated/sentiment/{size}.txt
+  tags:
+  - compute
+  - nlp
+  - text
+- id: sqlite_crud
+  name: Implementing a basic database interaction (CRUD operations)
+  kind: service
+  executable: true
+  smoke: false
+  sizes:
+  - s
+  - m
+  - l
+  contract:
+    mode: service
+  tags:
+  - service
+  - database
+  - api
+  - startup-sensitive
+- id: producer_consumer
+  name: Implementing a simple multithreading task (producer-consumer problem)
+  kind: compute
+  executable: true
+  smoke: false
+  sizes:
+  - s
+  - m
+  - l
+  contract:
+    mode: single
+    fixture: fixtures/generated/producer_consumer/{size}.txt
+  tags:
+  - compute
+  - concurrency
+  - queue
+- id: socket_programming
+  name: Implementing a basic networking task (socket programming)
+  kind: service
+  executable: true
+  smoke: false
+  sizes:
+  - s
+  - m
+  - l
+  contract:
+    mode: service
+  tags:
+  - service
+  - networking
+  - tcp
+  - startup-sensitive
+- id: gui_calculator
+  name: Implementing a simple GUI application (a calculator)
+  kind: ui
+  executable: true
+  smoke: false
+  sizes:
+  - s
+  - m
+  - l
+  contract:
+    mode: ui
+  tags:
+  - ui
+  - browser
+  - startup-sensitive
+- id: cli_file_search
+  name: Implementing a basic command-line tool (a file search utility)
+  kind: compute
+  executable: true
+  smoke: false
+  sizes:
+  - s
+  - m
+  - l
+  contract:
+    mode: single
+    fixture: fixtures/generated/search/{size}
+  tags:
+  - compute
+  - cli
+  - io
+  - filesystem
+- id: data_visualization
+  name: Implementing a simple data visualization task (plotting a graph)
+  kind: ui
+  executable: true
+  smoke: false
+  sizes:
+  - s
+  - m
+  - l
+  contract:
+    mode: ui
+  tags:
+  - ui
+  - browser
+  - visualization
+- id: basic_web_application
+  name: Implementing a basic web application (a to-do list)
+  kind: ui
+  executable: true
+  smoke: false
+  sizes:
+  - s
+  - m
+  - l
+  contract:
+    mode: ui
+  tags:
+  - ui
+  - browser
+  - crud
+- id: api_client
+  name: Implementing a simple API client (fetching data from a public API)
+  kind: integration
+  executable: true
+  smoke: false
+  sizes:
+  - s
+  - m
+  - l
+  contract:
+    mode: single
+    target: fixtures/mocks/public_api_{size}.json
+  tags:
+  - integration
+  - api
+  - json
+- id: decision_tree
+  name: Implementing a basic machine learning model (decision tree)
+  kind: compute
+  executable: true
+  smoke: false
+  sizes:
+  - s
+  - m
+  - l
+  contract:
+    mode: single
+    fixture: fixtures/generated/decision_tree/{size}.csv
+  tags:
+  - compute
+  - ml
+  - control-flow
+- id: third_party_api
+  name: Integrating with a third-party API (e.g., Twitter API)
+  kind: integration
+  executable: true
+  smoke: false
+  sizes:
+  - s
+  - m
+  - l
+  contract:
+    mode: single
+    target: fixtures/mocks/twitter_like_{size}.json
+  tags:
+  - integration
+  - api
+  - json
+- id: ai_service_integration
+  name: Integrating with AI services (e.g., OpenAI API or MCP services)
+  kind: integration
+  executable: true
+  smoke: false
+  sizes:
+  - s
+  - m
+  - l
+  contract:
+    mode: single
+    target: fixtures/mocks/ai_service_{size}.json
+  tags:
+  - integration
+  - ai
+  - json

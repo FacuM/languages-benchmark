@@ -1,0 +1,48 @@
+<svg xmlns='http://www.w3.org/2000/svg' width='860' height='520' viewBox='0 0 860 520'>
+<rect x='0' y='0' width='860' height='520' fill='#ffffff'/>
+<rect x='0.5' y='0.5' width='859' height='519' fill='none' stroke='#d1d5db'/>
+<text x='430.0' y='28' text-anchor='middle' font-size='20' fill='#000'>
+<tspan x='430.0' dy='0'>Implementing a simple data visualization task (plotting a</tspan>
+<tspan x='430.0' dy='22'>graph) — per-task overall score (0-100, higher is better)</tspan>
+<tspan x='430.0' dy='22'>— language best-case</tspan>
+</text>
+<text x='430.0' y='94' text-anchor='middle' font-size='12' fill='#555'>
+<tspan x='430.0' dy='0'>One bar per language family, keeping only the best tested version for this task.</tspan>
+</text>
+<line x1='64' y1='424' x2='812' y2='424' stroke='#e5e7eb' stroke-width='1'/>
+<text x='54' y='428' text-anchor='end' font-size='11' fill='#555'>0</text>
+<line x1='64' y1='349' x2='812' y2='349' stroke='#e5e7eb' stroke-width='1'/>
+<text x='54' y='353' text-anchor='end' font-size='11' fill='#555'>25</text>
+<line x1='64' y1='274' x2='812' y2='274' stroke='#e5e7eb' stroke-width='1'/>
+<text x='54' y='278' text-anchor='end' font-size='11' fill='#555'>50</text>
+<line x1='64' y1='199' x2='812' y2='199' stroke='#e5e7eb' stroke-width='1'/>
+<text x='54' y='203' text-anchor='end' font-size='11' fill='#555'>75</text>
+<line x1='64' y1='124' x2='812' y2='124' stroke='#e5e7eb' stroke-width='1'/>
+<text x='54' y='128' text-anchor='end' font-size='11' fill='#555'>100</text>
+<line x1='64' y1='424' x2='812' y2='424' stroke='black'/>
+<rect x='76' y='189' width='88' height='235' rx='4' fill='#4f46e5'/>
+<text x='120.0' y='446' text-anchor='middle' font-size='12'>PHP</text>
+<text x='120.0' y='181' text-anchor='middle' font-size='12'>78.5</text>
+<rect x='182' y='172' width='88' height='252' rx='4' fill='#4f46e5'/>
+<text x='226.0' y='446' text-anchor='middle' font-size='12'>Python</text>
+<text x='226.0' y='164' text-anchor='middle' font-size='12'>84.2</text>
+<rect x='288' y='190' width='88' height='234' rx='4' fill='#4f46e5'/>
+<text x='332.0' y='446' text-anchor='middle' font-size='12'>Java</text>
+<text x='332.0' y='182' text-anchor='middle' font-size='12'>78.2</text>
+<rect x='394' y='176' width='88' height='248' rx='4' fill='#4f46e5'/>
+<text x='438.0' y='446' text-anchor='middle' font-size='12'>C++</text>
+<text x='438.0' y='168' text-anchor='middle' font-size='12'>83.0</text>
+<rect x='500' y='166' width='88' height='258' rx='4' fill='#4f46e5'/>
+<text x='544.0' y='446' text-anchor='middle' font-size='12'>Node.js</text>
+<text x='544.0' y='158' text-anchor='middle' font-size='12'>86.1</text>
+<rect x='606' y='157' width='88' height='267' rx='4' fill='#4f46e5'/>
+<text x='650.0' y='446' text-anchor='middle' font-size='12'>Go</text>
+<text x='650.0' y='149' text-anchor='middle' font-size='12'>89.2</text>
+<rect x='712' y='158' width='88' height='266' rx='4' fill='#4f46e5'/>
+<text x='756.0' y='446' text-anchor='middle' font-size='12'>Rust</text>
+<text x='756.0' y='150' text-anchor='middle' font-size='12'>88.9</text>
+<text x='430.0' y='494' text-anchor='middle' font-size='11' fill='#555'>
+<tspan x='430.0' dy='0'>Canonical language-family order from benchmark.yaml for this task. All bars are normalized scores from 0 to 100, so</tspan>
+<tspan x='430.0' dy='14'>higher bars are better.</tspan>
+</text>
+</svg>

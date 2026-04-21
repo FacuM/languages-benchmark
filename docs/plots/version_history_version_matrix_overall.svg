@@ -1,0 +1,12 @@
+<svg xmlns='http://www.w3.org/2000/svg' width='860' height='220' viewBox='0 0 860 220'>
+<rect x='0' y='0' width='860' height='220' fill='#ffffff'/>
+<rect x='0.5' y='0.5' width='859' height='219' fill='none' stroke='#d1d5db'/>
+<text x='430' y='34' text-anchor='middle' font-size='20' fill='#000'>
+<tspan x='430' dy='0'>Version-matrix overall-score trend across published</tspan>
+<tspan x='430' dy='22'>snapshots</tspan>
+</text>
+<text x='430' y='100' text-anchor='middle' font-size='13' fill='#555'>
+<tspan x='430' dy='0'>At least two archived version-matrix history snapshots are required before a</tspan>
+<tspan x='430' dy='18'>trend chart is shown.</tspan>
+</text>
+</svg>

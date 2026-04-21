@@ -1,0 +1,1663 @@
+<svg xmlns='http://www.w3.org/2000/svg' width='28518' height='520' viewBox='0 0 28518 520'>
+<rect x='0' y='0' width='28518' height='520' fill='#ffffff'/>
+<rect x='0.5' y='0.5' width='28517' height='519' fill='none' stroke='#d1d5db'/>
+<text x='14259.0' y='28' text-anchor='middle' font-size='20' fill='#000'>
+<tspan x='14259.0' dy='0'>Implementing a basic web application (a to-do list) —</tspan>
+<tspan x='14259.0' dy='22'>overall score delta vs baseline (pts, higher is better)</tspan>
+</text>
+<text x='14259.0' y='72' text-anchor='middle' font-size='12' fill='#555'>
+<tspan x='14259.0' dy='0'>Per-task overall score minus baseline runtime python-3.12. Higher is better; baseline = 0.</tspan>
+</text>
+<line x1='72' y1='390' x2='28470' y2='390' stroke='#e5e7eb' stroke-width='1'/>
+<text x='62' y='394' text-anchor='end' font-size='11' fill='#555'>+0.0</text>
+<line x1='72' y1='318' x2='28470' y2='318' stroke='#e5e7eb' stroke-width='1'/>
+<text x='62' y='322' text-anchor='end' font-size='11' fill='#555'>+0.2</text>
+<line x1='72' y1='246' x2='28470' y2='246' stroke='#e5e7eb' stroke-width='1'/>
+<text x='62' y='250' text-anchor='end' font-size='11' fill='#555'>+0.5</text>
+<line x1='72' y1='174' x2='28470' y2='174' stroke='#e5e7eb' stroke-width='1'/>
+<text x='62' y='178' text-anchor='end' font-size='11' fill='#555'>+0.8</text>
+<line x1='72' y1='102' x2='28470' y2='102' stroke='#e5e7eb' stroke-width='1'/>
+<text x='62' y='106' text-anchor='end' font-size='11' fill='#555'>+1.0</text>
+<line x1='72' y1='390' x2='28470' y2='390' stroke='black'/>
+<rect x='84' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='109.0' y='430' transform='rotate(-30 109.0 430)' text-anchor='end' font-size='11' fill='#222'>PHP 8.4</text>
+<text x='101.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='136' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='161.0' y='430' transform='rotate(-30 161.0 430)' text-anchor='end' font-size='11' fill='#222'>PHP 8.4</text>
+<text x='153.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='188' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='213.0' y='430' transform='rotate(-30 213.0 430)' text-anchor='end' font-size='11' fill='#222'>PHP 8.4</text>
+<text x='205.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='240' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='265.0' y='430' transform='rotate(-30 265.0 430)' text-anchor='end' font-size='11' fill='#222'>PHP 8.4</text>
+<text x='257.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='292' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='317.0' y='430' transform='rotate(-30 317.0 430)' text-anchor='end' font-size='11' fill='#222'>PHP 8.4</text>
+<text x='309.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='344' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='369.0' y='430' transform='rotate(-30 369.0 430)' text-anchor='end' font-size='11' fill='#222'>PHP 8.4</text>
+<text x='361.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='396' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='421.0' y='430' transform='rotate(-30 421.0 430)' text-anchor='end' font-size='11' fill='#222'>PHP 8.4</text>
+<text x='413.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='448' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='473.0' y='430' transform='rotate(-30 473.0 430)' text-anchor='end' font-size='11' fill='#222'>PHP 8.4</text>
+<text x='465.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='500' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='525.0' y='430' transform='rotate(-30 525.0 430)' text-anchor='end' font-size='11' fill='#222'>PHP 8.4</text>
+<text x='517.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='552' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='577.0' y='430' transform='rotate(-30 577.0 430)' text-anchor='end' font-size='11' fill='#222'>PHP 8.4</text>
+<text x='569.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='604' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='629.0' y='430' transform='rotate(-30 629.0 430)' text-anchor='end' font-size='11' fill='#222'>PHP 8.4</text>
+<text x='621.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='656' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='681.0' y='430' transform='rotate(-30 681.0 430)' text-anchor='end' font-size='11' fill='#222'>PHP 8.4</text>
+<text x='673.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='708' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='733.0' y='430' transform='rotate(-30 733.0 430)' text-anchor='end' font-size='11' fill='#222'>PHP 8.4</text>
+<text x='725.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='760' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='785.0' y='430' transform='rotate(-30 785.0 430)' text-anchor='end' font-size='11' fill='#222'>PHP 8.4</text>
+<text x='777.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='812' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='837.0' y='430' transform='rotate(-30 837.0 430)' text-anchor='end' font-size='11' fill='#222'>PHP 8.4</text>
+<text x='829.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='864' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='889.0' y='430' transform='rotate(-30 889.0 430)' text-anchor='end' font-size='11' fill='#222'>PHP 8.4</text>
+<text x='881.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='916' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='941.0' y='430' transform='rotate(-30 941.0 430)' text-anchor='end' font-size='11' fill='#222'>PHP 8.4</text>
+<text x='933.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='968' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='993.0' y='430' transform='rotate(-30 993.0 430)' text-anchor='end' font-size='11' fill='#222'>PHP 8.4</text>
+<text x='985.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='1020' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='1045.0' y='430' transform='rotate(-30 1045.0 430)' text-anchor='end' font-size='11' fill='#222'>PHP 8.4</text>
+<text x='1037.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='1072' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='1097.0' y='430' transform='rotate(-30 1097.0 430)' text-anchor='end' font-size='11' fill='#222'>PHP 8.4</text>
+<text x='1089.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='1124' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='1149.0' y='430' transform='rotate(-30 1149.0 430)' text-anchor='end' font-size='11' fill='#222'>PHP 8.4</text>
+<text x='1141.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='1176' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='1201.0' y='430' transform='rotate(-30 1201.0 430)' text-anchor='end' font-size='11' fill='#222'>PHP 8.4</text>
+<text x='1193.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='1228' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='1253.0' y='430' transform='rotate(-30 1253.0 430)' text-anchor='end' font-size='11' fill='#222'>PHP 8.4</text>
+<text x='1245.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='1280' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='1305.0' y='430' transform='rotate(-30 1305.0 430)' text-anchor='end' font-size='11' fill='#222'>PHP 8.4</text>
+<text x='1297.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='1332' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='1357.0' y='430' transform='rotate(-30 1357.0 430)' text-anchor='end' font-size='11' fill='#222'>PHP 8.4</text>
+<text x='1349.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='1384' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='1409.0' y='430' transform='rotate(-30 1409.0 430)' text-anchor='end' font-size='11' fill='#222'>PHP 8.4</text>
+<text x='1401.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='1436' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='1461.0' y='430' transform='rotate(-30 1461.0 430)' text-anchor='end' font-size='11' fill='#222'>PHP 8.4</text>
+<text x='1453.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='1488' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='1513.0' y='430' transform='rotate(-30 1513.0 430)' text-anchor='end' font-size='11' fill='#222'>PHP 8.4</text>
+<text x='1505.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='1540' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='1565.0' y='430' transform='rotate(-30 1565.0 430)' text-anchor='end' font-size='11' fill='#222'>PHP 8.4</text>
+<text x='1557.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='1592' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='1617.0' y='430' transform='rotate(-30 1617.0 430)' text-anchor='end' font-size='11' fill='#222'>PHP 8.4</text>
+<text x='1609.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='1644' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='1669.0' y='430' transform='rotate(-30 1669.0 430)' text-anchor='end' font-size='11' fill='#222'>PHP 8.4</text>
+<text x='1661.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='1696' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='1721.0' y='430' transform='rotate(-30 1721.0 430)' text-anchor='end' font-size='11' fill='#222'>PHP 8.4</text>
+<text x='1713.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='1748' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='1773.0' y='430' transform='rotate(-30 1773.0 430)' text-anchor='end' font-size='11' fill='#222'>PHP 8.4</text>
+<text x='1765.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='1800' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='1825.0' y='430' transform='rotate(-30 1825.0 430)' text-anchor='end' font-size='11' fill='#222'>PHP 8.4</text>
+<text x='1817.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='1852' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='1877.0' y='430' transform='rotate(-30 1877.0 430)' text-anchor='end' font-size='11' fill='#222'>PHP 8.4</text>
+<text x='1869.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='1904' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='1929.0' y='430' transform='rotate(-30 1929.0 430)' text-anchor='end' font-size='11' fill='#222'>PHP 8.4</text>
+<text x='1921.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='1956' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='1981.0' y='430' transform='rotate(-30 1981.0 430)' text-anchor='end' font-size='11' fill='#222'>PHP 8.4</text>
+<text x='1973.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='2008' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='2033.0' y='430' transform='rotate(-30 2033.0 430)' text-anchor='end' font-size='11' fill='#222'>PHP 8.4</text>
+<text x='2025.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='2060' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='2085.0' y='430' transform='rotate(-30 2085.0 430)' text-anchor='end' font-size='11' fill='#222'>PHP 8.4</text>
+<text x='2077.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='2112' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='2137.0' y='430' transform='rotate(-30 2137.0 430)' text-anchor='end' font-size='11' fill='#222'>PHP 8.4</text>
+<text x='2129.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='2164' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='2189.0' y='430' transform='rotate(-30 2189.0 430)' text-anchor='end' font-size='11' fill='#222'>PHP 8.4</text>
+<text x='2181.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='2216' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='2241.0' y='430' transform='rotate(-30 2241.0 430)' text-anchor='end' font-size='11' fill='#222'>PHP 8.4</text>
+<text x='2233.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='2268' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='2293.0' y='430' transform='rotate(-30 2293.0 430)' text-anchor='end' font-size='11' fill='#222'>PHP 8.4</text>
+<text x='2285.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='2320' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='2345.0' y='430' transform='rotate(-30 2345.0 430)' text-anchor='end' font-size='11' fill='#222'>PHP 8.4</text>
+<text x='2337.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='2372' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='2397.0' y='430' transform='rotate(-30 2397.0 430)' text-anchor='end' font-size='11' fill='#222'>PHP 8.4</text>
+<text x='2389.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='2424' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='2449.0' y='430' transform='rotate(-30 2449.0 430)' text-anchor='end' font-size='11' fill='#222'>PHP 8.4</text>
+<text x='2441.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='2476' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='2501.0' y='430' transform='rotate(-30 2501.0 430)' text-anchor='end' font-size='11' fill='#222'>PHP 8.4</text>
+<text x='2493.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='2528' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='2553.0' y='430' transform='rotate(-30 2553.0 430)' text-anchor='end' font-size='11' fill='#222'>PHP 8.4</text>
+<text x='2545.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='2580' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='2605.0' y='430' transform='rotate(-30 2605.0 430)' text-anchor='end' font-size='11' fill='#222'>PHP 8.4</text>
+<text x='2597.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='2632' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='2657.0' y='430' transform='rotate(-30 2657.0 430)' text-anchor='end' font-size='11' fill='#222'>PHP 8.4</text>
+<text x='2649.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='2684' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='2709.0' y='430' transform='rotate(-30 2709.0 430)' text-anchor='end' font-size='11' fill='#222'>PHP 8.4</text>
+<text x='2701.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='2736' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='2761.0' y='430' transform='rotate(-30 2761.0 430)' text-anchor='end' font-size='11' fill='#222'>PHP 8.4</text>
+<text x='2753.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='2788' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='2813.0' y='430' transform='rotate(-30 2813.0 430)' text-anchor='end' font-size='11' fill='#222'>PHP 8.4</text>
+<text x='2805.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='2840' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='2865.0' y='430' transform='rotate(-30 2865.0 430)' text-anchor='end' font-size='11' fill='#222'>PHP 8.4</text>
+<text x='2857.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='2892' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='2917.0' y='430' transform='rotate(-30 2917.0 430)' text-anchor='end' font-size='11' fill='#222'>PHP 8.4</text>
+<text x='2909.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='2944' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='2969.0' y='430' transform='rotate(-30 2969.0 430)' text-anchor='end' font-size='11' fill='#222'>PHP 8.4</text>
+<text x='2961.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='2996' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='3021.0' y='430' transform='rotate(-30 3021.0 430)' text-anchor='end' font-size='11' fill='#222'>PHP 8.4</text>
+<text x='3013.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='3048' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='3073.0' y='430' transform='rotate(-30 3073.0 430)' text-anchor='end' font-size='11' fill='#222'>PHP 8.4</text>
+<text x='3065.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='3100' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='3125.0' y='430' transform='rotate(-30 3125.0 430)' text-anchor='end' font-size='11' fill='#222'>PHP 8.4</text>
+<text x='3117.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='3152' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='3177.0' y='430' transform='rotate(-30 3177.0 430)' text-anchor='end' font-size='11' fill='#222'>PHP 8.4</text>
+<text x='3169.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='3204' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='3229.0' y='430' transform='rotate(-30 3229.0 430)' text-anchor='end' font-size='11' fill='#222'>PHP 8.4</text>
+<text x='3221.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='3256' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='3281.0' y='430' transform='rotate(-30 3281.0 430)' text-anchor='end' font-size='11' fill='#222'>PHP 8.4</text>
+<text x='3273.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='3308' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='3333.0' y='430' transform='rotate(-30 3333.0 430)' text-anchor='end' font-size='11' fill='#222'>PHP 8.4</text>
+<text x='3325.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='3360' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='3385.0' y='430' transform='rotate(-30 3385.0 430)' text-anchor='end' font-size='11' fill='#222'>PHP 8.4</text>
+<text x='3377.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='3412' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='3437.0' y='430' transform='rotate(-30 3437.0 430)' text-anchor='end' font-size='11' fill='#222'>PHP 8.4</text>
+<text x='3429.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='3464' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='3489.0' y='430' transform='rotate(-30 3489.0 430)' text-anchor='end' font-size='11' fill='#222'>PHP 8.4</text>
+<text x='3481.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='3516' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='3541.0' y='430' transform='rotate(-30 3541.0 430)' text-anchor='end' font-size='11' fill='#222'>PHP 8.4</text>
+<text x='3533.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='3568' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='3593.0' y='430' transform='rotate(-30 3593.0 430)' text-anchor='end' font-size='11' fill='#222'>PHP 8.4</text>
+<text x='3585.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='3620' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='3645.0' y='430' transform='rotate(-30 3645.0 430)' text-anchor='end' font-size='11' fill='#222'>PHP 8.4</text>
+<text x='3637.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='3672' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='3697.0' y='430' transform='rotate(-30 3697.0 430)' text-anchor='end' font-size='11' fill='#222'>PHP 8.4</text>
+<text x='3689.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='3724' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='3749.0' y='430' transform='rotate(-30 3749.0 430)' text-anchor='end' font-size='11' fill='#222'>PHP 8.4</text>
+<text x='3741.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='3776' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='3801.0' y='430' transform='rotate(-30 3801.0 430)' text-anchor='end' font-size='11' fill='#222'>PHP 8.4</text>
+<text x='3793.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='3828' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='3853.0' y='430' transform='rotate(-30 3853.0 430)' text-anchor='end' font-size='11' fill='#222'>PHP 8.4</text>
+<text x='3845.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='3880' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='3905.0' y='430' transform='rotate(-30 3905.0 430)' text-anchor='end' font-size='11' fill='#222'>PHP 8.4</text>
+<text x='3897.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='3932' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='3957.0' y='430' transform='rotate(-30 3957.0 430)' text-anchor='end' font-size='11' fill='#222'>PHP 8.4</text>
+<text x='3949.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='3984' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='4009.0' y='430' transform='rotate(-30 4009.0 430)' text-anchor='end' font-size='11' fill='#222'>PHP 8.4</text>
+<text x='4001.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='4036' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='4061.0' y='430' transform='rotate(-30 4061.0 430)' text-anchor='end' font-size='11' fill='#222'>PHP 8.4</text>
+<text x='4053.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='4088' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='4113.0' y='430' transform='rotate(-30 4113.0 430)' text-anchor='end' font-size='11' fill='#222'>PHP 8.4</text>
+<text x='4105.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='4140' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='4165.0' y='430' transform='rotate(-30 4165.0 430)' text-anchor='end' font-size='11' fill='#222'>Python 3.12</text>
+<text x='4157.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='4192' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='4217.0' y='430' transform='rotate(-30 4217.0 430)' text-anchor='end' font-size='11' fill='#222'>Python 3.12</text>
+<text x='4209.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='4244' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='4269.0' y='430' transform='rotate(-30 4269.0 430)' text-anchor='end' font-size='11' fill='#222'>Python 3.12</text>
+<text x='4261.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='4296' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='4321.0' y='430' transform='rotate(-30 4321.0 430)' text-anchor='end' font-size='11' fill='#222'>Python 3.12</text>
+<text x='4313.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='4348' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='4373.0' y='430' transform='rotate(-30 4373.0 430)' text-anchor='end' font-size='11' fill='#222'>Python 3.12</text>
+<text x='4365.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='4400' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='4425.0' y='430' transform='rotate(-30 4425.0 430)' text-anchor='end' font-size='11' fill='#222'>Python 3.12</text>
+<text x='4417.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='4452' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='4477.0' y='430' transform='rotate(-30 4477.0 430)' text-anchor='end' font-size='11' fill='#222'>Python 3.12</text>
+<text x='4469.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='4504' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='4529.0' y='430' transform='rotate(-30 4529.0 430)' text-anchor='end' font-size='11' fill='#222'>Python 3.12</text>
+<text x='4521.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='4556' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='4581.0' y='430' transform='rotate(-30 4581.0 430)' text-anchor='end' font-size='11' fill='#222'>Python 3.12</text>
+<text x='4573.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='4608' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='4633.0' y='430' transform='rotate(-30 4633.0 430)' text-anchor='end' font-size='11' fill='#222'>Python 3.12</text>
+<text x='4625.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='4660' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='4685.0' y='430' transform='rotate(-30 4685.0 430)' text-anchor='end' font-size='11' fill='#222'>Python 3.12</text>
+<text x='4677.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='4712' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='4737.0' y='430' transform='rotate(-30 4737.0 430)' text-anchor='end' font-size='11' fill='#222'>Python 3.12</text>
+<text x='4729.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='4764' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='4789.0' y='430' transform='rotate(-30 4789.0 430)' text-anchor='end' font-size='11' fill='#222'>Python 3.12</text>
+<text x='4781.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='4816' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='4841.0' y='430' transform='rotate(-30 4841.0 430)' text-anchor='end' font-size='11' fill='#222'>Python 3.12</text>
+<text x='4833.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='4868' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='4893.0' y='430' transform='rotate(-30 4893.0 430)' text-anchor='end' font-size='11' fill='#222'>Python 3.12</text>
+<text x='4885.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='4920' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='4945.0' y='430' transform='rotate(-30 4945.0 430)' text-anchor='end' font-size='11' fill='#222'>Python 3.12</text>
+<text x='4937.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='4972' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='4997.0' y='430' transform='rotate(-30 4997.0 430)' text-anchor='end' font-size='11' fill='#222'>Python 3.12</text>
+<text x='4989.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='5024' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='5049.0' y='430' transform='rotate(-30 5049.0 430)' text-anchor='end' font-size='11' fill='#222'>Python 3.12</text>
+<text x='5041.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='5076' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='5101.0' y='430' transform='rotate(-30 5101.0 430)' text-anchor='end' font-size='11' fill='#222'>Python 3.12</text>
+<text x='5093.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='5128' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='5153.0' y='430' transform='rotate(-30 5153.0 430)' text-anchor='end' font-size='11' fill='#222'>Python 3.12</text>
+<text x='5145.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='5180' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='5205.0' y='430' transform='rotate(-30 5205.0 430)' text-anchor='end' font-size='11' fill='#222'>Python 3.12</text>
+<text x='5197.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='5232' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='5257.0' y='430' transform='rotate(-30 5257.0 430)' text-anchor='end' font-size='11' fill='#222'>Python 3.12</text>
+<text x='5249.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='5284' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='5309.0' y='430' transform='rotate(-30 5309.0 430)' text-anchor='end' font-size='11' fill='#222'>Python 3.12</text>
+<text x='5301.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='5336' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='5361.0' y='430' transform='rotate(-30 5361.0 430)' text-anchor='end' font-size='11' fill='#222'>Python 3.12</text>
+<text x='5353.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='5388' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='5413.0' y='430' transform='rotate(-30 5413.0 430)' text-anchor='end' font-size='11' fill='#222'>Python 3.12</text>
+<text x='5405.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='5440' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='5465.0' y='430' transform='rotate(-30 5465.0 430)' text-anchor='end' font-size='11' fill='#222'>Python 3.12</text>
+<text x='5457.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='5492' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='5517.0' y='430' transform='rotate(-30 5517.0 430)' text-anchor='end' font-size='11' fill='#222'>Python 3.12</text>
+<text x='5509.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='5544' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='5569.0' y='430' transform='rotate(-30 5569.0 430)' text-anchor='end' font-size='11' fill='#222'>Python 3.12</text>
+<text x='5561.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='5596' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='5621.0' y='430' transform='rotate(-30 5621.0 430)' text-anchor='end' font-size='11' fill='#222'>Python 3.12</text>
+<text x='5613.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='5648' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='5673.0' y='430' transform='rotate(-30 5673.0 430)' text-anchor='end' font-size='11' fill='#222'>Python 3.12</text>
+<text x='5665.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='5700' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='5725.0' y='430' transform='rotate(-30 5725.0 430)' text-anchor='end' font-size='11' fill='#222'>Python 3.12</text>
+<text x='5717.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='5752' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='5777.0' y='430' transform='rotate(-30 5777.0 430)' text-anchor='end' font-size='11' fill='#222'>Python 3.12</text>
+<text x='5769.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='5804' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='5829.0' y='430' transform='rotate(-30 5829.0 430)' text-anchor='end' font-size='11' fill='#222'>Python 3.12</text>
+<text x='5821.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='5856' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='5881.0' y='430' transform='rotate(-30 5881.0 430)' text-anchor='end' font-size='11' fill='#222'>Python 3.12</text>
+<text x='5873.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='5908' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='5933.0' y='430' transform='rotate(-30 5933.0 430)' text-anchor='end' font-size='11' fill='#222'>Python 3.12</text>
+<text x='5925.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='5960' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='5985.0' y='430' transform='rotate(-30 5985.0 430)' text-anchor='end' font-size='11' fill='#222'>Python 3.12</text>
+<text x='5977.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='6012' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='6037.0' y='430' transform='rotate(-30 6037.0 430)' text-anchor='end' font-size='11' fill='#222'>Python 3.12</text>
+<text x='6029.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='6064' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='6089.0' y='430' transform='rotate(-30 6089.0 430)' text-anchor='end' font-size='11' fill='#222'>Python 3.12</text>
+<text x='6081.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='6116' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='6141.0' y='430' transform='rotate(-30 6141.0 430)' text-anchor='end' font-size='11' fill='#222'>Python 3.12</text>
+<text x='6133.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='6168' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='6193.0' y='430' transform='rotate(-30 6193.0 430)' text-anchor='end' font-size='11' fill='#222'>Python 3.12</text>
+<text x='6185.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='6220' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='6245.0' y='430' transform='rotate(-30 6245.0 430)' text-anchor='end' font-size='11' fill='#222'>Python 3.12</text>
+<text x='6237.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='6272' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='6297.0' y='430' transform='rotate(-30 6297.0 430)' text-anchor='end' font-size='11' fill='#222'>Python 3.12</text>
+<text x='6289.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='6324' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='6349.0' y='430' transform='rotate(-30 6349.0 430)' text-anchor='end' font-size='11' fill='#222'>Python 3.12</text>
+<text x='6341.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='6376' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='6401.0' y='430' transform='rotate(-30 6401.0 430)' text-anchor='end' font-size='11' fill='#222'>Python 3.12</text>
+<text x='6393.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='6428' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='6453.0' y='430' transform='rotate(-30 6453.0 430)' text-anchor='end' font-size='11' fill='#222'>Python 3.12</text>
+<text x='6445.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='6480' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='6505.0' y='430' transform='rotate(-30 6505.0 430)' text-anchor='end' font-size='11' fill='#222'>Python 3.12</text>
+<text x='6497.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='6532' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='6557.0' y='430' transform='rotate(-30 6557.0 430)' text-anchor='end' font-size='11' fill='#222'>Python 3.12</text>
+<text x='6549.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='6584' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='6609.0' y='430' transform='rotate(-30 6609.0 430)' text-anchor='end' font-size='11' fill='#222'>Python 3.12</text>
+<text x='6601.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='6636' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='6661.0' y='430' transform='rotate(-30 6661.0 430)' text-anchor='end' font-size='11' fill='#222'>Python 3.12</text>
+<text x='6653.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='6688' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='6713.0' y='430' transform='rotate(-30 6713.0 430)' text-anchor='end' font-size='11' fill='#222'>Python 3.12</text>
+<text x='6705.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='6740' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='6765.0' y='430' transform='rotate(-30 6765.0 430)' text-anchor='end' font-size='11' fill='#222'>Python 3.12</text>
+<text x='6757.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='6792' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='6817.0' y='430' transform='rotate(-30 6817.0 430)' text-anchor='end' font-size='11' fill='#222'>Python 3.12</text>
+<text x='6809.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='6844' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='6869.0' y='430' transform='rotate(-30 6869.0 430)' text-anchor='end' font-size='11' fill='#222'>Python 3.12</text>
+<text x='6861.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='6896' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='6921.0' y='430' transform='rotate(-30 6921.0 430)' text-anchor='end' font-size='11' fill='#222'>Python 3.12</text>
+<text x='6913.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='6948' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='6973.0' y='430' transform='rotate(-30 6973.0 430)' text-anchor='end' font-size='11' fill='#222'>Python 3.12</text>
+<text x='6965.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='7000' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='7025.0' y='430' transform='rotate(-30 7025.0 430)' text-anchor='end' font-size='11' fill='#222'>Python 3.12</text>
+<text x='7017.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='7052' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='7077.0' y='430' transform='rotate(-30 7077.0 430)' text-anchor='end' font-size='11' fill='#222'>Python 3.12</text>
+<text x='7069.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='7104' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='7129.0' y='430' transform='rotate(-30 7129.0 430)' text-anchor='end' font-size='11' fill='#222'>Python 3.12</text>
+<text x='7121.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='7156' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='7181.0' y='430' transform='rotate(-30 7181.0 430)' text-anchor='end' font-size='11' fill='#222'>Python 3.12</text>
+<text x='7173.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='7208' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='7233.0' y='430' transform='rotate(-30 7233.0 430)' text-anchor='end' font-size='11' fill='#222'>Python 3.12</text>
+<text x='7225.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='7260' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='7285.0' y='430' transform='rotate(-30 7285.0 430)' text-anchor='end' font-size='11' fill='#222'>Python 3.12</text>
+<text x='7277.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='7312' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='7337.0' y='430' transform='rotate(-30 7337.0 430)' text-anchor='end' font-size='11' fill='#222'>Python 3.12</text>
+<text x='7329.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='7364' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='7389.0' y='430' transform='rotate(-30 7389.0 430)' text-anchor='end' font-size='11' fill='#222'>Python 3.12</text>
+<text x='7381.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='7416' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='7441.0' y='430' transform='rotate(-30 7441.0 430)' text-anchor='end' font-size='11' fill='#222'>Python 3.12</text>
+<text x='7433.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='7468' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='7493.0' y='430' transform='rotate(-30 7493.0 430)' text-anchor='end' font-size='11' fill='#222'>Python 3.12</text>
+<text x='7485.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='7520' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='7545.0' y='430' transform='rotate(-30 7545.0 430)' text-anchor='end' font-size='11' fill='#222'>Python 3.12</text>
+<text x='7537.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='7572' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='7597.0' y='430' transform='rotate(-30 7597.0 430)' text-anchor='end' font-size='11' fill='#222'>Python 3.12</text>
+<text x='7589.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='7624' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='7649.0' y='430' transform='rotate(-30 7649.0 430)' text-anchor='end' font-size='11' fill='#222'>Python 3.12</text>
+<text x='7641.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='7676' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='7701.0' y='430' transform='rotate(-30 7701.0 430)' text-anchor='end' font-size='11' fill='#222'>Python 3.12</text>
+<text x='7693.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='7728' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='7753.0' y='430' transform='rotate(-30 7753.0 430)' text-anchor='end' font-size='11' fill='#222'>Python 3.12</text>
+<text x='7745.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='7780' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='7805.0' y='430' transform='rotate(-30 7805.0 430)' text-anchor='end' font-size='11' fill='#222'>Python 3.12</text>
+<text x='7797.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='7832' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='7857.0' y='430' transform='rotate(-30 7857.0 430)' text-anchor='end' font-size='11' fill='#222'>Python 3.12</text>
+<text x='7849.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='7884' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='7909.0' y='430' transform='rotate(-30 7909.0 430)' text-anchor='end' font-size='11' fill='#222'>Python 3.12</text>
+<text x='7901.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='7936' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='7961.0' y='430' transform='rotate(-30 7961.0 430)' text-anchor='end' font-size='11' fill='#222'>Python 3.12</text>
+<text x='7953.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='7988' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='8013.0' y='430' transform='rotate(-30 8013.0 430)' text-anchor='end' font-size='11' fill='#222'>Python 3.12</text>
+<text x='8005.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='8040' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='8065.0' y='430' transform='rotate(-30 8065.0 430)' text-anchor='end' font-size='11' fill='#222'>Python 3.12</text>
+<text x='8057.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='8092' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='8117.0' y='430' transform='rotate(-30 8117.0 430)' text-anchor='end' font-size='11' fill='#222'>Python 3.12</text>
+<text x='8109.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='8144' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='8169.0' y='430' transform='rotate(-30 8169.0 430)' text-anchor='end' font-size='11' fill='#222'>Python 3.12</text>
+<text x='8161.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='8196' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='8221.0' y='430' transform='rotate(-30 8221.0 430)' text-anchor='end' font-size='11' fill='#222'>Java 21</text>
+<text x='8213.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='8248' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='8273.0' y='430' transform='rotate(-30 8273.0 430)' text-anchor='end' font-size='11' fill='#222'>Java 21</text>
+<text x='8265.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='8300' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='8325.0' y='430' transform='rotate(-30 8325.0 430)' text-anchor='end' font-size='11' fill='#222'>Java 21</text>
+<text x='8317.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='8352' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='8377.0' y='430' transform='rotate(-30 8377.0 430)' text-anchor='end' font-size='11' fill='#222'>Java 21</text>
+<text x='8369.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='8404' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='8429.0' y='430' transform='rotate(-30 8429.0 430)' text-anchor='end' font-size='11' fill='#222'>Java 21</text>
+<text x='8421.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='8456' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='8481.0' y='430' transform='rotate(-30 8481.0 430)' text-anchor='end' font-size='11' fill='#222'>Java 21</text>
+<text x='8473.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='8508' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='8533.0' y='430' transform='rotate(-30 8533.0 430)' text-anchor='end' font-size='11' fill='#222'>Java 21</text>
+<text x='8525.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='8560' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='8585.0' y='430' transform='rotate(-30 8585.0 430)' text-anchor='end' font-size='11' fill='#222'>Java 21</text>
+<text x='8577.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='8612' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='8637.0' y='430' transform='rotate(-30 8637.0 430)' text-anchor='end' font-size='11' fill='#222'>Java 21</text>
+<text x='8629.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='8664' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='8689.0' y='430' transform='rotate(-30 8689.0 430)' text-anchor='end' font-size='11' fill='#222'>Java 21</text>
+<text x='8681.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='8716' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='8741.0' y='430' transform='rotate(-30 8741.0 430)' text-anchor='end' font-size='11' fill='#222'>Java 21</text>
+<text x='8733.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='8768' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='8793.0' y='430' transform='rotate(-30 8793.0 430)' text-anchor='end' font-size='11' fill='#222'>Java 21</text>
+<text x='8785.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='8820' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='8845.0' y='430' transform='rotate(-30 8845.0 430)' text-anchor='end' font-size='11' fill='#222'>Java 21</text>
+<text x='8837.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='8872' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='8897.0' y='430' transform='rotate(-30 8897.0 430)' text-anchor='end' font-size='11' fill='#222'>Java 21</text>
+<text x='8889.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='8924' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='8949.0' y='430' transform='rotate(-30 8949.0 430)' text-anchor='end' font-size='11' fill='#222'>Java 21</text>
+<text x='8941.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='8976' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='9001.0' y='430' transform='rotate(-30 9001.0 430)' text-anchor='end' font-size='11' fill='#222'>Java 21</text>
+<text x='8993.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='9028' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='9053.0' y='430' transform='rotate(-30 9053.0 430)' text-anchor='end' font-size='11' fill='#222'>Java 21</text>
+<text x='9045.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='9080' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='9105.0' y='430' transform='rotate(-30 9105.0 430)' text-anchor='end' font-size='11' fill='#222'>Java 21</text>
+<text x='9097.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='9132' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='9157.0' y='430' transform='rotate(-30 9157.0 430)' text-anchor='end' font-size='11' fill='#222'>Java 21</text>
+<text x='9149.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='9184' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='9209.0' y='430' transform='rotate(-30 9209.0 430)' text-anchor='end' font-size='11' fill='#222'>Java 21</text>
+<text x='9201.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='9236' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='9261.0' y='430' transform='rotate(-30 9261.0 430)' text-anchor='end' font-size='11' fill='#222'>Java 21</text>
+<text x='9253.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='9288' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='9313.0' y='430' transform='rotate(-30 9313.0 430)' text-anchor='end' font-size='11' fill='#222'>Java 21</text>
+<text x='9305.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='9340' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='9365.0' y='430' transform='rotate(-30 9365.0 430)' text-anchor='end' font-size='11' fill='#222'>Java 21</text>
+<text x='9357.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='9392' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='9417.0' y='430' transform='rotate(-30 9417.0 430)' text-anchor='end' font-size='11' fill='#222'>Java 21</text>
+<text x='9409.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='9444' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='9469.0' y='430' transform='rotate(-30 9469.0 430)' text-anchor='end' font-size='11' fill='#222'>Java 21</text>
+<text x='9461.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='9496' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='9521.0' y='430' transform='rotate(-30 9521.0 430)' text-anchor='end' font-size='11' fill='#222'>Java 21</text>
+<text x='9513.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='9548' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='9573.0' y='430' transform='rotate(-30 9573.0 430)' text-anchor='end' font-size='11' fill='#222'>Java 21</text>
+<text x='9565.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='9600' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='9625.0' y='430' transform='rotate(-30 9625.0 430)' text-anchor='end' font-size='11' fill='#222'>Java 21</text>
+<text x='9617.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='9652' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='9677.0' y='430' transform='rotate(-30 9677.0 430)' text-anchor='end' font-size='11' fill='#222'>Java 21</text>
+<text x='9669.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='9704' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='9729.0' y='430' transform='rotate(-30 9729.0 430)' text-anchor='end' font-size='11' fill='#222'>Java 21</text>
+<text x='9721.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='9756' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='9781.0' y='430' transform='rotate(-30 9781.0 430)' text-anchor='end' font-size='11' fill='#222'>Java 21</text>
+<text x='9773.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='9808' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='9833.0' y='430' transform='rotate(-30 9833.0 430)' text-anchor='end' font-size='11' fill='#222'>Java 21</text>
+<text x='9825.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='9860' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='9885.0' y='430' transform='rotate(-30 9885.0 430)' text-anchor='end' font-size='11' fill='#222'>Java 21</text>
+<text x='9877.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='9912' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='9937.0' y='430' transform='rotate(-30 9937.0 430)' text-anchor='end' font-size='11' fill='#222'>Java 21</text>
+<text x='9929.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='9964' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='9989.0' y='430' transform='rotate(-30 9989.0 430)' text-anchor='end' font-size='11' fill='#222'>Java 21</text>
+<text x='9981.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='10016' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='10041.0' y='430' transform='rotate(-30 10041.0 430)' text-anchor='end' font-size='11' fill='#222'>Java 21</text>
+<text x='10033.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='10068' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='10093.0' y='430' transform='rotate(-30 10093.0 430)' text-anchor='end' font-size='11' fill='#222'>Java 21</text>
+<text x='10085.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='10120' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='10145.0' y='430' transform='rotate(-30 10145.0 430)' text-anchor='end' font-size='11' fill='#222'>Java 21</text>
+<text x='10137.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='10172' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='10197.0' y='430' transform='rotate(-30 10197.0 430)' text-anchor='end' font-size='11' fill='#222'>Java 21</text>
+<text x='10189.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='10224' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='10249.0' y='430' transform='rotate(-30 10249.0 430)' text-anchor='end' font-size='11' fill='#222'>Java 21</text>
+<text x='10241.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='10276' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='10301.0' y='430' transform='rotate(-30 10301.0 430)' text-anchor='end' font-size='11' fill='#222'>Java 21</text>
+<text x='10293.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='10328' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='10353.0' y='430' transform='rotate(-30 10353.0 430)' text-anchor='end' font-size='11' fill='#222'>Java 21</text>
+<text x='10345.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='10380' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='10405.0' y='430' transform='rotate(-30 10405.0 430)' text-anchor='end' font-size='11' fill='#222'>Java 21</text>
+<text x='10397.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='10432' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='10457.0' y='430' transform='rotate(-30 10457.0 430)' text-anchor='end' font-size='11' fill='#222'>Java 21</text>
+<text x='10449.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='10484' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='10509.0' y='430' transform='rotate(-30 10509.0 430)' text-anchor='end' font-size='11' fill='#222'>Java 21</text>
+<text x='10501.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='10536' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='10561.0' y='430' transform='rotate(-30 10561.0 430)' text-anchor='end' font-size='11' fill='#222'>Java 21</text>
+<text x='10553.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='10588' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='10613.0' y='430' transform='rotate(-30 10613.0 430)' text-anchor='end' font-size='11' fill='#222'>Java 21</text>
+<text x='10605.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='10640' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='10665.0' y='430' transform='rotate(-30 10665.0 430)' text-anchor='end' font-size='11' fill='#222'>Java 21</text>
+<text x='10657.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='10692' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='10717.0' y='430' transform='rotate(-30 10717.0 430)' text-anchor='end' font-size='11' fill='#222'>Java 21</text>
+<text x='10709.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='10744' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='10769.0' y='430' transform='rotate(-30 10769.0 430)' text-anchor='end' font-size='11' fill='#222'>Java 21</text>
+<text x='10761.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='10796' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='10821.0' y='430' transform='rotate(-30 10821.0 430)' text-anchor='end' font-size='11' fill='#222'>Java 21</text>
+<text x='10813.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='10848' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='10873.0' y='430' transform='rotate(-30 10873.0 430)' text-anchor='end' font-size='11' fill='#222'>Java 21</text>
+<text x='10865.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='10900' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='10925.0' y='430' transform='rotate(-30 10925.0 430)' text-anchor='end' font-size='11' fill='#222'>Java 21</text>
+<text x='10917.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='10952' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='10977.0' y='430' transform='rotate(-30 10977.0 430)' text-anchor='end' font-size='11' fill='#222'>Java 21</text>
+<text x='10969.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='11004' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='11029.0' y='430' transform='rotate(-30 11029.0 430)' text-anchor='end' font-size='11' fill='#222'>Java 21</text>
+<text x='11021.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='11056' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='11081.0' y='430' transform='rotate(-30 11081.0 430)' text-anchor='end' font-size='11' fill='#222'>Java 21</text>
+<text x='11073.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='11108' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='11133.0' y='430' transform='rotate(-30 11133.0 430)' text-anchor='end' font-size='11' fill='#222'>Java 21</text>
+<text x='11125.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='11160' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='11185.0' y='430' transform='rotate(-30 11185.0 430)' text-anchor='end' font-size='11' fill='#222'>Java 21</text>
+<text x='11177.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='11212' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='11237.0' y='430' transform='rotate(-30 11237.0 430)' text-anchor='end' font-size='11' fill='#222'>Java 21</text>
+<text x='11229.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='11264' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='11289.0' y='430' transform='rotate(-30 11289.0 430)' text-anchor='end' font-size='11' fill='#222'>Java 21</text>
+<text x='11281.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='11316' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='11341.0' y='430' transform='rotate(-30 11341.0 430)' text-anchor='end' font-size='11' fill='#222'>Java 21</text>
+<text x='11333.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='11368' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='11393.0' y='430' transform='rotate(-30 11393.0 430)' text-anchor='end' font-size='11' fill='#222'>Java 21</text>
+<text x='11385.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='11420' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='11445.0' y='430' transform='rotate(-30 11445.0 430)' text-anchor='end' font-size='11' fill='#222'>Java 21</text>
+<text x='11437.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='11472' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='11497.0' y='430' transform='rotate(-30 11497.0 430)' text-anchor='end' font-size='11' fill='#222'>Java 21</text>
+<text x='11489.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='11524' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='11549.0' y='430' transform='rotate(-30 11549.0 430)' text-anchor='end' font-size='11' fill='#222'>Java 21</text>
+<text x='11541.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='11576' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='11601.0' y='430' transform='rotate(-30 11601.0 430)' text-anchor='end' font-size='11' fill='#222'>Java 21</text>
+<text x='11593.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='11628' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='11653.0' y='430' transform='rotate(-30 11653.0 430)' text-anchor='end' font-size='11' fill='#222'>Java 21</text>
+<text x='11645.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='11680' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='11705.0' y='430' transform='rotate(-30 11705.0 430)' text-anchor='end' font-size='11' fill='#222'>Java 21</text>
+<text x='11697.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='11732' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='11757.0' y='430' transform='rotate(-30 11757.0 430)' text-anchor='end' font-size='11' fill='#222'>Java 21</text>
+<text x='11749.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='11784' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='11809.0' y='430' transform='rotate(-30 11809.0 430)' text-anchor='end' font-size='11' fill='#222'>Java 21</text>
+<text x='11801.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='11836' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='11861.0' y='430' transform='rotate(-30 11861.0 430)' text-anchor='end' font-size='11' fill='#222'>Java 21</text>
+<text x='11853.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='11888' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='11913.0' y='430' transform='rotate(-30 11913.0 430)' text-anchor='end' font-size='11' fill='#222'>Java 21</text>
+<text x='11905.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='11940' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='11965.0' y='430' transform='rotate(-30 11965.0 430)' text-anchor='end' font-size='11' fill='#222'>Java 21</text>
+<text x='11957.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='11992' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='12017.0' y='430' transform='rotate(-30 12017.0 430)' text-anchor='end' font-size='11' fill='#222'>Java 21</text>
+<text x='12009.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='12044' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='12069.0' y='430' transform='rotate(-30 12069.0 430)' text-anchor='end' font-size='11' fill='#222'>Java 21</text>
+<text x='12061.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='12096' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='12121.0' y='430' transform='rotate(-30 12121.0 430)' text-anchor='end' font-size='11' fill='#222'>Java 21</text>
+<text x='12113.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='12148' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='12173.0' y='430' transform='rotate(-30 12173.0 430)' text-anchor='end' font-size='11' fill='#222'>Java 21</text>
+<text x='12165.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='12200' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='12225.0' y='430' transform='rotate(-30 12225.0 430)' text-anchor='end' font-size='11' fill='#222'>Java 21</text>
+<text x='12217.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='12252' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='12277.0' y='430' transform='rotate(-30 12277.0 430)' text-anchor='end' font-size='11' fill='#222'>C++ (GCC 14)</text>
+<text x='12269.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='12304' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='12329.0' y='430' transform='rotate(-30 12329.0 430)' text-anchor='end' font-size='11' fill='#222'>C++ (GCC 14)</text>
+<text x='12321.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='12356' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='12381.0' y='430' transform='rotate(-30 12381.0 430)' text-anchor='end' font-size='11' fill='#222'>C++ (GCC 14)</text>
+<text x='12373.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='12408' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='12433.0' y='430' transform='rotate(-30 12433.0 430)' text-anchor='end' font-size='11' fill='#222'>C++ (GCC 14)</text>
+<text x='12425.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='12460' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='12485.0' y='430' transform='rotate(-30 12485.0 430)' text-anchor='end' font-size='11' fill='#222'>C++ (GCC 14)</text>
+<text x='12477.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='12512' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='12537.0' y='430' transform='rotate(-30 12537.0 430)' text-anchor='end' font-size='11' fill='#222'>C++ (GCC 14)</text>
+<text x='12529.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='12564' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='12589.0' y='430' transform='rotate(-30 12589.0 430)' text-anchor='end' font-size='11' fill='#222'>C++ (GCC 14)</text>
+<text x='12581.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='12616' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='12641.0' y='430' transform='rotate(-30 12641.0 430)' text-anchor='end' font-size='11' fill='#222'>C++ (GCC 14)</text>
+<text x='12633.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='12668' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='12693.0' y='430' transform='rotate(-30 12693.0 430)' text-anchor='end' font-size='11' fill='#222'>C++ (GCC 14)</text>
+<text x='12685.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='12720' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='12745.0' y='430' transform='rotate(-30 12745.0 430)' text-anchor='end' font-size='11' fill='#222'>C++ (GCC 14)</text>
+<text x='12737.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='12772' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='12797.0' y='430' transform='rotate(-30 12797.0 430)' text-anchor='end' font-size='11' fill='#222'>C++ (GCC 14)</text>
+<text x='12789.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='12824' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='12849.0' y='430' transform='rotate(-30 12849.0 430)' text-anchor='end' font-size='11' fill='#222'>C++ (GCC 14)</text>
+<text x='12841.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='12876' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='12901.0' y='430' transform='rotate(-30 12901.0 430)' text-anchor='end' font-size='11' fill='#222'>C++ (GCC 14)</text>
+<text x='12893.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='12928' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='12953.0' y='430' transform='rotate(-30 12953.0 430)' text-anchor='end' font-size='11' fill='#222'>C++ (GCC 14)</text>
+<text x='12945.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='12980' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='13005.0' y='430' transform='rotate(-30 13005.0 430)' text-anchor='end' font-size='11' fill='#222'>C++ (GCC 14)</text>
+<text x='12997.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='13032' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='13057.0' y='430' transform='rotate(-30 13057.0 430)' text-anchor='end' font-size='11' fill='#222'>C++ (GCC 14)</text>
+<text x='13049.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='13084' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='13109.0' y='430' transform='rotate(-30 13109.0 430)' text-anchor='end' font-size='11' fill='#222'>C++ (GCC 14)</text>
+<text x='13101.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='13136' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='13161.0' y='430' transform='rotate(-30 13161.0 430)' text-anchor='end' font-size='11' fill='#222'>C++ (GCC 14)</text>
+<text x='13153.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='13188' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='13213.0' y='430' transform='rotate(-30 13213.0 430)' text-anchor='end' font-size='11' fill='#222'>C++ (GCC 14)</text>
+<text x='13205.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='13240' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='13265.0' y='430' transform='rotate(-30 13265.0 430)' text-anchor='end' font-size='11' fill='#222'>C++ (GCC 14)</text>
+<text x='13257.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='13292' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='13317.0' y='430' transform='rotate(-30 13317.0 430)' text-anchor='end' font-size='11' fill='#222'>C++ (GCC 14)</text>
+<text x='13309.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='13344' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='13369.0' y='430' transform='rotate(-30 13369.0 430)' text-anchor='end' font-size='11' fill='#222'>C++ (GCC 14)</text>
+<text x='13361.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='13396' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='13421.0' y='430' transform='rotate(-30 13421.0 430)' text-anchor='end' font-size='11' fill='#222'>C++ (GCC 14)</text>
+<text x='13413.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='13448' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='13473.0' y='430' transform='rotate(-30 13473.0 430)' text-anchor='end' font-size='11' fill='#222'>C++ (GCC 14)</text>
+<text x='13465.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='13500' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='13525.0' y='430' transform='rotate(-30 13525.0 430)' text-anchor='end' font-size='11' fill='#222'>C++ (GCC 14)</text>
+<text x='13517.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='13552' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='13577.0' y='430' transform='rotate(-30 13577.0 430)' text-anchor='end' font-size='11' fill='#222'>C++ (GCC 14)</text>
+<text x='13569.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='13604' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='13629.0' y='430' transform='rotate(-30 13629.0 430)' text-anchor='end' font-size='11' fill='#222'>C++ (GCC 14)</text>
+<text x='13621.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='13656' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='13681.0' y='430' transform='rotate(-30 13681.0 430)' text-anchor='end' font-size='11' fill='#222'>C++ (GCC 14)</text>
+<text x='13673.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='13708' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='13733.0' y='430' transform='rotate(-30 13733.0 430)' text-anchor='end' font-size='11' fill='#222'>C++ (GCC 14)</text>
+<text x='13725.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='13760' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='13785.0' y='430' transform='rotate(-30 13785.0 430)' text-anchor='end' font-size='11' fill='#222'>C++ (GCC 14)</text>
+<text x='13777.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='13812' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='13837.0' y='430' transform='rotate(-30 13837.0 430)' text-anchor='end' font-size='11' fill='#222'>C++ (GCC 14)</text>
+<text x='13829.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='13864' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='13889.0' y='430' transform='rotate(-30 13889.0 430)' text-anchor='end' font-size='11' fill='#222'>C++ (GCC 14)</text>
+<text x='13881.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='13916' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='13941.0' y='430' transform='rotate(-30 13941.0 430)' text-anchor='end' font-size='11' fill='#222'>C++ (GCC 14)</text>
+<text x='13933.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='13968' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='13993.0' y='430' transform='rotate(-30 13993.0 430)' text-anchor='end' font-size='11' fill='#222'>C++ (GCC 14)</text>
+<text x='13985.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='14020' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='14045.0' y='430' transform='rotate(-30 14045.0 430)' text-anchor='end' font-size='11' fill='#222'>C++ (GCC 14)</text>
+<text x='14037.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='14072' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='14097.0' y='430' transform='rotate(-30 14097.0 430)' text-anchor='end' font-size='11' fill='#222'>C++ (GCC 14)</text>
+<text x='14089.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='14124' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='14149.0' y='430' transform='rotate(-30 14149.0 430)' text-anchor='end' font-size='11' fill='#222'>C++ (GCC 14)</text>
+<text x='14141.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='14176' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='14201.0' y='430' transform='rotate(-30 14201.0 430)' text-anchor='end' font-size='11' fill='#222'>C++ (GCC 14)</text>
+<text x='14193.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='14228' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='14253.0' y='430' transform='rotate(-30 14253.0 430)' text-anchor='end' font-size='11' fill='#222'>C++ (GCC 14)</text>
+<text x='14245.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='14280' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='14305.0' y='430' transform='rotate(-30 14305.0 430)' text-anchor='end' font-size='11' fill='#222'>C++ (GCC 14)</text>
+<text x='14297.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='14332' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='14357.0' y='430' transform='rotate(-30 14357.0 430)' text-anchor='end' font-size='11' fill='#222'>C++ (GCC 14)</text>
+<text x='14349.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='14384' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='14409.0' y='430' transform='rotate(-30 14409.0 430)' text-anchor='end' font-size='11' fill='#222'>C++ (GCC 14)</text>
+<text x='14401.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='14436' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='14461.0' y='430' transform='rotate(-30 14461.0 430)' text-anchor='end' font-size='11' fill='#222'>C++ (GCC 14)</text>
+<text x='14453.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='14488' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='14513.0' y='430' transform='rotate(-30 14513.0 430)' text-anchor='end' font-size='11' fill='#222'>C++ (GCC 14)</text>
+<text x='14505.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='14540' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='14565.0' y='430' transform='rotate(-30 14565.0 430)' text-anchor='end' font-size='11' fill='#222'>C++ (GCC 14)</text>
+<text x='14557.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='14592' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='14617.0' y='430' transform='rotate(-30 14617.0 430)' text-anchor='end' font-size='11' fill='#222'>C++ (GCC 14)</text>
+<text x='14609.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='14644' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='14669.0' y='430' transform='rotate(-30 14669.0 430)' text-anchor='end' font-size='11' fill='#222'>C++ (GCC 14)</text>
+<text x='14661.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='14696' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='14721.0' y='430' transform='rotate(-30 14721.0 430)' text-anchor='end' font-size='11' fill='#222'>C++ (GCC 14)</text>
+<text x='14713.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='14748' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='14773.0' y='430' transform='rotate(-30 14773.0 430)' text-anchor='end' font-size='11' fill='#222'>C++ (GCC 14)</text>
+<text x='14765.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='14800' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='14825.0' y='430' transform='rotate(-30 14825.0 430)' text-anchor='end' font-size='11' fill='#222'>C++ (GCC 14)</text>
+<text x='14817.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='14852' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='14877.0' y='430' transform='rotate(-30 14877.0 430)' text-anchor='end' font-size='11' fill='#222'>C++ (GCC 14)</text>
+<text x='14869.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='14904' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='14929.0' y='430' transform='rotate(-30 14929.0 430)' text-anchor='end' font-size='11' fill='#222'>C++ (GCC 14)</text>
+<text x='14921.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='14956' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='14981.0' y='430' transform='rotate(-30 14981.0 430)' text-anchor='end' font-size='11' fill='#222'>C++ (GCC 14)</text>
+<text x='14973.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='15008' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='15033.0' y='430' transform='rotate(-30 15033.0 430)' text-anchor='end' font-size='11' fill='#222'>C++ (GCC 14)</text>
+<text x='15025.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='15060' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='15085.0' y='430' transform='rotate(-30 15085.0 430)' text-anchor='end' font-size='11' fill='#222'>C++ (GCC 14)</text>
+<text x='15077.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='15112' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='15137.0' y='430' transform='rotate(-30 15137.0 430)' text-anchor='end' font-size='11' fill='#222'>C++ (GCC 14)</text>
+<text x='15129.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='15164' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='15189.0' y='430' transform='rotate(-30 15189.0 430)' text-anchor='end' font-size='11' fill='#222'>C++ (GCC 14)</text>
+<text x='15181.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='15216' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='15241.0' y='430' transform='rotate(-30 15241.0 430)' text-anchor='end' font-size='11' fill='#222'>C++ (GCC 14)</text>
+<text x='15233.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='15268' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='15293.0' y='430' transform='rotate(-30 15293.0 430)' text-anchor='end' font-size='11' fill='#222'>C++ (GCC 14)</text>
+<text x='15285.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='15320' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='15345.0' y='430' transform='rotate(-30 15345.0 430)' text-anchor='end' font-size='11' fill='#222'>C++ (GCC 14)</text>
+<text x='15337.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='15372' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='15397.0' y='430' transform='rotate(-30 15397.0 430)' text-anchor='end' font-size='11' fill='#222'>C++ (GCC 14)</text>
+<text x='15389.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='15424' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='15449.0' y='430' transform='rotate(-30 15449.0 430)' text-anchor='end' font-size='11' fill='#222'>C++ (GCC 14)</text>
+<text x='15441.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='15476' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='15501.0' y='430' transform='rotate(-30 15501.0 430)' text-anchor='end' font-size='11' fill='#222'>C++ (GCC 14)</text>
+<text x='15493.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='15528' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='15553.0' y='430' transform='rotate(-30 15553.0 430)' text-anchor='end' font-size='11' fill='#222'>C++ (GCC 14)</text>
+<text x='15545.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='15580' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='15605.0' y='430' transform='rotate(-30 15605.0 430)' text-anchor='end' font-size='11' fill='#222'>C++ (GCC 14)</text>
+<text x='15597.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='15632' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='15657.0' y='430' transform='rotate(-30 15657.0 430)' text-anchor='end' font-size='11' fill='#222'>C++ (GCC 14)</text>
+<text x='15649.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='15684' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='15709.0' y='430' transform='rotate(-30 15709.0 430)' text-anchor='end' font-size='11' fill='#222'>C++ (GCC 14)</text>
+<text x='15701.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='15736' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='15761.0' y='430' transform='rotate(-30 15761.0 430)' text-anchor='end' font-size='11' fill='#222'>C++ (GCC 14)</text>
+<text x='15753.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='15788' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='15813.0' y='430' transform='rotate(-30 15813.0 430)' text-anchor='end' font-size='11' fill='#222'>C++ (GCC 14)</text>
+<text x='15805.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='15840' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='15865.0' y='430' transform='rotate(-30 15865.0 430)' text-anchor='end' font-size='11' fill='#222'>C++ (GCC 14)</text>
+<text x='15857.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='15892' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='15917.0' y='430' transform='rotate(-30 15917.0 430)' text-anchor='end' font-size='11' fill='#222'>C++ (GCC 14)</text>
+<text x='15909.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='15944' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='15969.0' y='430' transform='rotate(-30 15969.0 430)' text-anchor='end' font-size='11' fill='#222'>C++ (GCC 14)</text>
+<text x='15961.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='15996' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='16021.0' y='430' transform='rotate(-30 16021.0 430)' text-anchor='end' font-size='11' fill='#222'>C++ (GCC 14)</text>
+<text x='16013.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='16048' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='16073.0' y='430' transform='rotate(-30 16073.0 430)' text-anchor='end' font-size='11' fill='#222'>C++ (GCC 14)</text>
+<text x='16065.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='16100' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='16125.0' y='430' transform='rotate(-30 16125.0 430)' text-anchor='end' font-size='11' fill='#222'>C++ (GCC 14)</text>
+<text x='16117.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='16152' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='16177.0' y='430' transform='rotate(-30 16177.0 430)' text-anchor='end' font-size='11' fill='#222'>C++ (GCC 14)</text>
+<text x='16169.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='16204' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='16229.0' y='430' transform='rotate(-30 16229.0 430)' text-anchor='end' font-size='11' fill='#222'>C++ (GCC 14)</text>
+<text x='16221.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='16256' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='16281.0' y='430' transform='rotate(-30 16281.0 430)' text-anchor='end' font-size='11' fill='#222'>C++ (GCC 14)</text>
+<text x='16273.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='16308' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='16333.0' y='430' transform='rotate(-30 16333.0 430)' text-anchor='end' font-size='11' fill='#222'>Node.js 22</text>
+<text x='16325.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='16360' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='16385.0' y='430' transform='rotate(-30 16385.0 430)' text-anchor='end' font-size='11' fill='#222'>Node.js 22</text>
+<text x='16377.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='16412' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='16437.0' y='430' transform='rotate(-30 16437.0 430)' text-anchor='end' font-size='11' fill='#222'>Node.js 22</text>
+<text x='16429.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='16464' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='16489.0' y='430' transform='rotate(-30 16489.0 430)' text-anchor='end' font-size='11' fill='#222'>Node.js 22</text>
+<text x='16481.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='16516' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='16541.0' y='430' transform='rotate(-30 16541.0 430)' text-anchor='end' font-size='11' fill='#222'>Node.js 22</text>
+<text x='16533.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='16568' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='16593.0' y='430' transform='rotate(-30 16593.0 430)' text-anchor='end' font-size='11' fill='#222'>Node.js 22</text>
+<text x='16585.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='16620' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='16645.0' y='430' transform='rotate(-30 16645.0 430)' text-anchor='end' font-size='11' fill='#222'>Node.js 22</text>
+<text x='16637.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='16672' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='16697.0' y='430' transform='rotate(-30 16697.0 430)' text-anchor='end' font-size='11' fill='#222'>Node.js 22</text>
+<text x='16689.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='16724' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='16749.0' y='430' transform='rotate(-30 16749.0 430)' text-anchor='end' font-size='11' fill='#222'>Node.js 22</text>
+<text x='16741.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='16776' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='16801.0' y='430' transform='rotate(-30 16801.0 430)' text-anchor='end' font-size='11' fill='#222'>Node.js 22</text>
+<text x='16793.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='16828' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='16853.0' y='430' transform='rotate(-30 16853.0 430)' text-anchor='end' font-size='11' fill='#222'>Node.js 22</text>
+<text x='16845.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='16880' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='16905.0' y='430' transform='rotate(-30 16905.0 430)' text-anchor='end' font-size='11' fill='#222'>Node.js 22</text>
+<text x='16897.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='16932' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='16957.0' y='430' transform='rotate(-30 16957.0 430)' text-anchor='end' font-size='11' fill='#222'>Node.js 22</text>
+<text x='16949.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='16984' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='17009.0' y='430' transform='rotate(-30 17009.0 430)' text-anchor='end' font-size='11' fill='#222'>Node.js 22</text>
+<text x='17001.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='17036' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='17061.0' y='430' transform='rotate(-30 17061.0 430)' text-anchor='end' font-size='11' fill='#222'>Node.js 22</text>
+<text x='17053.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='17088' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='17113.0' y='430' transform='rotate(-30 17113.0 430)' text-anchor='end' font-size='11' fill='#222'>Node.js 22</text>
+<text x='17105.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='17140' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='17165.0' y='430' transform='rotate(-30 17165.0 430)' text-anchor='end' font-size='11' fill='#222'>Node.js 22</text>
+<text x='17157.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='17192' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='17217.0' y='430' transform='rotate(-30 17217.0 430)' text-anchor='end' font-size='11' fill='#222'>Node.js 22</text>
+<text x='17209.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='17244' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='17269.0' y='430' transform='rotate(-30 17269.0 430)' text-anchor='end' font-size='11' fill='#222'>Node.js 22</text>
+<text x='17261.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='17296' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='17321.0' y='430' transform='rotate(-30 17321.0 430)' text-anchor='end' font-size='11' fill='#222'>Node.js 22</text>
+<text x='17313.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='17348' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='17373.0' y='430' transform='rotate(-30 17373.0 430)' text-anchor='end' font-size='11' fill='#222'>Node.js 22</text>
+<text x='17365.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='17400' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='17425.0' y='430' transform='rotate(-30 17425.0 430)' text-anchor='end' font-size='11' fill='#222'>Node.js 22</text>
+<text x='17417.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='17452' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='17477.0' y='430' transform='rotate(-30 17477.0 430)' text-anchor='end' font-size='11' fill='#222'>Node.js 22</text>
+<text x='17469.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='17504' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='17529.0' y='430' transform='rotate(-30 17529.0 430)' text-anchor='end' font-size='11' fill='#222'>Node.js 22</text>
+<text x='17521.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='17556' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='17581.0' y='430' transform='rotate(-30 17581.0 430)' text-anchor='end' font-size='11' fill='#222'>Node.js 22</text>
+<text x='17573.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='17608' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='17633.0' y='430' transform='rotate(-30 17633.0 430)' text-anchor='end' font-size='11' fill='#222'>Node.js 22</text>
+<text x='17625.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='17660' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='17685.0' y='430' transform='rotate(-30 17685.0 430)' text-anchor='end' font-size='11' fill='#222'>Node.js 22</text>
+<text x='17677.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='17712' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='17737.0' y='430' transform='rotate(-30 17737.0 430)' text-anchor='end' font-size='11' fill='#222'>Node.js 22</text>
+<text x='17729.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='17764' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='17789.0' y='430' transform='rotate(-30 17789.0 430)' text-anchor='end' font-size='11' fill='#222'>Node.js 22</text>
+<text x='17781.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='17816' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='17841.0' y='430' transform='rotate(-30 17841.0 430)' text-anchor='end' font-size='11' fill='#222'>Node.js 22</text>
+<text x='17833.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='17868' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='17893.0' y='430' transform='rotate(-30 17893.0 430)' text-anchor='end' font-size='11' fill='#222'>Node.js 22</text>
+<text x='17885.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='17920' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='17945.0' y='430' transform='rotate(-30 17945.0 430)' text-anchor='end' font-size='11' fill='#222'>Node.js 22</text>
+<text x='17937.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='17972' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='17997.0' y='430' transform='rotate(-30 17997.0 430)' text-anchor='end' font-size='11' fill='#222'>Node.js 22</text>
+<text x='17989.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='18024' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='18049.0' y='430' transform='rotate(-30 18049.0 430)' text-anchor='end' font-size='11' fill='#222'>Node.js 22</text>
+<text x='18041.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='18076' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='18101.0' y='430' transform='rotate(-30 18101.0 430)' text-anchor='end' font-size='11' fill='#222'>Node.js 22</text>
+<text x='18093.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='18128' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='18153.0' y='430' transform='rotate(-30 18153.0 430)' text-anchor='end' font-size='11' fill='#222'>Node.js 22</text>
+<text x='18145.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='18180' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='18205.0' y='430' transform='rotate(-30 18205.0 430)' text-anchor='end' font-size='11' fill='#222'>Node.js 22</text>
+<text x='18197.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='18232' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='18257.0' y='430' transform='rotate(-30 18257.0 430)' text-anchor='end' font-size='11' fill='#222'>Node.js 22</text>
+<text x='18249.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='18284' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='18309.0' y='430' transform='rotate(-30 18309.0 430)' text-anchor='end' font-size='11' fill='#222'>Node.js 22</text>
+<text x='18301.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='18336' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='18361.0' y='430' transform='rotate(-30 18361.0 430)' text-anchor='end' font-size='11' fill='#222'>Node.js 22</text>
+<text x='18353.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='18388' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='18413.0' y='430' transform='rotate(-30 18413.0 430)' text-anchor='end' font-size='11' fill='#222'>Node.js 22</text>
+<text x='18405.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='18440' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='18465.0' y='430' transform='rotate(-30 18465.0 430)' text-anchor='end' font-size='11' fill='#222'>Node.js 22</text>
+<text x='18457.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='18492' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='18517.0' y='430' transform='rotate(-30 18517.0 430)' text-anchor='end' font-size='11' fill='#222'>Node.js 22</text>
+<text x='18509.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='18544' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='18569.0' y='430' transform='rotate(-30 18569.0 430)' text-anchor='end' font-size='11' fill='#222'>Node.js 22</text>
+<text x='18561.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='18596' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='18621.0' y='430' transform='rotate(-30 18621.0 430)' text-anchor='end' font-size='11' fill='#222'>Node.js 22</text>
+<text x='18613.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='18648' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='18673.0' y='430' transform='rotate(-30 18673.0 430)' text-anchor='end' font-size='11' fill='#222'>Node.js 22</text>
+<text x='18665.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='18700' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='18725.0' y='430' transform='rotate(-30 18725.0 430)' text-anchor='end' font-size='11' fill='#222'>Node.js 22</text>
+<text x='18717.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='18752' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='18777.0' y='430' transform='rotate(-30 18777.0 430)' text-anchor='end' font-size='11' fill='#222'>Node.js 22</text>
+<text x='18769.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='18804' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='18829.0' y='430' transform='rotate(-30 18829.0 430)' text-anchor='end' font-size='11' fill='#222'>Node.js 22</text>
+<text x='18821.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='18856' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='18881.0' y='430' transform='rotate(-30 18881.0 430)' text-anchor='end' font-size='11' fill='#222'>Node.js 22</text>
+<text x='18873.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='18908' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='18933.0' y='430' transform='rotate(-30 18933.0 430)' text-anchor='end' font-size='11' fill='#222'>Node.js 22</text>
+<text x='18925.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='18960' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='18985.0' y='430' transform='rotate(-30 18985.0 430)' text-anchor='end' font-size='11' fill='#222'>Node.js 22</text>
+<text x='18977.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='19012' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='19037.0' y='430' transform='rotate(-30 19037.0 430)' text-anchor='end' font-size='11' fill='#222'>Node.js 22</text>
+<text x='19029.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='19064' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='19089.0' y='430' transform='rotate(-30 19089.0 430)' text-anchor='end' font-size='11' fill='#222'>Node.js 22</text>
+<text x='19081.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='19116' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='19141.0' y='430' transform='rotate(-30 19141.0 430)' text-anchor='end' font-size='11' fill='#222'>Node.js 22</text>
+<text x='19133.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='19168' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='19193.0' y='430' transform='rotate(-30 19193.0 430)' text-anchor='end' font-size='11' fill='#222'>Node.js 22</text>
+<text x='19185.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='19220' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='19245.0' y='430' transform='rotate(-30 19245.0 430)' text-anchor='end' font-size='11' fill='#222'>Node.js 22</text>
+<text x='19237.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='19272' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='19297.0' y='430' transform='rotate(-30 19297.0 430)' text-anchor='end' font-size='11' fill='#222'>Node.js 22</text>
+<text x='19289.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='19324' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='19349.0' y='430' transform='rotate(-30 19349.0 430)' text-anchor='end' font-size='11' fill='#222'>Node.js 22</text>
+<text x='19341.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='19376' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='19401.0' y='430' transform='rotate(-30 19401.0 430)' text-anchor='end' font-size='11' fill='#222'>Node.js 22</text>
+<text x='19393.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='19428' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='19453.0' y='430' transform='rotate(-30 19453.0 430)' text-anchor='end' font-size='11' fill='#222'>Node.js 22</text>
+<text x='19445.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='19480' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='19505.0' y='430' transform='rotate(-30 19505.0 430)' text-anchor='end' font-size='11' fill='#222'>Node.js 22</text>
+<text x='19497.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='19532' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='19557.0' y='430' transform='rotate(-30 19557.0 430)' text-anchor='end' font-size='11' fill='#222'>Node.js 22</text>
+<text x='19549.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='19584' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='19609.0' y='430' transform='rotate(-30 19609.0 430)' text-anchor='end' font-size='11' fill='#222'>Node.js 22</text>
+<text x='19601.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='19636' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='19661.0' y='430' transform='rotate(-30 19661.0 430)' text-anchor='end' font-size='11' fill='#222'>Node.js 22</text>
+<text x='19653.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='19688' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='19713.0' y='430' transform='rotate(-30 19713.0 430)' text-anchor='end' font-size='11' fill='#222'>Node.js 22</text>
+<text x='19705.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='19740' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='19765.0' y='430' transform='rotate(-30 19765.0 430)' text-anchor='end' font-size='11' fill='#222'>Node.js 22</text>
+<text x='19757.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='19792' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='19817.0' y='430' transform='rotate(-30 19817.0 430)' text-anchor='end' font-size='11' fill='#222'>Node.js 22</text>
+<text x='19809.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='19844' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='19869.0' y='430' transform='rotate(-30 19869.0 430)' text-anchor='end' font-size='11' fill='#222'>Node.js 22</text>
+<text x='19861.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='19896' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='19921.0' y='430' transform='rotate(-30 19921.0 430)' text-anchor='end' font-size='11' fill='#222'>Node.js 22</text>
+<text x='19913.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='19948' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='19973.0' y='430' transform='rotate(-30 19973.0 430)' text-anchor='end' font-size='11' fill='#222'>Node.js 22</text>
+<text x='19965.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='20000' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='20025.0' y='430' transform='rotate(-30 20025.0 430)' text-anchor='end' font-size='11' fill='#222'>Node.js 22</text>
+<text x='20017.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='20052' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='20077.0' y='430' transform='rotate(-30 20077.0 430)' text-anchor='end' font-size='11' fill='#222'>Node.js 22</text>
+<text x='20069.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='20104' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='20129.0' y='430' transform='rotate(-30 20129.0 430)' text-anchor='end' font-size='11' fill='#222'>Node.js 22</text>
+<text x='20121.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='20156' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='20181.0' y='430' transform='rotate(-30 20181.0 430)' text-anchor='end' font-size='11' fill='#222'>Node.js 22</text>
+<text x='20173.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='20208' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='20233.0' y='430' transform='rotate(-30 20233.0 430)' text-anchor='end' font-size='11' fill='#222'>Node.js 22</text>
+<text x='20225.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='20260' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='20285.0' y='430' transform='rotate(-30 20285.0 430)' text-anchor='end' font-size='11' fill='#222'>Node.js 22</text>
+<text x='20277.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='20312' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='20337.0' y='430' transform='rotate(-30 20337.0 430)' text-anchor='end' font-size='11' fill='#222'>Node.js 22</text>
+<text x='20329.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='20364' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='20389.0' y='430' transform='rotate(-30 20389.0 430)' text-anchor='end' font-size='11' fill='#222'>Go 1.23</text>
+<text x='20381.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='20416' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='20441.0' y='430' transform='rotate(-30 20441.0 430)' text-anchor='end' font-size='11' fill='#222'>Go 1.23</text>
+<text x='20433.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='20468' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='20493.0' y='430' transform='rotate(-30 20493.0 430)' text-anchor='end' font-size='11' fill='#222'>Go 1.23</text>
+<text x='20485.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='20520' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='20545.0' y='430' transform='rotate(-30 20545.0 430)' text-anchor='end' font-size='11' fill='#222'>Go 1.23</text>
+<text x='20537.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='20572' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='20597.0' y='430' transform='rotate(-30 20597.0 430)' text-anchor='end' font-size='11' fill='#222'>Go 1.23</text>
+<text x='20589.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='20624' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='20649.0' y='430' transform='rotate(-30 20649.0 430)' text-anchor='end' font-size='11' fill='#222'>Go 1.23</text>
+<text x='20641.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='20676' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='20701.0' y='430' transform='rotate(-30 20701.0 430)' text-anchor='end' font-size='11' fill='#222'>Go 1.23</text>
+<text x='20693.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='20728' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='20753.0' y='430' transform='rotate(-30 20753.0 430)' text-anchor='end' font-size='11' fill='#222'>Go 1.23</text>
+<text x='20745.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='20780' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='20805.0' y='430' transform='rotate(-30 20805.0 430)' text-anchor='end' font-size='11' fill='#222'>Go 1.23</text>
+<text x='20797.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='20832' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='20857.0' y='430' transform='rotate(-30 20857.0 430)' text-anchor='end' font-size='11' fill='#222'>Go 1.23</text>
+<text x='20849.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='20884' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='20909.0' y='430' transform='rotate(-30 20909.0 430)' text-anchor='end' font-size='11' fill='#222'>Go 1.23</text>
+<text x='20901.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='20936' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='20961.0' y='430' transform='rotate(-30 20961.0 430)' text-anchor='end' font-size='11' fill='#222'>Go 1.23</text>
+<text x='20953.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='20988' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='21013.0' y='430' transform='rotate(-30 21013.0 430)' text-anchor='end' font-size='11' fill='#222'>Go 1.23</text>
+<text x='21005.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='21040' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='21065.0' y='430' transform='rotate(-30 21065.0 430)' text-anchor='end' font-size='11' fill='#222'>Go 1.23</text>
+<text x='21057.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='21092' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='21117.0' y='430' transform='rotate(-30 21117.0 430)' text-anchor='end' font-size='11' fill='#222'>Go 1.23</text>
+<text x='21109.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='21144' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='21169.0' y='430' transform='rotate(-30 21169.0 430)' text-anchor='end' font-size='11' fill='#222'>Go 1.23</text>
+<text x='21161.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='21196' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='21221.0' y='430' transform='rotate(-30 21221.0 430)' text-anchor='end' font-size='11' fill='#222'>Go 1.23</text>
+<text x='21213.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='21248' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='21273.0' y='430' transform='rotate(-30 21273.0 430)' text-anchor='end' font-size='11' fill='#222'>Go 1.23</text>
+<text x='21265.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='21300' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='21325.0' y='430' transform='rotate(-30 21325.0 430)' text-anchor='end' font-size='11' fill='#222'>Go 1.23</text>
+<text x='21317.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='21352' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='21377.0' y='430' transform='rotate(-30 21377.0 430)' text-anchor='end' font-size='11' fill='#222'>Go 1.23</text>
+<text x='21369.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='21404' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='21429.0' y='430' transform='rotate(-30 21429.0 430)' text-anchor='end' font-size='11' fill='#222'>Go 1.23</text>
+<text x='21421.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='21456' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='21481.0' y='430' transform='rotate(-30 21481.0 430)' text-anchor='end' font-size='11' fill='#222'>Go 1.23</text>
+<text x='21473.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='21508' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='21533.0' y='430' transform='rotate(-30 21533.0 430)' text-anchor='end' font-size='11' fill='#222'>Go 1.23</text>
+<text x='21525.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='21560' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='21585.0' y='430' transform='rotate(-30 21585.0 430)' text-anchor='end' font-size='11' fill='#222'>Go 1.23</text>
+<text x='21577.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='21612' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='21637.0' y='430' transform='rotate(-30 21637.0 430)' text-anchor='end' font-size='11' fill='#222'>Go 1.23</text>
+<text x='21629.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='21664' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='21689.0' y='430' transform='rotate(-30 21689.0 430)' text-anchor='end' font-size='11' fill='#222'>Go 1.23</text>
+<text x='21681.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='21716' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='21741.0' y='430' transform='rotate(-30 21741.0 430)' text-anchor='end' font-size='11' fill='#222'>Go 1.23</text>
+<text x='21733.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='21768' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='21793.0' y='430' transform='rotate(-30 21793.0 430)' text-anchor='end' font-size='11' fill='#222'>Go 1.23</text>
+<text x='21785.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='21820' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='21845.0' y='430' transform='rotate(-30 21845.0 430)' text-anchor='end' font-size='11' fill='#222'>Go 1.23</text>
+<text x='21837.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='21872' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='21897.0' y='430' transform='rotate(-30 21897.0 430)' text-anchor='end' font-size='11' fill='#222'>Go 1.23</text>
+<text x='21889.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='21924' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='21949.0' y='430' transform='rotate(-30 21949.0 430)' text-anchor='end' font-size='11' fill='#222'>Go 1.23</text>
+<text x='21941.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='21976' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='22001.0' y='430' transform='rotate(-30 22001.0 430)' text-anchor='end' font-size='11' fill='#222'>Go 1.23</text>
+<text x='21993.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='22028' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='22053.0' y='430' transform='rotate(-30 22053.0 430)' text-anchor='end' font-size='11' fill='#222'>Go 1.23</text>
+<text x='22045.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='22080' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='22105.0' y='430' transform='rotate(-30 22105.0 430)' text-anchor='end' font-size='11' fill='#222'>Go 1.23</text>
+<text x='22097.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='22132' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='22157.0' y='430' transform='rotate(-30 22157.0 430)' text-anchor='end' font-size='11' fill='#222'>Go 1.23</text>
+<text x='22149.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='22184' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='22209.0' y='430' transform='rotate(-30 22209.0 430)' text-anchor='end' font-size='11' fill='#222'>Go 1.23</text>
+<text x='22201.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='22236' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='22261.0' y='430' transform='rotate(-30 22261.0 430)' text-anchor='end' font-size='11' fill='#222'>Go 1.23</text>
+<text x='22253.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='22288' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='22313.0' y='430' transform='rotate(-30 22313.0 430)' text-anchor='end' font-size='11' fill='#222'>Go 1.23</text>
+<text x='22305.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='22340' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='22365.0' y='430' transform='rotate(-30 22365.0 430)' text-anchor='end' font-size='11' fill='#222'>Go 1.23</text>
+<text x='22357.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='22392' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='22417.0' y='430' transform='rotate(-30 22417.0 430)' text-anchor='end' font-size='11' fill='#222'>Go 1.23</text>
+<text x='22409.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='22444' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='22469.0' y='430' transform='rotate(-30 22469.0 430)' text-anchor='end' font-size='11' fill='#222'>Go 1.23</text>
+<text x='22461.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='22496' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='22521.0' y='430' transform='rotate(-30 22521.0 430)' text-anchor='end' font-size='11' fill='#222'>Go 1.23</text>
+<text x='22513.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='22548' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='22573.0' y='430' transform='rotate(-30 22573.0 430)' text-anchor='end' font-size='11' fill='#222'>Go 1.23</text>
+<text x='22565.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='22600' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='22625.0' y='430' transform='rotate(-30 22625.0 430)' text-anchor='end' font-size='11' fill='#222'>Go 1.23</text>
+<text x='22617.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='22652' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='22677.0' y='430' transform='rotate(-30 22677.0 430)' text-anchor='end' font-size='11' fill='#222'>Go 1.23</text>
+<text x='22669.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='22704' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='22729.0' y='430' transform='rotate(-30 22729.0 430)' text-anchor='end' font-size='11' fill='#222'>Go 1.23</text>
+<text x='22721.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='22756' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='22781.0' y='430' transform='rotate(-30 22781.0 430)' text-anchor='end' font-size='11' fill='#222'>Go 1.23</text>
+<text x='22773.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='22808' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='22833.0' y='430' transform='rotate(-30 22833.0 430)' text-anchor='end' font-size='11' fill='#222'>Go 1.23</text>
+<text x='22825.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='22860' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='22885.0' y='430' transform='rotate(-30 22885.0 430)' text-anchor='end' font-size='11' fill='#222'>Go 1.23</text>
+<text x='22877.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='22912' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='22937.0' y='430' transform='rotate(-30 22937.0 430)' text-anchor='end' font-size='11' fill='#222'>Go 1.23</text>
+<text x='22929.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='22964' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='22989.0' y='430' transform='rotate(-30 22989.0 430)' text-anchor='end' font-size='11' fill='#222'>Go 1.23</text>
+<text x='22981.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='23016' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='23041.0' y='430' transform='rotate(-30 23041.0 430)' text-anchor='end' font-size='11' fill='#222'>Go 1.23</text>
+<text x='23033.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='23068' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='23093.0' y='430' transform='rotate(-30 23093.0 430)' text-anchor='end' font-size='11' fill='#222'>Go 1.23</text>
+<text x='23085.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='23120' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='23145.0' y='430' transform='rotate(-30 23145.0 430)' text-anchor='end' font-size='11' fill='#222'>Go 1.23</text>
+<text x='23137.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='23172' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='23197.0' y='430' transform='rotate(-30 23197.0 430)' text-anchor='end' font-size='11' fill='#222'>Go 1.23</text>
+<text x='23189.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='23224' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='23249.0' y='430' transform='rotate(-30 23249.0 430)' text-anchor='end' font-size='11' fill='#222'>Go 1.23</text>
+<text x='23241.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='23276' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='23301.0' y='430' transform='rotate(-30 23301.0 430)' text-anchor='end' font-size='11' fill='#222'>Go 1.23</text>
+<text x='23293.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='23328' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='23353.0' y='430' transform='rotate(-30 23353.0 430)' text-anchor='end' font-size='11' fill='#222'>Go 1.23</text>
+<text x='23345.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='23380' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='23405.0' y='430' transform='rotate(-30 23405.0 430)' text-anchor='end' font-size='11' fill='#222'>Go 1.23</text>
+<text x='23397.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='23432' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='23457.0' y='430' transform='rotate(-30 23457.0 430)' text-anchor='end' font-size='11' fill='#222'>Go 1.23</text>
+<text x='23449.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='23484' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='23509.0' y='430' transform='rotate(-30 23509.0 430)' text-anchor='end' font-size='11' fill='#222'>Go 1.23</text>
+<text x='23501.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='23536' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='23561.0' y='430' transform='rotate(-30 23561.0 430)' text-anchor='end' font-size='11' fill='#222'>Go 1.23</text>
+<text x='23553.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='23588' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='23613.0' y='430' transform='rotate(-30 23613.0 430)' text-anchor='end' font-size='11' fill='#222'>Go 1.23</text>
+<text x='23605.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='23640' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='23665.0' y='430' transform='rotate(-30 23665.0 430)' text-anchor='end' font-size='11' fill='#222'>Go 1.23</text>
+<text x='23657.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='23692' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='23717.0' y='430' transform='rotate(-30 23717.0 430)' text-anchor='end' font-size='11' fill='#222'>Go 1.23</text>
+<text x='23709.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='23744' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='23769.0' y='430' transform='rotate(-30 23769.0 430)' text-anchor='end' font-size='11' fill='#222'>Go 1.23</text>
+<text x='23761.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='23796' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='23821.0' y='430' transform='rotate(-30 23821.0 430)' text-anchor='end' font-size='11' fill='#222'>Go 1.23</text>
+<text x='23813.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='23848' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='23873.0' y='430' transform='rotate(-30 23873.0 430)' text-anchor='end' font-size='11' fill='#222'>Go 1.23</text>
+<text x='23865.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='23900' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='23925.0' y='430' transform='rotate(-30 23925.0 430)' text-anchor='end' font-size='11' fill='#222'>Go 1.23</text>
+<text x='23917.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='23952' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='23977.0' y='430' transform='rotate(-30 23977.0 430)' text-anchor='end' font-size='11' fill='#222'>Go 1.23</text>
+<text x='23969.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='24004' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='24029.0' y='430' transform='rotate(-30 24029.0 430)' text-anchor='end' font-size='11' fill='#222'>Go 1.23</text>
+<text x='24021.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='24056' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='24081.0' y='430' transform='rotate(-30 24081.0 430)' text-anchor='end' font-size='11' fill='#222'>Go 1.23</text>
+<text x='24073.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='24108' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='24133.0' y='430' transform='rotate(-30 24133.0 430)' text-anchor='end' font-size='11' fill='#222'>Go 1.23</text>
+<text x='24125.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='24160' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='24185.0' y='430' transform='rotate(-30 24185.0 430)' text-anchor='end' font-size='11' fill='#222'>Go 1.23</text>
+<text x='24177.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='24212' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='24237.0' y='430' transform='rotate(-30 24237.0 430)' text-anchor='end' font-size='11' fill='#222'>Go 1.23</text>
+<text x='24229.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='24264' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='24289.0' y='430' transform='rotate(-30 24289.0 430)' text-anchor='end' font-size='11' fill='#222'>Go 1.23</text>
+<text x='24281.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='24316' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='24341.0' y='430' transform='rotate(-30 24341.0 430)' text-anchor='end' font-size='11' fill='#222'>Go 1.23</text>
+<text x='24333.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='24368' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='24393.0' y='430' transform='rotate(-30 24393.0 430)' text-anchor='end' font-size='11' fill='#222'>Go 1.23</text>
+<text x='24385.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='24420' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='24445.0' y='430' transform='rotate(-30 24445.0 430)' text-anchor='end' font-size='11' fill='#222'>Rust 1.82</text>
+<text x='24437.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='24472' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='24497.0' y='430' transform='rotate(-30 24497.0 430)' text-anchor='end' font-size='11' fill='#222'>Rust 1.82</text>
+<text x='24489.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='24524' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='24549.0' y='430' transform='rotate(-30 24549.0 430)' text-anchor='end' font-size='11' fill='#222'>Rust 1.82</text>
+<text x='24541.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='24576' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='24601.0' y='430' transform='rotate(-30 24601.0 430)' text-anchor='end' font-size='11' fill='#222'>Rust 1.82</text>
+<text x='24593.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='24628' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='24653.0' y='430' transform='rotate(-30 24653.0 430)' text-anchor='end' font-size='11' fill='#222'>Rust 1.82</text>
+<text x='24645.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='24680' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='24705.0' y='430' transform='rotate(-30 24705.0 430)' text-anchor='end' font-size='11' fill='#222'>Rust 1.82</text>
+<text x='24697.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='24732' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='24757.0' y='430' transform='rotate(-30 24757.0 430)' text-anchor='end' font-size='11' fill='#222'>Rust 1.82</text>
+<text x='24749.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='24784' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='24809.0' y='430' transform='rotate(-30 24809.0 430)' text-anchor='end' font-size='11' fill='#222'>Rust 1.82</text>
+<text x='24801.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='24836' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='24861.0' y='430' transform='rotate(-30 24861.0 430)' text-anchor='end' font-size='11' fill='#222'>Rust 1.82</text>
+<text x='24853.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='24888' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='24913.0' y='430' transform='rotate(-30 24913.0 430)' text-anchor='end' font-size='11' fill='#222'>Rust 1.82</text>
+<text x='24905.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='24940' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='24965.0' y='430' transform='rotate(-30 24965.0 430)' text-anchor='end' font-size='11' fill='#222'>Rust 1.82</text>
+<text x='24957.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='24992' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='25017.0' y='430' transform='rotate(-30 25017.0 430)' text-anchor='end' font-size='11' fill='#222'>Rust 1.82</text>
+<text x='25009.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='25044' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='25069.0' y='430' transform='rotate(-30 25069.0 430)' text-anchor='end' font-size='11' fill='#222'>Rust 1.82</text>
+<text x='25061.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='25096' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='25121.0' y='430' transform='rotate(-30 25121.0 430)' text-anchor='end' font-size='11' fill='#222'>Rust 1.82</text>
+<text x='25113.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='25148' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='25173.0' y='430' transform='rotate(-30 25173.0 430)' text-anchor='end' font-size='11' fill='#222'>Rust 1.82</text>
+<text x='25165.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='25200' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='25225.0' y='430' transform='rotate(-30 25225.0 430)' text-anchor='end' font-size='11' fill='#222'>Rust 1.82</text>
+<text x='25217.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='25252' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='25277.0' y='430' transform='rotate(-30 25277.0 430)' text-anchor='end' font-size='11' fill='#222'>Rust 1.82</text>
+<text x='25269.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='25304' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='25329.0' y='430' transform='rotate(-30 25329.0 430)' text-anchor='end' font-size='11' fill='#222'>Rust 1.82</text>
+<text x='25321.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='25356' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='25381.0' y='430' transform='rotate(-30 25381.0 430)' text-anchor='end' font-size='11' fill='#222'>Rust 1.82</text>
+<text x='25373.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='25408' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='25433.0' y='430' transform='rotate(-30 25433.0 430)' text-anchor='end' font-size='11' fill='#222'>Rust 1.82</text>
+<text x='25425.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='25460' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='25485.0' y='430' transform='rotate(-30 25485.0 430)' text-anchor='end' font-size='11' fill='#222'>Rust 1.82</text>
+<text x='25477.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='25512' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='25537.0' y='430' transform='rotate(-30 25537.0 430)' text-anchor='end' font-size='11' fill='#222'>Rust 1.82</text>
+<text x='25529.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='25564' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='25589.0' y='430' transform='rotate(-30 25589.0 430)' text-anchor='end' font-size='11' fill='#222'>Rust 1.82</text>
+<text x='25581.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='25616' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='25641.0' y='430' transform='rotate(-30 25641.0 430)' text-anchor='end' font-size='11' fill='#222'>Rust 1.82</text>
+<text x='25633.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='25668' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='25693.0' y='430' transform='rotate(-30 25693.0 430)' text-anchor='end' font-size='11' fill='#222'>Rust 1.82</text>
+<text x='25685.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='25720' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='25745.0' y='430' transform='rotate(-30 25745.0 430)' text-anchor='end' font-size='11' fill='#222'>Rust 1.82</text>
+<text x='25737.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='25772' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='25797.0' y='430' transform='rotate(-30 25797.0 430)' text-anchor='end' font-size='11' fill='#222'>Rust 1.82</text>
+<text x='25789.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='25824' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='25849.0' y='430' transform='rotate(-30 25849.0 430)' text-anchor='end' font-size='11' fill='#222'>Rust 1.82</text>
+<text x='25841.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='25876' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='25901.0' y='430' transform='rotate(-30 25901.0 430)' text-anchor='end' font-size='11' fill='#222'>Rust 1.82</text>
+<text x='25893.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='25928' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='25953.0' y='430' transform='rotate(-30 25953.0 430)' text-anchor='end' font-size='11' fill='#222'>Rust 1.82</text>
+<text x='25945.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='25980' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='26005.0' y='430' transform='rotate(-30 26005.0 430)' text-anchor='end' font-size='11' fill='#222'>Rust 1.82</text>
+<text x='25997.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='26032' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='26057.0' y='430' transform='rotate(-30 26057.0 430)' text-anchor='end' font-size='11' fill='#222'>Rust 1.82</text>
+<text x='26049.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='26084' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='26109.0' y='430' transform='rotate(-30 26109.0 430)' text-anchor='end' font-size='11' fill='#222'>Rust 1.82</text>
+<text x='26101.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='26136' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='26161.0' y='430' transform='rotate(-30 26161.0 430)' text-anchor='end' font-size='11' fill='#222'>Rust 1.82</text>
+<text x='26153.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='26188' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='26213.0' y='430' transform='rotate(-30 26213.0 430)' text-anchor='end' font-size='11' fill='#222'>Rust 1.82</text>
+<text x='26205.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='26240' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='26265.0' y='430' transform='rotate(-30 26265.0 430)' text-anchor='end' font-size='11' fill='#222'>Rust 1.82</text>
+<text x='26257.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='26292' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='26317.0' y='430' transform='rotate(-30 26317.0 430)' text-anchor='end' font-size='11' fill='#222'>Rust 1.82</text>
+<text x='26309.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='26344' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='26369.0' y='430' transform='rotate(-30 26369.0 430)' text-anchor='end' font-size='11' fill='#222'>Rust 1.82</text>
+<text x='26361.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='26396' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='26421.0' y='430' transform='rotate(-30 26421.0 430)' text-anchor='end' font-size='11' fill='#222'>Rust 1.82</text>
+<text x='26413.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='26448' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='26473.0' y='430' transform='rotate(-30 26473.0 430)' text-anchor='end' font-size='11' fill='#222'>Rust 1.82</text>
+<text x='26465.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='26500' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='26525.0' y='430' transform='rotate(-30 26525.0 430)' text-anchor='end' font-size='11' fill='#222'>Rust 1.82</text>
+<text x='26517.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='26552' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='26577.0' y='430' transform='rotate(-30 26577.0 430)' text-anchor='end' font-size='11' fill='#222'>Rust 1.82</text>
+<text x='26569.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='26604' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='26629.0' y='430' transform='rotate(-30 26629.0 430)' text-anchor='end' font-size='11' fill='#222'>Rust 1.82</text>
+<text x='26621.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='26656' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='26681.0' y='430' transform='rotate(-30 26681.0 430)' text-anchor='end' font-size='11' fill='#222'>Rust 1.82</text>
+<text x='26673.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='26708' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='26733.0' y='430' transform='rotate(-30 26733.0 430)' text-anchor='end' font-size='11' fill='#222'>Rust 1.82</text>
+<text x='26725.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='26760' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='26785.0' y='430' transform='rotate(-30 26785.0 430)' text-anchor='end' font-size='11' fill='#222'>Rust 1.82</text>
+<text x='26777.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='26812' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='26837.0' y='430' transform='rotate(-30 26837.0 430)' text-anchor='end' font-size='11' fill='#222'>Rust 1.82</text>
+<text x='26829.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='26864' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='26889.0' y='430' transform='rotate(-30 26889.0 430)' text-anchor='end' font-size='11' fill='#222'>Rust 1.82</text>
+<text x='26881.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='26916' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='26941.0' y='430' transform='rotate(-30 26941.0 430)' text-anchor='end' font-size='11' fill='#222'>Rust 1.82</text>
+<text x='26933.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='26968' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='26993.0' y='430' transform='rotate(-30 26993.0 430)' text-anchor='end' font-size='11' fill='#222'>Rust 1.82</text>
+<text x='26985.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='27020' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='27045.0' y='430' transform='rotate(-30 27045.0 430)' text-anchor='end' font-size='11' fill='#222'>Rust 1.82</text>
+<text x='27037.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='27072' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='27097.0' y='430' transform='rotate(-30 27097.0 430)' text-anchor='end' font-size='11' fill='#222'>Rust 1.82</text>
+<text x='27089.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='27124' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='27149.0' y='430' transform='rotate(-30 27149.0 430)' text-anchor='end' font-size='11' fill='#222'>Rust 1.82</text>
+<text x='27141.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='27176' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='27201.0' y='430' transform='rotate(-30 27201.0 430)' text-anchor='end' font-size='11' fill='#222'>Rust 1.82</text>
+<text x='27193.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='27228' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='27253.0' y='430' transform='rotate(-30 27253.0 430)' text-anchor='end' font-size='11' fill='#222'>Rust 1.82</text>
+<text x='27245.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='27280' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='27305.0' y='430' transform='rotate(-30 27305.0 430)' text-anchor='end' font-size='11' fill='#222'>Rust 1.82</text>
+<text x='27297.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='27332' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='27357.0' y='430' transform='rotate(-30 27357.0 430)' text-anchor='end' font-size='11' fill='#222'>Rust 1.82</text>
+<text x='27349.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='27384' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='27409.0' y='430' transform='rotate(-30 27409.0 430)' text-anchor='end' font-size='11' fill='#222'>Rust 1.82</text>
+<text x='27401.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='27436' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='27461.0' y='430' transform='rotate(-30 27461.0 430)' text-anchor='end' font-size='11' fill='#222'>Rust 1.82</text>
+<text x='27453.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='27488' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='27513.0' y='430' transform='rotate(-30 27513.0 430)' text-anchor='end' font-size='11' fill='#222'>Rust 1.82</text>
+<text x='27505.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='27540' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='27565.0' y='430' transform='rotate(-30 27565.0 430)' text-anchor='end' font-size='11' fill='#222'>Rust 1.82</text>
+<text x='27557.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='27592' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='27617.0' y='430' transform='rotate(-30 27617.0 430)' text-anchor='end' font-size='11' fill='#222'>Rust 1.82</text>
+<text x='27609.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='27644' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='27669.0' y='430' transform='rotate(-30 27669.0 430)' text-anchor='end' font-size='11' fill='#222'>Rust 1.82</text>
+<text x='27661.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='27696' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='27721.0' y='430' transform='rotate(-30 27721.0 430)' text-anchor='end' font-size='11' fill='#222'>Rust 1.82</text>
+<text x='27713.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='27748' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='27773.0' y='430' transform='rotate(-30 27773.0 430)' text-anchor='end' font-size='11' fill='#222'>Rust 1.82</text>
+<text x='27765.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='27800' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='27825.0' y='430' transform='rotate(-30 27825.0 430)' text-anchor='end' font-size='11' fill='#222'>Rust 1.82</text>
+<text x='27817.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='27852' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='27877.0' y='430' transform='rotate(-30 27877.0 430)' text-anchor='end' font-size='11' fill='#222'>Rust 1.82</text>
+<text x='27869.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='27904' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='27929.0' y='430' transform='rotate(-30 27929.0 430)' text-anchor='end' font-size='11' fill='#222'>Rust 1.82</text>
+<text x='27921.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='27956' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='27981.0' y='430' transform='rotate(-30 27981.0 430)' text-anchor='end' font-size='11' fill='#222'>Rust 1.82</text>
+<text x='27973.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='28008' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='28033.0' y='430' transform='rotate(-30 28033.0 430)' text-anchor='end' font-size='11' fill='#222'>Rust 1.82</text>
+<text x='28025.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='28060' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='28085.0' y='430' transform='rotate(-30 28085.0 430)' text-anchor='end' font-size='11' fill='#222'>Rust 1.82</text>
+<text x='28077.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='28112' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='28137.0' y='430' transform='rotate(-30 28137.0 430)' text-anchor='end' font-size='11' fill='#222'>Rust 1.82</text>
+<text x='28129.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='28164' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='28189.0' y='430' transform='rotate(-30 28189.0 430)' text-anchor='end' font-size='11' fill='#222'>Rust 1.82</text>
+<text x='28181.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='28216' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='28241.0' y='430' transform='rotate(-30 28241.0 430)' text-anchor='end' font-size='11' fill='#222'>Rust 1.82</text>
+<text x='28233.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='28268' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='28293.0' y='430' transform='rotate(-30 28293.0 430)' text-anchor='end' font-size='11' fill='#222'>Rust 1.82</text>
+<text x='28285.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='28320' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='28345.0' y='430' transform='rotate(-30 28345.0 430)' text-anchor='end' font-size='11' fill='#222'>Rust 1.82</text>
+<text x='28337.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='28372' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='28397.0' y='430' transform='rotate(-30 28397.0 430)' text-anchor='end' font-size='11' fill='#222'>Rust 1.82</text>
+<text x='28389.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<rect x='28424' y='390' width='34' height='0' rx='4' fill='#0f766e'/>
+<text x='28449.0' y='430' transform='rotate(-30 28449.0 430)' text-anchor='end' font-size='11' fill='#222'>Rust 1.82</text>
+<text x='28441.0' y='382' text-anchor='middle' font-size='12'>+0.00</text>
+<text x='14259.0' y='508' text-anchor='middle' font-size='11' fill='#555'>
+<tspan x='14259.0' dy='0'>Baseline runtime: python-3.12.</tspan>
+</text>
+</svg>

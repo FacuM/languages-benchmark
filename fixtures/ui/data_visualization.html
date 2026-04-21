@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Benchmark Data Visualization</title>
+  <style>
+    body { font-family: system-ui, sans-serif; margin: 24px; background: #ffffff; color: #1f2328; }
+    svg { border: 1px solid #d0d7de; border-radius: 12px; background: #f6f8fa; }
+  </style>
+</head>
+<body>
+  <h1>Visualization</h1>
+  <svg id="chart" width="960" height="360" viewBox="0 0 960 360"></svg>
+  <script>
+    window.renderChart = function(values) {
+      const svg = document.getElementById("chart");
+      while (svg.firstChild) svg.removeChild(svg.firstChild);
+      const width = 960;
+      const height = 360;
+      const barWidth = Math.max(1, Math.floor(width / values.length));
+      let checksum = 0;
+      values.forEach((value, idx) => {
+        const h = Math.max(1, Math.floor((value / 220) * (height - 20)));
+        const rect = document.createElementNS("http://www.w3.org/2000/svg", "rect");
+        rect.setAttribute("x", String(idx * barWidth));
+        rect.setAttribute("y", String(height - h));
+        rect.setAttribute("width", String(Math.max(1, barWidth - 1)));
+        rect.setAttribute("height", String(h));
+        rect.setAttribute("fill", idx % 2 === 0 ? "#0969da" : "#1a7f37");
+        svg.appendChild(rect);
+        checksum = (checksum + ((idx + 1) * h)) % 10000019;
+      });
+      return checksum;
+    };
+  </script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<svg xmlns='http://www.w3.org/2000/svg' width='980' height='540' viewBox='0 0 980 540'>
+<rect x='0' y='0' width='980' height='540' fill='#ffffff'/>
+<rect x='0.5' y='0.5' width='979' height='539' fill='none' stroke='#d1d5db'/>
+<text x='490.0' y='28' text-anchor='middle' font-size='20' fill='#000'>
+<tspan x='490.0' dy='0'>L/S growth ratio summary (lower is better) — ranked best to worst</tspan>
+</text>
+<text x='490.0' y='50' text-anchor='middle' font-size='12' fill='#555'>
+<tspan x='490.0' dy='0'>Same L/S growth-ratio bars, but languages are ordered by the average of wall-time and memory L/S growth.</tspan>
+</text>
+<line x1='72' y1='438' x2='932' y2='438' stroke='#e5e7eb' stroke-width='1'/>
+<text x='62' y='442' text-anchor='end' font-size='11' fill='#555'>0.0x</text>
+<line x1='72' y1='349' x2='932' y2='349' stroke='#e5e7eb' stroke-width='1'/>
+<text x='62' y='353' text-anchor='end' font-size='11' fill='#555'>1.2x</text>
+<line x1='72' y1='259' x2='932' y2='259' stroke='#e5e7eb' stroke-width='1'/>
+<text x='62' y='263' text-anchor='end' font-size='11' fill='#555'>2.5x</text>
+<line x1='72' y1='170' x2='932' y2='170' stroke='#e5e7eb' stroke-width='1'/>
+<text x='62' y='174' text-anchor='end' font-size='11' fill='#555'>3.8x</text>
+<line x1='72' y1='80' x2='932' y2='80' stroke='#e5e7eb' stroke-width='1'/>
+<text x='62' y='84' text-anchor='end' font-size='11' fill='#555'>5.0x</text>
+<line x1='72' y1='438' x2='932' y2='438' stroke='black'/>
+<rect x='146' y='321' width='41' height='117' rx='3' fill='#4f46e5'/>
+<rect x='193' y='360' width='41' height='78' rx='3' fill='#0f766e'/>
+<text x='190.0' y='460' text-anchor='middle' font-size='12'>node-22</text>
+<text x='166.5' y='313' text-anchor='middle' font-size='11'>1.64x</text>
+<text x='213.5' y='352' text-anchor='middle' font-size='11'>1.09x</text>
+<rect x='250' y='309' width='41' height='129' rx='3' fill='#4f46e5'/>
+<rect x='297' y='359' width='41' height='79' rx='3' fill='#0f766e'/>
+<text x='294.0' y='460' text-anchor='middle' font-size='12'>python-3.12</text>
+<text x='270.5' y='301' text-anchor='middle' font-size='11'>1.81x</text>
+<text x='317.5' y='351' text-anchor='middle' font-size='11'>1.11x</text>
+<rect x='354' y='303' width='41' height='135' rx='3' fill='#4f46e5'/>
+<rect x='401' y='360' width='41' height='78' rx='3' fill='#0f766e'/>
+<text x='398.0' y='460' text-anchor='middle' font-size='12'>java-21</text>
+<text x='374.5' y='295' text-anchor='middle' font-size='11'>1.90x</text>
+<text x='421.5' y='352' text-anchor='middle' font-size='11'>1.09x</text>
+<rect x='458' y='278' width='41' height='160' rx='3' fill='#4f46e5'/>
+<rect x='505' y='363' width='41' height='75' rx='3' fill='#0f766e'/>
+<text x='502.0' y='460' text-anchor='middle' font-size='12'>php-8.4</text>
+<text x='478.5' y='270' text-anchor='middle' font-size='11'>2.24x</text>
+<text x='525.5' y='355' text-anchor='middle' font-size='11'>1.06x</text>
+<rect x='562' y='255' width='41' height='183' rx='3' fill='#4f46e5'/>
+<rect x='609' y='355' width='41' height='83' rx='3' fill='#0f766e'/>
+<text x='606.0' y='460' text-anchor='middle' font-size='12'>rust-1.82</text>
+<text x='582.5' y='247' text-anchor='middle' font-size='11'>2.56x</text>
+<text x='629.5' y='347' text-anchor='middle' font-size='11'>1.17x</text>
+<rect x='666' y='220' width='41' height='218' rx='3' fill='#4f46e5'/>
+<rect x='713' y='364' width='41' height='74' rx='3' fill='#0f766e'/>
+<text x='710.0' y='460' text-anchor='middle' font-size='12'>cpp-14</text>
+<text x='686.5' y='212' text-anchor='middle' font-size='11'>3.05x</text>
+<text x='733.5' y='356' text-anchor='middle' font-size='11'>1.04x</text>
+<rect x='770' y='169' width='41' height='269' rx='3' fill='#4f46e5'/>
+<rect x='817' y='350' width='41' height='88' rx='3' fill='#0f766e'/>
+<text x='814.0' y='460' text-anchor='middle' font-size='12'>go-1.23</text>
+<text x='790.5' y='161' text-anchor='middle' font-size='11'>3.77x</text>
+<text x='837.5' y='342' text-anchor='middle' font-size='11'>1.24x</text>
+<rect x='752' y='404' width='180' height='30' rx='8' fill='#f8fafc' stroke='#e5e7eb'/>
+<rect x='764' y='413' width='14' height='14' rx='3' fill='#4f46e5'/>
+<text x='786' y='424' font-size='12'>Wall L/S</text>
+<rect x='844' y='413' width='14' height='14' rx='3' fill='#0f766e'/>
+<text x='866' y='424' font-size='12'>Memory L/S</text>
+<text x='490.0' y='528' text-anchor='middle' font-size='11' fill='#555'>
+<tspan x='490.0' dy='0'>Languages sorted by combined L/S growth from best to worst. Lower bars are better.</tspan>
+</text>
+</svg>

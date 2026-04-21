@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+set -euo pipefail
+if [[ -x ".venv/bin/python" ]]; then
+  exec .venv/bin/python -m runner.cli "$@"
+fi
+exec python3 -m runner.cli "$@"
