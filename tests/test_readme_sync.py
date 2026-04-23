@@ -162,7 +162,8 @@ def test_sync_readme_embeds_dual_plot_sets_table_explanations_and_code(tmp_path)
     assert "| Language family | Primary runtime | Objective | CPU | Wall | Memory | LOC | Tasks |" in content
     assert "| Language family | Primary runtime | Opinionated | Scalability | Ease | Community | Debugging | Docs | Libraries | Concurrency | Tasks |" in content
     assert "What the current executable tests do" in content
-    assert "Code examples from the current implementations" in content
+    assert "Code examples from the current implementations" not in content
+    assert "- **Implementations:**" in content
     assert "### Category leaderboards" in content
     assert "| Runtime | Overall | Objective | Opinionated | Tasks |" in content
     assert "| Runtime | Objective | CPU | Wall | Memory | LOC | Tasks |" in content
@@ -200,8 +201,6 @@ def test_sync_readme_embeds_dual_plot_sets_table_explanations_and_code(tmp_path)
     assert "docs/plots/best_case_task_sort_integers_ranked.svg" in content
     assert "#### `sort_integers`" in content
     assert "**Implementations:**" in content
-    assert "```python" in content
-    assert "##### Python" in content
     assert "| Python | Python 3.12 | 90.50 | 87.45 | 91.68 | 2 |" in content
     assert "| Python | Python 3.12 | 87.45 | 91.00 | 89.00 | 80.00 | 88.00 | 2 |" in content
     assert "| Python | Python 3.12 | 91.68 | 95.00 | 92.00 | 90.00 | 91.00 | 93.00 | 94.00 | 87.00 | 2 |" in content

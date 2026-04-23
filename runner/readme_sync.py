@@ -101,15 +101,6 @@ LANGUAGE_LABELS = {
     "go": "Go",
     "rust": "Rust",
 }
-CODE_FENCE_LABELS = {
-    "php": "php",
-    "python": "python",
-    "java": "java",
-    "cpp": "cpp",
-    "node": "javascript",
-    "go": "go",
-    "rust": "rust",
-}
 TASK_EXPLANATIONS = {
     "sort_integers": {
         "how": "Each implementation reads a deterministic fixture of integers, parses them into an in-memory array/vector/list, sorts ascending, and prints the sum of the first 100 values as a correctness checksum.",
@@ -1109,14 +1100,6 @@ def _build_section(payload: dict, plot_rel_dir: Path, docs_dir: Path, previous_m
     lines.extend(_task_explanation_lines(tasks))
     lines.extend([
         "",
-        "### Code examples from the current implementations",
-        "",
-        "The snippets below are taken directly from the runnable task implementations used in this repository today. They are not pseudocode; they are the actual source files executed inside the benchmark containers for the tasks in this snapshot.",
-        "",
-    ])
-    lines.extend(_task_code_example_lines(tasks))
-    lines.extend([
-        "",
         "### What this benchmark is not",
         "",
         "- It is **not** a universal truth about a language; it is a comparison across this repository's fixed workload mix.",
@@ -2061,44 +2044,6 @@ def _task_raw_table_lines(medians: list[dict], task_ids: list[str], versioned: b
             )
         lines.extend(["", "</details>", ""])
     return lines
-
-
-def _task_code_example_lines(task_ids: list[str]) -> list[str]:
-    lines: list[str] = []
-    catalog = _catalog_by_id()
-    for task_id in task_ids:
-        task = catalog.get(task_id)
-        if task is None:
-            continue
-        lines.append(f"<details>")
-        lines.append(f"<summary><strong>{task_id}</strong> — {task.name}</summary>")
-        lines.append("")
-        explanation = TASK_EXPLANATIONS.get(task_id)
-        if explanation:
-            lines.append(f"This task reads the same deterministic fixture in every language and validates the workload with a printed checksum/result. {explanation['tests']}")
-            lines.append("")
-        for language in _canonical_language_order():
-            snippet = _read_task_snippet(language, task_id)
-            if not snippet:
-                continue
-            lines.extend([
-                f"##### {LANGUAGE_LABELS.get(language, language)}",
-                "",
-                f"```{CODE_FENCE_LABELS.get(language, '')}",
-                snippet,
-                "```",
-                "",
-            ])
-        lines.append("</details>")
-        lines.append("")
-    return lines
-
-
-def _read_task_snippet(language: str, task_id: str) -> str:
-    path = _task_source_path(language, task_id)
-    if not path.exists():
-        return ""
-    return path.read_text(encoding="utf-8").strip()
 
 
 def _task_source_path(language: str, task_id: str) -> Path:
