@@ -41,6 +41,8 @@ def score_results(rows: list[dict], weights: dict[str, float]) -> tuple[list[dic
         memory_values = [x["max_rss_mb"] for x in bucket if x["max_rss_mb"] is not None]
         medians.append({
             "language": language,
+            "runtime_id": bucket[0].get("runtime_id", language),
+            "architecture": bucket[0].get("architecture", "unknown"),
             "language_family": bucket[0].get("language_family", language),
             "language_label": bucket[0].get("language_label", language),
             "language_version": bucket[0].get("language_version"),
@@ -159,6 +161,8 @@ def _aggregate_language_scores(medians: list[dict], all_rows: list[dict], weight
         output[-1]["language_family"] = bucket[0].get("language_family", language)
         output[-1]["language_label"] = bucket[0].get("language_label", language)
         output[-1]["language_version"] = bucket[0].get("language_version")
+        output[-1]["runtime_id"] = bucket[0].get("runtime_id", language)
+        output[-1]["architecture"] = bucket[0].get("architecture", "unknown")
         output[-1]["cpu_geomean_score"] = round(_geomean([r["cpu_score"] for r in bucket]), 2)
         output[-1]["wall_geomean_score"] = round(_geomean([r["wall_score"] for r in bucket]), 2)
         output[-1]["cpu_cv_percent"] = round(_avg_cv(bucket, "cpu_stddev_seconds", "cpu_seconds"), 2)

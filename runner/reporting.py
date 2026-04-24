@@ -523,6 +523,7 @@ def generate_report(results_path: Path, output_dir: Path) -> Path:
         "iterations": profile.get("iterations") or config.iterations,
         "warmups": profile.get("warmups") or config.warmups,
         "jobs": profile.get("jobs") or 1,
+        "architectures": profile.get("architectures") or config.architectures,
         "baseline_runtime": baseline_runtime,
     }
     baseline_rows = _baseline_rows(aggregate, raw_unit_rows, baseline_runtime)
@@ -608,20 +609,23 @@ def _ordered_rows(
         return []
     canonical = _canonical_language_order() if best_case else _canonical_variant_order()
     order_index = {language: index for index, language in enumerate(canonical)}
+    def order_key(row: dict) -> str:
+        return str(row.get("runtime_id") or row.get("language", "")).split("@", 1)[0]
+
     enriched = list(rows)
     if ranked and metric:
         return sorted(
             enriched,
             key=lambda row: (
                 (-1 if reverse_for_ranking else 1) * float(row.get(metric, 0) or 0),
-                order_index.get(row.get("language", ""), len(order_index)),
+                order_index.get(order_key(row), len(order_index)),
                 row.get("language", ""),
             ),
         )
     return sorted(
         enriched,
         key=lambda row: (
-            order_index.get(row.get("language", ""), len(order_index)),
+            order_index.get(order_key(row), len(order_index)),
             row.get("language", ""),
         ),
     )
@@ -960,6 +964,8 @@ def _raw_unit_rows(medians: list[dict]) -> list[dict]:
     for language, bucket in grouped.items():
         rows.append({
             "language": language,
+            "runtime_id": bucket[0].get("runtime_id", language),
+            "architecture": bucket[0].get("architecture", "unknown"),
             "language_family": bucket[0].get("language_family", language),
             "language_label": bucket[0].get("language_label", language),
             "language_version": bucket[0].get("language_version"),
@@ -1236,9 +1242,9 @@ def _task_score_rows(medians: list[dict], weights: dict[str, float]) -> dict[str
 def _task_baseline_rows(task_rows: list[dict], baseline_runtime: str) -> list[dict]:
     config = load_app_config()
     baseline_family = config.language_variants.get(baseline_runtime, {}).get("family", baseline_runtime)
-    baseline = next((row for row in task_rows if row.get("language") == baseline_runtime), None)
+    baseline = next((row for row in task_rows if row.get("language") == baseline_runtime or row.get("runtime_id") == baseline_runtime), None)
     if baseline is None:
-        baseline = next((row for row in task_rows if row.get("language") == baseline_family), None)
+        baseline = next((row for row in task_rows if row.get("language") == baseline_family or row.get("language_family") == baseline_family), None)
     if baseline is None:
         return []
     return [
@@ -1333,6 +1339,7 @@ def _host_metadata_html(host: dict) -> str:
         ("release", "Kernel / release"),
         ("platform", "Platform"),
         ("machine", "Machine"),
+        ("architecture", "Normalized architecture"),
         ("cpu_model", "CPU model"),
         ("cpu_count", "CPU count"),
         ("python_version", "Python"),
@@ -1356,6 +1363,7 @@ def _runtime_matrix_html(runtimes: list[dict]) -> str:
             "<tr>"
             f"<td>{escape(str(row.get('language_label') or row.get('language') or ''))}</td>"
             f"<td>{escape(str(row.get('language_family') or ''))}</td>"
+            f"<td>{escape(str(row.get('architecture') or ''))}</td>"
             f"<td>{escape(str(row.get('configured_version') or ''))}</td>"
             f"<td>{escape(str(row.get('reported_version') or ''))}</td>"
             f"<td>{escape(_normalized_image_label(row.get('image') or ''))}</td>"
@@ -1363,7 +1371,7 @@ def _runtime_matrix_html(runtimes: list[dict]) -> str:
         )
     return (
         "<table><thead><tr>"
-        "<th>Runtime</th><th>Family</th><th>Configured version</th><th>Reported version</th><th>Image</th>"
+        "<th>Runtime</th><th>Family</th><th>Architecture</th><th>Configured version</th><th>Reported version</th><th>Image</th>"
         "</tr></thead>"
         f"<tbody>{''.join(rows)}</tbody></table>"
     )
@@ -1528,6 +1536,8 @@ def _service_split_rows(medians: list[dict]) -> list[dict]:
         workload = [float(row.get("workload_wall_seconds") or 0) for row in bucket if row.get("workload_wall_seconds") is not None]
         rows.append({
             "language": language,
+            "runtime_id": bucket[0].get("runtime_id", language),
+            "architecture": bucket[0].get("architecture", "unknown"),
             "language_label": bucket[0].get("language_label", language),
             "service_task_count": len(bucket),
             "startup_wall_avg": sum(startup) / len(startup) if startup else 0.0,
@@ -1559,8 +1569,18 @@ def _baseline_rows(aggregate: list[dict], raw_unit_rows: list[dict], baseline_ru
     raw_by_language = {row["language"]: row for row in raw_unit_rows}
     config = load_app_config()
     baseline_family = config.language_variants.get(baseline_runtime, {}).get("family", baseline_runtime)
-    baseline_agg = aggregate_by_language.get(baseline_runtime) or aggregate_by_language.get(baseline_family)
-    baseline_raw = raw_by_language.get(baseline_runtime) or raw_by_language.get(baseline_family)
+    baseline_agg = (
+        aggregate_by_language.get(baseline_runtime)
+        or next((row for row in aggregate if row.get("runtime_id") == baseline_runtime), None)
+        or aggregate_by_language.get(baseline_family)
+        or next((row for row in aggregate if row.get("language_family") == baseline_family), None)
+    )
+    baseline_raw = (
+        raw_by_language.get(baseline_runtime)
+        or next((row for row in raw_unit_rows if row.get("runtime_id") == baseline_runtime), None)
+        or raw_by_language.get(baseline_family)
+        or next((row for row in raw_unit_rows if row.get("language_family") == baseline_family), None)
+    )
     if not baseline_agg or not baseline_raw:
         return []
     rows = []
@@ -1861,6 +1881,7 @@ def _html_page(
         "iterations": profile.get("iterations") or config.iterations,
         "warmups": profile.get("warmups") or config.warmups,
         "jobs": profile.get("jobs") or 1,
+        "architectures": profile.get("architectures") or config.architectures,
         "baseline_runtime": baseline_runtime,
     }
     version_history_iframe = "<iframe src='history_version_matrix_overall.svg'></iframe>" if len(version_history_rows) >= 2 else ""
@@ -1947,12 +1968,13 @@ def _html_page(
     <tr><td>Iterations</td><td>{escape(str(effective_profile.get("iterations")))}</td></tr>
     <tr><td>Warmups</td><td>{escape(str(effective_profile.get("warmups")))}</td></tr>
     <tr><td>Jobs</td><td>{escape(str(effective_profile.get("jobs")))}</td></tr>
+    <tr><td>Architectures</td><td>{escape(', '.join(effective_profile.get("architectures") or []))}</td></tr>
     <tr><td>Baseline runtime</td><td>{escape(str(effective_profile.get("baseline_runtime")))}</td></tr>
   </tbody></table>
   <h2>Regression vs previous published snapshot</h2>
   {_regression_summary_html(aggregate, weights, previous_manifest)}
   <h2>Tested runtime versions</h2>
-  <p>Each benchmark run also records the configured and reported runtime version for every tested language/runtime variant.</p>
+  <p>Each benchmark run records the configured/reported runtime version and CPU architecture for every tested runtime variant. Runtime identity is architecture-aware, so future ARM, RISC-V, or other host runs can be added without collapsing them into the current architecture's results.</p>
   {_runtime_matrix_html(runtimes)}
   <ul class='caption-list'>
     <li><strong>Per-version charts:</strong> one bar per tested runtime variant, such as PHP 5.6 vs PHP 8.4.</li>

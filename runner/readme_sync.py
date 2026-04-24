@@ -7,7 +7,7 @@ import shutil
 from statistics import pstdev
 
 from runner.config import ROOT, load_app_config, load_catalog, load_rubrics, load_weights
-from runner.scoring import split_aggregate_scores, aggregate_for_task_ids
+from runner.scoring import score_results, split_aggregate_scores, aggregate_for_task_ids
 from runner.utils import ensure_dir, read_json, write_json
 
 MARKER_BEGIN = "<!-- benchmark:begin -->"
@@ -290,6 +290,158 @@ def _stable_results_path(path: Path | str | None) -> str | None:
         return resolved.as_posix()
 
 
+def _results_path_from_stable(path: str | Path | None) -> Path | None:
+    if not path:
+        return None
+    raw = Path(path)
+    return raw if raw.is_absolute() else ROOT / raw
+
+
+def _architecture_publish_payload(payload: dict, results_path: Path, docs_dir: Path, previous_manifest: dict | None) -> tuple[dict, Path]:
+    """Return the architecture-union payload used for README/report publication.
+
+    Each architecture has one authoritative source artifact. A fresh x86_64 run
+    replaces the x86_64 slice; a later aarch64 run replaces only the aarch64
+    slice and keeps the latest known x86_64 slice in the published tables.
+    """
+
+    current_architectures = _payload_architectures(payload)
+    if not current_architectures:
+        return payload, results_path
+
+    current_source = _stable_results_path(results_path)
+    architecture_results = _previous_architecture_results(previous_manifest)
+    for architecture in current_architectures:
+        architecture_results[architecture] = current_source
+    architecture_results = {
+        architecture: source
+        for architecture, source in sorted(architecture_results.items())
+        if source and _results_path_from_stable(source) and _results_path_from_stable(source).exists()
+    }
+
+    if len(architecture_results) <= 1:
+        payload["architecture_results"] = architecture_results
+        payload["architecture_source_runs"] = _architecture_source_runs(architecture_results, payload, current_source)
+        source_notes = dict(payload.get("source_notes") or {})
+        source_notes["architecture_sources"] = architecture_results
+        payload["source_notes"] = source_notes
+        return payload, results_path
+
+    merged = _merge_architecture_sources(architecture_results, payload, current_source)
+    target = results_path.parent / "architecture_merged_scored_results.json"
+    write_json(target, merged)
+    return merged, target
+
+
+def _previous_architecture_results(previous_manifest: dict | None) -> dict[str, str]:
+    if not previous_manifest:
+        return {}
+    explicit = previous_manifest.get("architecture_results")
+    if isinstance(explicit, dict):
+        return {
+            str(architecture): str(source)
+            for architecture, source in explicit.items()
+            if architecture and source
+        }
+    canonical = previous_manifest.get("canonical_results")
+    canonical_path = _results_path_from_stable(canonical)
+    if not canonical_path or not canonical_path.exists():
+        return {}
+    try:
+        payload = read_json(canonical_path)
+    except Exception:
+        return {}
+    source = _stable_results_path(canonical_path)
+    return {architecture: source for architecture in _payload_architectures(payload)}
+
+
+def _payload_architectures(payload: dict) -> list[str]:
+    architectures: set[str] = set()
+    for collection_name in ("rows", "medians", "aggregate", "runtimes"):
+        for row in payload.get(collection_name) or []:
+            architecture = row.get("architecture")
+            if architecture:
+                architectures.add(str(architecture))
+    profile_architectures = (payload.get("profile") or {}).get("architectures") or []
+    if isinstance(profile_architectures, str):
+        profile_architectures = [profile_architectures]
+    for architecture in profile_architectures:
+        if architecture and architecture != "host":
+            architectures.add(str(architecture))
+    host_architecture = (payload.get("host") or {}).get("architecture")
+    if host_architecture:
+        architectures.add(str(host_architecture))
+    return sorted(architectures)
+
+
+def _architecture_source_runs(architecture_results: dict[str, str], current_payload: dict, current_source: str | None) -> dict[str, dict]:
+    runs: dict[str, dict] = {}
+    for architecture, source in architecture_results.items():
+        if source == current_source:
+            source_payload = current_payload
+        else:
+            source_path = _results_path_from_stable(source)
+            if not source_path or not source_path.exists():
+                continue
+            source_payload = read_json(source_path)
+        runs[architecture] = {
+            "run_id": source_payload.get("run_id"),
+            "results": source,
+            "host": (source_payload.get("host") or {}).get("hostname"),
+            "architecture": architecture,
+        }
+    return runs
+
+
+def _merge_architecture_sources(architecture_results: dict[str, str], current_payload: dict, current_source: str | None) -> dict:
+    combined_rows: list[dict] = []
+    combined_runtimes: dict[str, dict] = {}
+    source_runs = _architecture_source_runs(architecture_results, current_payload, current_source)
+    source_payloads: dict[str, dict] = {}
+    for source in sorted(set(architecture_results.values())):
+        if source == current_source:
+            source_payloads[source] = current_payload
+            continue
+        source_path = _results_path_from_stable(source)
+        if source_path and source_path.exists():
+            source_payloads[source] = read_json(source_path)
+
+    for architecture, source in architecture_results.items():
+        source_payload = source_payloads.get(source)
+        if not source_payload:
+            continue
+        for row in source_payload.get("rows") or []:
+            if row.get("architecture") == architecture:
+                combined_rows.append(dict(row))
+        for runtime in source_payload.get("runtimes") or []:
+            if runtime.get("architecture") != architecture:
+                continue
+            key = str(runtime.get("language") or f"{runtime.get('runtime_id')}@{architecture}")
+            combined_runtimes[key] = dict(runtime)
+
+    weights = current_payload.get("weights") or load_weights()
+    medians, aggregate = score_results(combined_rows, weights)
+    source_notes = dict(current_payload.get("source_notes") or {})
+    source_notes["architecture_sources"] = architecture_results
+    profile = dict(current_payload.get("profile") or {})
+    profile["architectures"] = sorted(architecture_results)
+    profile["architecture_sources"] = architecture_results
+    merged = {
+        **current_payload,
+        "host": current_payload.get("host"),
+        "profile": profile,
+        "runtimes": sorted(combined_runtimes.values(), key=lambda row: str(row.get("language") or "")),
+        "rows": combined_rows,
+        "medians": medians,
+        "aggregate": aggregate,
+        "weights": weights,
+        "architecture_results": architecture_results,
+        "architecture_source_runs": source_runs,
+        "source_notes": source_notes,
+    }
+    return merged
+
+
 def _current_snapshot_task_ids(payload: dict) -> list[str]:
     return sorted({str(row.get("task_id")) for row in payload.get("medians", []) if row.get("task_id")})
 
@@ -363,6 +515,7 @@ def _effective_previous_manifest(docs_dir: Path, current_run_id: str, previous_m
 def sync_readme(results_path: Path, readme_path: Path, docs_dir: Path) -> Path:
     payload = read_json(results_path)
     previous_manifest = _load_previous_publish_manifest(docs_dir)
+    payload, results_path = _architecture_publish_payload(payload, results_path, docs_dir, previous_manifest)
     _archive_publish_history(payload, results_path, docs_dir, previous_manifest)
     report_dir = results_path.parent / "report"
     plot_dir = ensure_dir(docs_dir / "plots")
@@ -485,6 +638,8 @@ def _build_section(payload: dict, plot_rel_dir: Path, docs_dir: Path, previous_m
     lines.extend([
         "",
         "### Runtime versions present in this published snapshot",
+        "",
+        "Runtime identity is architecture-aware: each row represents a specific language/runtime version on a specific CPU architecture so future ARM, RISC-V, or other host runs can be added without collapsing them into the current x86_64 results.",
         "",
     ])
     lines.extend(_runtime_lines(all_runtimes))
@@ -1409,11 +1564,15 @@ def _published_runtimes(payload: dict, docs_dir: Path | None = None) -> list[dic
         merged[str(language)] = row
     ordered = []
     variant_order = _canonical_variant_order()
+    def runtime_order_id(row: dict) -> str:
+        return str(row.get("runtime_id") or row.get("language") or "").split("@", 1)[0]
+
     for variant in variant_order:
-        if variant in merged:
-            ordered.append(merged[variant])
+        for language, row in merged.items():
+            if runtime_order_id(row) == variant and row not in ordered:
+                ordered.append(row)
     for language, row in merged.items():
-        if language not in variant_order:
+        if row not in ordered:
             ordered.append(row)
     return ordered
 
@@ -1451,6 +1610,7 @@ def _host_lines(host: dict) -> list[str]:
         ("release", "Kernel / release"),
         ("platform", "Platform"),
         ("machine", "Machine"),
+        ("architecture", "Normalized architecture"),
         ("cpu_model", "CPU model"),
         ("cpu_count", "CPU count"),
         ("python_version", "Python"),
@@ -1489,12 +1649,12 @@ def _runtime_lines(runtimes: list[dict]) -> list[str]:
     if not runtimes:
         return ["Runtime version metadata was not available in this results file."]
     lines = [
-        "| Runtime | Family | Configured version | Reported version | Image |",
-        "|---|---|---|---|---|",
+        "| Runtime | Family | Architecture | Configured version | Reported version | Image |",
+        "|---|---|---|---|---|---|",
     ]
     for row in runtimes:
         lines.append(
-            f"| {_display_name(row)} | {row.get('language_family', '')} | {row.get('configured_version', '')} | {row.get('reported_version', '')} | {_normalized_image_label(row.get('image', ''))} |"
+            f"| {_display_name(row)} | {row.get('language_family', '')} | {row.get('architecture', '')} | {row.get('configured_version', '')} | {row.get('reported_version', '')} | {_normalized_image_label(row.get('image', ''))} |"
         )
     return lines
 
@@ -1523,6 +1683,8 @@ def _write_publish_manifest(payload: dict, results_path: Path, docs_dir: Path, p
         "version_matrix_results": version_matrix_source,
         "runtime_metadata_source": runtime_metadata_source,
         "javascript_runtime_source": javascript_runtime_source,
+        "architecture_results": payload.get("architecture_results") or {},
+        "architecture_source_runs": payload.get("architecture_source_runs") or {},
         "host": payload.get("host"),
         "git": payload.get("git"),
         "profile": profile,
@@ -1551,6 +1713,8 @@ def _archive_publish_history(payload: dict, results_path: Path, docs_dir: Path, 
         "version_matrix_results": version_matrix_source,
         "runtime_metadata_source": runtime_metadata_source,
         "javascript_runtime_source": javascript_runtime_source,
+        "architecture_results": payload.get("architecture_results") or {},
+        "architecture_source_runs": payload.get("architecture_source_runs") or {},
         "host": payload.get("host"),
         "git": payload.get("git"),
         "profile": profile,
@@ -1673,6 +1837,8 @@ def _service_split_rows(medians: list[dict]) -> list[dict]:
         workload = [float(row.get("workload_wall_seconds") or 0) for row in bucket if row.get("workload_wall_seconds") is not None]
         rows.append({
             "language": language,
+            "runtime_id": bucket[0].get("runtime_id", language),
+            "architecture": bucket[0].get("architecture", "unknown"),
             "language_label": bucket[0].get("language_label", language),
             "samples": len(bucket),
             "startup_wall_avg": sum(startup) / len(startup) if startup else 0.0,
@@ -1680,7 +1846,8 @@ def _service_split_rows(medians: list[dict]) -> list[dict]:
             "workload_wall_avg": sum(workload) / len(workload) if workload else 0.0,
             "workload_wall_avg_ci95": (1.96 * pstdev(workload) / (len(workload) ** 0.5)) if len(workload) > 1 else 0.0,
         })
-    return sorted(rows, key=lambda row: _canonical_variant_order().index(row["language"]) if row["language"] in _canonical_variant_order() else 999)
+    canonical = _canonical_variant_order()
+    return sorted(rows, key=lambda row: canonical.index(str(row.get("runtime_id") or row["language"]).split("@", 1)[0]) if str(row.get("runtime_id") or row["language"]).split("@", 1)[0] in canonical else 999)
 
 
 def _has_service_split_data(medians: list[dict]) -> bool:
@@ -1710,6 +1877,7 @@ def _profile_lines(profile: dict) -> list[str]:
         "iterations": profile.get("iterations") if profile else config.iterations,
         "warmups": profile.get("warmups") if profile else config.warmups,
         "jobs": profile.get("jobs") if profile else 1,
+        "architectures": profile.get("architectures") if profile else config.architectures,
         "baseline_runtime": profile.get("baseline_runtime") if profile else config.baseline_runtime,
         "engine": profile.get("engine") if profile else config.engine,
     }
@@ -1718,6 +1886,7 @@ def _profile_lines(profile: dict) -> list[str]:
         ("Iterations", effective.get("iterations")),
         ("Warmups", effective.get("warmups")),
         ("Jobs", effective.get("jobs")),
+        ("Architectures", ", ".join(effective.get("architectures") or [])),
         ("Baseline runtime", effective.get("baseline_runtime")),
         ("Engine", effective.get("engine")),
     ]
@@ -1780,8 +1949,18 @@ def _baseline_rows(payload: dict) -> tuple[str, list[dict]]:
             "memory_mb_avg": sum(float(row.get("max_rss_mb", 0) or 0) for row in bucket) / max(len(bucket), 1),
         }
     aggregate_by_language = {row["language"]: row for row in aggregate}
-    baseline_agg = aggregate_by_language.get(baseline_runtime) or aggregate_by_language.get(baseline_family)
-    baseline_raw = raw_rows.get(baseline_runtime) or raw_rows.get(baseline_family)
+    baseline_agg = (
+        aggregate_by_language.get(baseline_runtime)
+        or next((row for row in aggregate if row.get("runtime_id") == baseline_runtime), None)
+        or aggregate_by_language.get(baseline_family)
+        or next((row for row in aggregate if row.get("language_family") == baseline_family), None)
+    )
+    baseline_raw = (
+        raw_rows.get(baseline_runtime)
+        or next((raw_rows.get(str(row.get("language"))) for row in medians if row.get("runtime_id") == baseline_runtime and raw_rows.get(str(row.get("language")))), None)
+        or raw_rows.get(baseline_family)
+        or next((raw_rows.get(str(row.get("language"))) for row in medians if row.get("language_family") == baseline_family and raw_rows.get(str(row.get("language")))), None)
+    )
     if not baseline_agg or not baseline_raw:
         return baseline_runtime, []
     rows = []
@@ -1862,6 +2041,10 @@ def _provenance_lines(payload: dict) -> list[str]:
     source_notes = payload.get("source_notes") or {}
     lines = ["| Published view | Source artifact |", "|---|---|"]
     lines.append(f"| Canonical README/report snapshot | `{payload.get('run_id', 'unknown')}` |")
+    architecture_sources = source_notes.get("architecture_sources") or payload.get("architecture_results") or {}
+    if isinstance(architecture_sources, dict) and architecture_sources:
+        for architecture, source in sorted(architecture_sources.items()):
+            lines.append(f"| Architecture truth: `{architecture}` | `{_stable_results_path(source)}` |")
     for label, key in [
         ("Version-matrix supplemental view", "version_matrix_source"),
         ("Runtime metadata source", "runtime_metadata_source"),
@@ -2015,7 +2198,7 @@ def _task_raw_table_lines(medians: list[dict], task_ids: list[str], versioned: b
         rows = sorted(
             grouped.get(task_id, []),
             key=lambda row: (
-                canonical.index(row["language"]) if row.get("language") in canonical else 999,
+                canonical.index(str(row.get("runtime_id") or row.get("language", "")).split("@", 1)[0]) if str(row.get("runtime_id") or row.get("language", "")).split("@", 1)[0] in canonical else 999,
                 size_order.get(row.get("size"), 999),
             ),
         )

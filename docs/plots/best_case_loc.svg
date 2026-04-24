@@ -19,24 +19,24 @@
 <line x1='64' y1='102' x2='812' y2='102' stroke='#e5e7eb' stroke-width='1'/>
 <text x='54' y='106' text-anchor='end' font-size='11' fill='#555'>100</text>
 <line x1='64' y1='424' x2='812' y2='424' stroke='black'/>
-<rect x='76' y='316' width='88' height='108' rx='4' fill='#4f46e5'/>
-<text x='120.0' y='446' text-anchor='middle' font-size='12'>PHP</text>
-<text x='120.0' y='308' text-anchor='middle' font-size='12'>33.6</text>
-<rect x='182' y='271' width='88' height='153' rx='4' fill='#4f46e5'/>
-<text x='226.0' y='446' text-anchor='middle' font-size='12'>Python</text>
-<text x='226.0' y='263' text-anchor='middle' font-size='12'>47.5</text>
+<rect x='76' y='340' width='88' height='84' rx='4' fill='#4f46e5'/>
+<text x='120.0' y='446' text-anchor='middle' font-size='12'>C++</text>
+<text x='120.0' y='332' text-anchor='middle' font-size='12'>26.2</text>
+<rect x='182' y='324' width='88' height='100' rx='4' fill='#4f46e5'/>
+<text x='226.0' y='446' text-anchor='middle' font-size='12'>Go</text>
+<text x='226.0' y='316' text-anchor='middle' font-size='12'>31.4</text>
 <rect x='288' y='326' width='88' height='98' rx='4' fill='#4f46e5'/>
 <text x='332.0' y='446' text-anchor='middle' font-size='12'>Java</text>
 <text x='332.0' y='318' text-anchor='middle' font-size='12'>30.5</text>
-<rect x='394' y='340' width='88' height='84' rx='4' fill='#4f46e5'/>
-<text x='438.0' y='446' text-anchor='middle' font-size='12'>C++</text>
-<text x='438.0' y='332' text-anchor='middle' font-size='12'>26.2</text>
-<rect x='500' y='302' width='88' height='122' rx='4' fill='#4f46e5'/>
-<text x='544.0' y='446' text-anchor='middle' font-size='12'>Node.js</text>
-<text x='544.0' y='294' text-anchor='middle' font-size='12'>38.2</text>
-<rect x='606' y='324' width='88' height='100' rx='4' fill='#4f46e5'/>
-<text x='650.0' y='446' text-anchor='middle' font-size='12'>Go</text>
-<text x='650.0' y='316' text-anchor='middle' font-size='12'>31.4</text>
+<rect x='394' y='302' width='88' height='122' rx='4' fill='#4f46e5'/>
+<text x='438.0' y='446' text-anchor='middle' font-size='12'>Node.js</text>
+<text x='438.0' y='294' text-anchor='middle' font-size='12'>38.2</text>
+<rect x='500' y='316' width='88' height='108' rx='4' fill='#4f46e5'/>
+<text x='544.0' y='446' text-anchor='middle' font-size='12'>PHP</text>
+<text x='544.0' y='308' text-anchor='middle' font-size='12'>33.6</text>
+<rect x='606' y='271' width='88' height='153' rx='4' fill='#4f46e5'/>
+<text x='650.0' y='446' text-anchor='middle' font-size='12'>Python</text>
+<text x='650.0' y='263' text-anchor='middle' font-size='12'>47.5</text>
 <rect x='712' y='290' width='88' height='134' rx='4' fill='#4f46e5'/>
 <text x='756.0' y='446' text-anchor='middle' font-size='12'>Rust</text>
 <text x='756.0' y='282' text-anchor='middle' font-size='12'>41.8</text>

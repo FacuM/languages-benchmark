@@ -9,38 +9,38 @@
 <tspan x='430.0' dy='0'>Runtime total wall-clock time divided by the configured baseline runtime. Lower is better;</tspan>
 <tspan x='430.0' dy='16'>baseline = 1.0x.</tspan>
 </text>
-<line x1='72' y1='438' x2='812' y2='438' stroke='#e5e7eb' stroke-width='1'/>
-<text x='62' y='442' text-anchor='end' font-size='11' fill='#555'>0.0x</text>
-<line x1='72' y1='358' x2='812' y2='358' stroke='#e5e7eb' stroke-width='1'/>
-<text x='62' y='362' text-anchor='end' font-size='11' fill='#555'>0.5x</text>
-<line x1='72' y1='278' x2='812' y2='278' stroke='#e5e7eb' stroke-width='1'/>
-<text x='62' y='282' text-anchor='end' font-size='11' fill='#555'>1.0x</text>
-<line x1='72' y1='198' x2='812' y2='198' stroke='#e5e7eb' stroke-width='1'/>
-<text x='62' y='202' text-anchor='end' font-size='11' fill='#555'>1.5x</text>
+<line x1='72' y1='390' x2='812' y2='390' stroke='#e5e7eb' stroke-width='1'/>
+<text x='62' y='394' text-anchor='end' font-size='11' fill='#555'>0.0x</text>
+<line x1='72' y1='322' x2='812' y2='322' stroke='#e5e7eb' stroke-width='1'/>
+<text x='62' y='326' text-anchor='end' font-size='11' fill='#555'>0.5x</text>
+<line x1='72' y1='254' x2='812' y2='254' stroke='#e5e7eb' stroke-width='1'/>
+<text x='62' y='258' text-anchor='end' font-size='11' fill='#555'>1.0x</text>
+<line x1='72' y1='186' x2='812' y2='186' stroke='#e5e7eb' stroke-width='1'/>
+<text x='62' y='190' text-anchor='end' font-size='11' fill='#555'>1.5x</text>
 <line x1='72' y1='118' x2='812' y2='118' stroke='#e5e7eb' stroke-width='1'/>
 <text x='62' y='122' text-anchor='end' font-size='11' fill='#555'>2.0x</text>
-<line x1='72' y1='438' x2='812' y2='438' stroke='black'/>
-<rect x='80' y='341' width='88' height='97' rx='4' fill='#0f766e'/>
-<text x='124.0' y='460' text-anchor='middle' font-size='12'>Rust 1.82</text>
-<text x='124.0' y='333' text-anchor='middle' font-size='12'>0.61x</text>
-<rect x='186' y='335' width='88' height='103' rx='4' fill='#0f766e'/>
-<text x='230.0' y='460' text-anchor='middle' font-size='12'>C++ (GCC 14)</text>
-<text x='230.0' y='327' text-anchor='middle' font-size='12'>0.65x</text>
-<rect x='292' y='335' width='88' height='103' rx='4' fill='#0f766e'/>
-<text x='336.0' y='460' text-anchor='middle' font-size='12'>Go 1.23</text>
-<text x='336.0' y='327' text-anchor='middle' font-size='12'>0.65x</text>
-<rect x='398' y='322' width='88' height='116' rx='4' fill='#0f766e'/>
-<text x='442.0' y='460' text-anchor='middle' font-size='12'>PHP 8.4</text>
-<text x='442.0' y='314' text-anchor='middle' font-size='12'>0.73x</text>
-<rect x='504' y='308' width='88' height='130' rx='4' fill='#0f766e'/>
-<text x='548.0' y='460' text-anchor='middle' font-size='12'>Node.js 22</text>
-<text x='548.0' y='300' text-anchor='middle' font-size='12'>0.82x</text>
-<rect x='610' y='278' width='88' height='160' rx='4' fill='#0f766e'/>
-<text x='654.0' y='460' text-anchor='middle' font-size='12'>Python 3.12</text>
-<text x='654.0' y='270' text-anchor='middle' font-size='12'>1.00x</text>
-<rect x='716' y='243' width='88' height='195' rx='4' fill='#0f766e'/>
-<text x='760.0' y='460' text-anchor='middle' font-size='12'>Java 21</text>
-<text x='760.0' y='235' text-anchor='middle' font-size='12'>1.22x</text>
+<line x1='72' y1='390' x2='812' y2='390' stroke='black'/>
+<rect x='80' y='308' width='88' height='82' rx='4' fill='#0f766e'/>
+<text x='132.0' y='430' transform='rotate(-30 132.0 430)' text-anchor='end' font-size='11' fill='#222'>Rust 1.82 [x86_64]</text>
+<text x='124.0' y='300' text-anchor='middle' font-size='12'>0.61x</text>
+<rect x='186' y='303' width='88' height='87' rx='4' fill='#0f766e'/>
+<text x='238.0' y='430' transform='rotate(-30 238.0 430)' text-anchor='end' font-size='11' fill='#222'>C++ (GCC 14) [x86_64]</text>
+<text x='230.0' y='295' text-anchor='middle' font-size='12'>0.65x</text>
+<rect x='292' y='302' width='88' height='88' rx='4' fill='#0f766e'/>
+<text x='344.0' y='430' transform='rotate(-30 344.0 430)' text-anchor='end' font-size='11' fill='#222'>Go 1.23 [x86_64]</text>
+<text x='336.0' y='294' text-anchor='middle' font-size='12'>0.65x</text>
+<rect x='398' y='291' width='88' height='99' rx='4' fill='#0f766e'/>
+<text x='450.0' y='430' transform='rotate(-30 450.0 430)' text-anchor='end' font-size='11' fill='#222'>PHP 8.4 [x86_64]</text>
+<text x='442.0' y='283' text-anchor='middle' font-size='12'>0.73x</text>
+<rect x='504' y='279' width='88' height='111' rx='4' fill='#0f766e'/>
+<text x='556.0' y='430' transform='rotate(-30 556.0 430)' text-anchor='end' font-size='11' fill='#222'>Node.js 22 [x86_64]</text>
+<text x='548.0' y='271' text-anchor='middle' font-size='12'>0.82x</text>
+<rect x='610' y='254' width='88' height='136' rx='4' fill='#0f766e'/>
+<text x='662.0' y='430' transform='rotate(-30 662.0 430)' text-anchor='end' font-size='11' fill='#222'>Python 3.12 [x86_64]</text>
+<text x='654.0' y='246' text-anchor='middle' font-size='12'>1.00x</text>
+<rect x='716' y='225' width='88' height='165' rx='4' fill='#0f766e'/>
+<text x='768.0' y='430' transform='rotate(-30 768.0 430)' text-anchor='end' font-size='11' fill='#222'>Java 21 [x86_64]</text>
+<text x='760.0' y='217' text-anchor='middle' font-size='12'>1.22x</text>
 <text x='430.0' y='508' text-anchor='middle' font-size='11' fill='#555'>
 <tspan x='430.0' dy='0'>Baseline runtime: python-3.12.</tspan>
 </text>

@@ -5,6 +5,17 @@
   "version_matrix_results": "results/20260423T043938Z/scored_results.json",
   "runtime_metadata_source": "results/20260423T043938Z/scored_results.json",
   "javascript_runtime_source": "results/20260423T043938Z/scored_results.json",
+  "architecture_results": {
+    "x86_64": "results/20260423T042840Z/scored_results.json"
+  },
+  "architecture_source_runs": {
+    "x86_64": {
+      "run_id": "20260423T042840Z",
+      "results": "results/20260423T042840Z/scored_results.json",
+      "host": "cachyos-x8664-hp16la",
+      "architecture": "x86_64"
+    }
+  },
   "host": {
     "hostname": "cachyos-x8664-hp16la",
     "platform": "Linux-6.19.11-1-cachyos-x86_64-with-glibc2.43",
@@ -15,7 +26,8 @@
     "cpu_count": 8,
     "cpu_model": "Intel(R) Core(TM) i5-10300H CPU @ 2.50GHz",
     "engine_binary": "docker",
-    "engine_version": "Docker version 29.4.0, build 9d7ad9ff18"
+    "engine_version": "Docker version 29.4.0, build 9d7ad9ff18",
+    "architecture": "x86_64"
   },
   "git": {
     "commit": "61cb41f4fd1703931ef034db67bf05ad97ba45f3",
@@ -37,7 +49,10 @@
     "jobs": 1,
     "engine": "docker",
     "baseline_runtime": "python-3.12",
-    "execution_mode": "container"
+    "execution_mode": "container",
+    "architectures": [
+      "x86_64"
+    ]
   },
   "previous_manifest": null
 }

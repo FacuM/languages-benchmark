@@ -8,38 +8,38 @@
 <text x='430.0' y='72' text-anchor='middle' font-size='12' fill='#555'>
 <tspan x='430.0' dy='0'>Average of per-task/per-size median peak RSS values for each language. Lower is better.</tspan>
 </text>
-<line x1='72' y1='424' x2='812' y2='424' stroke='#e5e7eb' stroke-width='1'/>
-<text x='62' y='428' text-anchor='end' font-size='11' fill='#555'>0.0</text>
-<line x1='72' y1='344' x2='812' y2='344' stroke='#e5e7eb' stroke-width='1'/>
-<text x='62' y='348' text-anchor='end' font-size='11' fill='#555'>12.5</text>
-<line x1='72' y1='263' x2='812' y2='263' stroke='#e5e7eb' stroke-width='1'/>
-<text x='62' y='267' text-anchor='end' font-size='11' fill='#555'>25.0</text>
-<line x1='72' y1='183' x2='812' y2='183' stroke='#e5e7eb' stroke-width='1'/>
-<text x='62' y='187' text-anchor='end' font-size='11' fill='#555'>37.5</text>
+<line x1='72' y1='376' x2='812' y2='376' stroke='#e5e7eb' stroke-width='1'/>
+<text x='62' y='380' text-anchor='end' font-size='11' fill='#555'>0.0</text>
+<line x1='72' y1='308' x2='812' y2='308' stroke='#e5e7eb' stroke-width='1'/>
+<text x='62' y='312' text-anchor='end' font-size='11' fill='#555'>12.5</text>
+<line x1='72' y1='239' x2='812' y2='239' stroke='#e5e7eb' stroke-width='1'/>
+<text x='62' y='243' text-anchor='end' font-size='11' fill='#555'>25.0</text>
+<line x1='72' y1='171' x2='812' y2='171' stroke='#e5e7eb' stroke-width='1'/>
+<text x='62' y='175' text-anchor='end' font-size='11' fill='#555'>37.5</text>
 <line x1='72' y1='102' x2='812' y2='102' stroke='#e5e7eb' stroke-width='1'/>
 <text x='62' y='106' text-anchor='end' font-size='11' fill='#555'>50.0</text>
-<line x1='72' y1='424' x2='812' y2='424' stroke='black'/>
-<rect x='80' y='390' width='88' height='34' rx='4' fill='#0f766e'/>
-<text x='124.0' y='446' text-anchor='middle' font-size='12'>Rust 1.82</text>
-<text x='124.0' y='382' text-anchor='middle' font-size='12'>5.4 MB</text>
-<rect x='186' y='387' width='88' height='37' rx='4' fill='#0f766e'/>
-<text x='230.0' y='446' text-anchor='middle' font-size='12'>C++ (GCC 14)</text>
-<text x='230.0' y='379' text-anchor='middle' font-size='12'>5.8 MB</text>
-<rect x='292' y='350' width='88' height='74' rx='4' fill='#0f766e'/>
-<text x='336.0' y='446' text-anchor='middle' font-size='12'>Go 1.23</text>
-<text x='336.0' y='342' text-anchor='middle' font-size='12'>11.6 MB</text>
-<rect x='398' y='306' width='88' height='118' rx='4' fill='#0f766e'/>
-<text x='442.0' y='446' text-anchor='middle' font-size='12'>Python 3.12</text>
-<text x='442.0' y='298' text-anchor='middle' font-size='12'>18.3 MB</text>
-<rect x='504' y='268' width='88' height='156' rx='4' fill='#0f766e'/>
-<text x='548.0' y='446' text-anchor='middle' font-size='12'>PHP 8.4</text>
-<text x='548.0' y='260' text-anchor='middle' font-size='12'>24.3 MB</text>
-<rect x='610' y='141' width='88' height='283' rx='4' fill='#0f766e'/>
-<text x='654.0' y='446' text-anchor='middle' font-size='12'>Node.js 22</text>
-<text x='654.0' y='133' text-anchor='middle' font-size='12'>44.0 MB</text>
-<rect x='716' y='125' width='88' height='299' rx='4' fill='#0f766e'/>
-<text x='760.0' y='446' text-anchor='middle' font-size='12'>Java 21</text>
-<text x='760.0' y='117' text-anchor='middle' font-size='12'>46.4 MB</text>
+<line x1='72' y1='376' x2='812' y2='376' stroke='black'/>
+<rect x='80' y='347' width='88' height='29' rx='4' fill='#0f766e'/>
+<text x='132.0' y='416' transform='rotate(-30 132.0 416)' text-anchor='end' font-size='11' fill='#222'>Rust 1.82 [x86_64]</text>
+<text x='124.0' y='339' text-anchor='middle' font-size='12'>5.4 MB</text>
+<rect x='186' y='345' width='88' height='31' rx='4' fill='#0f766e'/>
+<text x='238.0' y='416' transform='rotate(-30 238.0 416)' text-anchor='end' font-size='11' fill='#222'>C++ (GCC 14) [x86_64]</text>
+<text x='230.0' y='337' text-anchor='middle' font-size='12'>5.8 MB</text>
+<rect x='292' y='313' width='88' height='63' rx='4' fill='#0f766e'/>
+<text x='344.0' y='416' transform='rotate(-30 344.0 416)' text-anchor='end' font-size='11' fill='#222'>Go 1.23 [x86_64]</text>
+<text x='336.0' y='305' text-anchor='middle' font-size='12'>11.6 MB</text>
+<rect x='398' y='276' width='88' height='100' rx='4' fill='#0f766e'/>
+<text x='450.0' y='416' transform='rotate(-30 450.0 416)' text-anchor='end' font-size='11' fill='#222'>Python 3.12 [x86_64]</text>
+<text x='442.0' y='268' text-anchor='middle' font-size='12'>18.3 MB</text>
+<rect x='504' y='243' width='88' height='133' rx='4' fill='#0f766e'/>
+<text x='556.0' y='416' transform='rotate(-30 556.0 416)' text-anchor='end' font-size='11' fill='#222'>PHP 8.4 [x86_64]</text>
+<text x='548.0' y='235' text-anchor='middle' font-size='12'>24.3 MB</text>
+<rect x='610' y='135' width='88' height='241' rx='4' fill='#0f766e'/>
+<text x='662.0' y='416' transform='rotate(-30 662.0 416)' text-anchor='end' font-size='11' fill='#222'>Node.js 22 [x86_64]</text>
+<text x='654.0' y='127' text-anchor='middle' font-size='12'>44.0 MB</text>
+<rect x='716' y='122' width='88' height='254' rx='4' fill='#0f766e'/>
+<text x='768.0' y='416' transform='rotate(-30 768.0 416)' text-anchor='end' font-size='11' fill='#222'>Java 21 [x86_64]</text>
+<text x='760.0' y='116' text-anchor='middle' font-size='12'>46.4 MB</text>
 <text x='430.0' y='494' text-anchor='middle' font-size='11' fill='#555'>
 <tspan x='430.0' dy='0'>Languages sorted by this raw measurement from best to worst. Raw memory uses real units, not normalized benchmark</tspan>
 <tspan x='430.0' dy='14'>scores.</tspan>

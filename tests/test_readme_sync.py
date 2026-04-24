@@ -1,7 +1,82 @@
 import json
 
-from runner.readme_sync import sync_readme
+from runner.readme_sync import _architecture_publish_payload, sync_readme
 from runner.utils import write_json
+
+
+def _architecture_payload(run_id: str, runtime: str, architecture: str, cpu_seconds: float) -> dict:
+    language = f"{runtime}@{architecture}"
+    return {
+        "run_id": run_id,
+        "host": {"hostname": f"{architecture}-host", "architecture": architecture},
+        "profile": {"architectures": [architecture]},
+        "runtimes": [{
+            "language": language,
+            "runtime_id": runtime,
+            "architecture": architecture,
+            "language_label": f"{runtime} [{architecture}]",
+            "language_family": runtime.split("-", 1)[0],
+        }],
+        "rows": [{
+            "task_id": "sort_integers",
+            "language": language,
+            "runtime_id": runtime,
+            "architecture": architecture,
+            "language_label": f"{runtime} [{architecture}]",
+            "language_family": runtime.split("-", 1)[0],
+            "size": "s",
+            "status": "ok",
+            "cpu_seconds": cpu_seconds,
+            "wall_seconds": cpu_seconds + 0.1,
+            "max_rss_mb": 10.0,
+            "loc": 10,
+            "ease_score": 9,
+            "community_score": 9,
+            "debugging_score": 9,
+            "docs_score": 9,
+            "libraries_score": 9,
+            "concurrency_score": 9,
+            "stdout": "ok",
+        }],
+        "weights": {
+            "cpu": 0.14,
+            "wall": 0.14,
+            "memory": 0.10,
+            "loc": 0.06,
+            "ease": 0.08,
+            "community": 0.08,
+            "scalability": 0.12,
+            "debugging": 0.06,
+            "docs": 0.06,
+            "libraries": 0.06,
+            "concurrency": 0.10,
+        },
+    }
+
+
+def test_architecture_publish_payload_merges_missing_architectures_and_replaces_current(tmp_path):
+    docs_dir = tmp_path / "docs"
+    x86_path = tmp_path / "results" / "x86" / "scored_results.json"
+    arm_path = tmp_path / "results" / "arm" / "scored_results.json"
+    x86_path.parent.mkdir(parents=True)
+    arm_path.parent.mkdir(parents=True)
+    x86_payload = _architecture_payload("x86-run", "python-3.12", "x86_64", 0.2)
+    arm_payload = _architecture_payload("arm-run", "python-3.12", "aarch64", 0.1)
+    write_json(x86_path, x86_payload)
+    write_json(arm_path, arm_payload)
+    previous_manifest = {
+        "generated_run_id": "x86-run",
+        "architecture_results": {"x86_64": str(x86_path)},
+        "canonical_results": str(x86_path),
+    }
+
+    merged, merged_path = _architecture_publish_payload(arm_payload, arm_path, docs_dir, previous_manifest)
+
+    assert merged_path.name == "architecture_merged_scored_results.json"
+    assert merged["architecture_results"] == {"aarch64": str(arm_path), "x86_64": str(x86_path)}
+    assert {row["architecture"] for row in merged["rows"]} == {"x86_64", "aarch64"}
+    assert {row["language"] for row in merged["aggregate"]} == {"python-3.12@x86_64", "python-3.12@aarch64"}
+    assert merged["profile"]["architectures"] == ["aarch64", "x86_64"]
 
 
 def test_sync_readme_embeds_dual_plot_sets_table_explanations_and_code(tmp_path):

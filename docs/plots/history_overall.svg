@@ -20,32 +20,32 @@
 <line x1='72' y1='80' x2='72' y2='404' stroke='#f1f5f9' stroke-width='1'/>
 <text x='72' y='426' text-anchor='middle' font-size='11'>42840Z</text>
 <circle cx='72' cy='186' r='4' fill='#475569'/>
-<title>rust-1.82 67.31</title>
+<title>rust-1.82@x86_64 67.31</title>
 <circle cx='72' cy='216' r='4' fill='#0891b2'/>
-<title>go-1.23 58.05</title>
+<title>go-1.23@x86_64 58.05</title>
 <circle cx='72' cy='222' r='4' fill='#4f46e5'/>
-<title>cpp-14 56.26</title>
+<title>cpp-14@x86_64 56.26</title>
 <circle cx='72' cy='226' r='4' fill='#ea580c'/>
-<title>python-3.12 55.05</title>
+<title>python-3.12@x86_64 55.05</title>
 <circle cx='72' cy='231' r='4' fill='#dc2626'/>
-<title>node-22 53.64</title>
+<title>node-22@x86_64 53.64</title>
 <circle cx='72' cy='232' r='4' fill='#16a34a'/>
-<title>java-21 53.33</title>
+<title>java-21@x86_64 53.33</title>
 <circle cx='72' cy='254' r='4' fill='#9333ea'/>
-<title>php-8.4 46.53</title>
+<title>php-8.4@x86_64 46.53</title>
 <rect x='812' y='80' width='168' height='150' rx='8' fill='#f8fafc' stroke='#e5e7eb'/>
 <line x1='824' y1='100' x2='842' y2='100' stroke='#475569' stroke-width='4' stroke-linecap='round'/>
-<text x='852' y='104' font-size='11'>rust-1.82</text>
+<text x='852' y='104' font-size='11'>rust-1.82@x86_64</text>
 <line x1='824' y1='118' x2='842' y2='118' stroke='#0891b2' stroke-width='4' stroke-linecap='round'/>
-<text x='852' y='122' font-size='11'>go-1.23</text>
+<text x='852' y='122' font-size='11'>go-1.23@x86_64</text>
 <line x1='824' y1='136' x2='842' y2='136' stroke='#4f46e5' stroke-width='4' stroke-linecap='round'/>
-<text x='852' y='140' font-size='11'>cpp-14</text>
+<text x='852' y='140' font-size='11'>cpp-14@x86_64</text>
 <line x1='824' y1='154' x2='842' y2='154' stroke='#ea580c' stroke-width='4' stroke-linecap='round'/>
-<text x='852' y='158' font-size='11'>python-3.12</text>
+<text x='852' y='158' font-size='11'>python-3.12@x86_64</text>
 <line x1='824' y1='172' x2='842' y2='172' stroke='#dc2626' stroke-width='4' stroke-linecap='round'/>
-<text x='852' y='176' font-size='11'>node-22</text>
+<text x='852' y='176' font-size='11'>node-22@x86_64</text>
 <line x1='824' y1='190' x2='842' y2='190' stroke='#16a34a' stroke-width='4' stroke-linecap='round'/>
-<text x='852' y='194' font-size='11'>java-21</text>
+<text x='852' y='194' font-size='11'>java-21@x86_64</text>
 <line x1='824' y1='208' x2='842' y2='208' stroke='#9333ea' stroke-width='4' stroke-linecap='round'/>
-<text x='852' y='212' font-size='11'>php-8.4</text>
+<text x='852' y='212' font-size='11'>php-8.4@x86_64</text>
 </svg>

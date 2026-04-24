@@ -20,6 +20,7 @@ class AppConfig:
     default_tasks: str | list[str]
     smoke_tasks: list[str]
     results_dir: str
+    architectures: list[str] = field(default_factory=lambda: ["host"])
     ui_driver_image: str = "languages-benchmark:ui-driver"
     baseline_runtime: str = "python-3.12"
     presets: dict[str, dict[str, Any]] = field(default_factory=dict)
@@ -43,6 +44,8 @@ class ResultRow:
     run_id: str
     task_id: str
     language: str
+    runtime_id: str
+    architecture: str
     size: str
     iteration: int
     repeat_count: int

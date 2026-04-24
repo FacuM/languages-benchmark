@@ -35,7 +35,9 @@ def test_dry_run_respects_zero_warmups(monkeypatch):
     payload = __import__("json").load(latest.open())
     statuses = [row["status"] for row in payload["rows"]]
     assert statuses == ["ok"]
-    assert payload["runtimes"][0]["language"] == "python-3.12"
+    assert payload["runtimes"][0]["runtime_id"] == "python-3.12"
+    assert payload["runtimes"][0]["architecture"]
+    assert payload["rows"][0]["architecture"] == payload["runtimes"][0]["architecture"]
     if latest_link.is_symlink():
         latest_link.unlink()
     if created_run_dir.exists():

@@ -43,12 +43,14 @@ def write_csv(path: Path, rows: list[dict]) -> None:
 
 
 def collect_host_metadata(engine_binary: str) -> dict:
+    machine = platform.machine()
     metadata = {
         "hostname": platform.node(),
         "platform": platform.platform(),
         "system": platform.system(),
         "release": platform.release(),
-        "machine": platform.machine(),
+        "machine": machine,
+        "architecture": normalize_architecture(machine),
         "python_version": platform.python_version(),
         "cpu_count": os.cpu_count(),
         "cpu_model": _cpu_model(),
@@ -56,6 +58,23 @@ def collect_host_metadata(engine_binary: str) -> dict:
         "engine_version": _command_output([engine_binary, "--version"]),
     }
     return metadata
+
+
+def normalize_architecture(value: str | None) -> str:
+    text = (value or "").strip().lower().replace("-", "_")
+    aliases = {
+        "amd64": "x86_64",
+        "x64": "x86_64",
+        "x86_64": "x86_64",
+        "aarch64": "aarch64",
+        "arm64": "aarch64",
+        "armv7l": "armv7l",
+        "armv6l": "armv6l",
+        "ppc64le": "ppc64le",
+        "s390x": "s390x",
+        "riscv64": "riscv64",
+    }
+    return aliases.get(text, text or "unknown")
 
 
 def git_metadata(cwd: Path) -> dict[str, Any]:

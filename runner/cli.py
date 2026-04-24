@@ -21,7 +21,7 @@ from runner.service_workloads import run_service_workload, service_port, wait_fo
 from runner.ui_workloads import run_ui_workload, ui_port
 from runner.readme_sync import sync_readme
 from runner.scoring import score_results
-from runner.utils import collect_host_metadata, ensure_dir, utc_stamp, write_json, write_csv, read_json, git_metadata
+from runner.utils import collect_host_metadata, ensure_dir, utc_stamp, write_json, write_csv, read_json, git_metadata, normalize_architecture
 
 LANGUAGES = ["php", "python", "java", "cpp", "node", "go", "rust"]
 
@@ -41,7 +41,9 @@ def _format_seconds_short(value: float | None) -> str:
 def _describe_case(case: dict) -> str:
     task = case["task"]
     spec = case["spec"]
-    return f"{task.id} | {spec.get('label', case['variant_id'])} | size {str(case['size']).upper()}"
+    architecture = case.get("architecture")
+    arch_suffix = f" | arch {architecture}" if architecture else ""
+    return f"{task.id} | {spec.get('label', case['variant_id'])}{arch_suffix} | size {str(case['size']).upper()}"
 
 
 def _summarize_case_rows(rows: list[dict]) -> str:
@@ -84,6 +86,7 @@ def main(argv: list[str] | None = None) -> int:
     run_p.add_argument("--dry-run", action="store_true")
     run_p.add_argument("--jobs", type=int, default=None)
     run_p.add_argument("--execution-mode", choices=["container", "native-host"], default="container")
+    run_p.add_argument("--architectures")
 
     score_p = sub.add_parser("score")
     score_p.add_argument("--results", required=True)
@@ -108,6 +111,7 @@ def main(argv: list[str] | None = None) -> int:
     all_p.add_argument("--update-readme", action="store_true")
     all_p.add_argument("--jobs", type=int, default=None)
     all_p.add_argument("--execution-mode", choices=["container", "native-host"], default="container")
+    all_p.add_argument("--architectures")
 
     bundle_p = sub.add_parser("publish-bundle")
     bundle_p.add_argument("--tasks")
@@ -122,6 +126,7 @@ def main(argv: list[str] | None = None) -> int:
     bundle_p.add_argument("--reruns", type=int, default=3)
     bundle_p.add_argument("--update-readme", action="store_true")
     bundle_p.add_argument("--execution-mode", choices=["container", "native-host"], default="container")
+    bundle_p.add_argument("--architectures")
 
     args = parser.parse_args(argv)
     if args.command == "setup":
@@ -187,37 +192,49 @@ def cmd_run(args) -> int:
     community = load_community()
     engine = ContainerEngine(args.engine or config.engine)
     host = collect_host_metadata(engine.binary)
+    host_arch = str(host.get("architecture") or normalize_architecture(host.get("machine")))
+    architectures = _select_architectures(getattr(args, "architectures", None) or preset.get("architectures"), config.architectures, host_arch)
+    non_host_architectures = [arch for arch in architectures if arch != host_arch]
+    if non_host_architectures and not args.dry_run:
+        raise SystemExit(
+            "Architecture-aware result metadata is supported, but this runner currently executes only on the host architecture "
+            f"({host_arch}). Re-run on the target architecture host or use --dry-run for schema checks. Requested: {', '.join(non_host_architectures)}"
+        )
     git = git_metadata(ROOT)
-    runtimes = _collect_runtime_matrix(engine, variants, dry_run=args.dry_run)
+    runtimes = _collect_runtime_matrix(engine, variants, dry_run=args.dry_run, architectures=architectures)
     _log(
         "[run] Starting benchmark run "
-        f"{run_id} | tasks={len(selected_tasks)} | runtimes={len(variants)} | sizes={len(sizes)} | "
+        f"{run_id} | tasks={len(selected_tasks)} | runtimes={len(variants)} | architectures={len(architectures)} | sizes={len(sizes)} | "
         f"iterations={iterations} | warmups={warmups} | jobs={jobs} | "
         f"mode={args.execution_mode} | dry_run={'yes' if args.dry_run else 'no'}"
     )
     _log("[run] Selected runtimes: " + ", ".join(spec.get("label", variant_id) for variant_id, spec in variants))
+    _log("[run] Selected architecture(s): " + ", ".join(architectures))
     variant_index = {variant_id: index for index, (variant_id, _spec) in enumerate(_variant_entries(config))}
     cases = []
     for task_index, task in enumerate(selected_tasks):
-        for variant_index_order, (variant_id, spec) in enumerate(variants):
-            family = spec["family"]
-            implementation = spec.get("implementation", family)
-            rubric = runtime_rubrics.get(variant_id, rubrics[family])
-            community_score = round((community[family]["active_contributors"] + community[family]["update_cadence"]) / 2.0, 2)
-            supported_tasks = set(spec.get("supported_tasks", []))
-            for size_index, size in enumerate(sizes):
-                cases.append({
-                    "sort_key": (task_index, variant_index_order, size_index),
-                    "task": task,
-                    "variant_id": variant_id,
-                    "spec": spec,
-                    "size": size,
-                    "implementation": implementation,
-                    "rubric": rubric,
-                    "community_score": community_score,
-                    "supported_tasks": supported_tasks,
-                    "execution_mode": args.execution_mode,
-                })
+        for architecture_index, architecture in enumerate(architectures):
+            for variant_index_order, (variant_id, spec) in enumerate(variants):
+                family = spec["family"]
+                implementation = spec.get("implementation", family)
+                rubric = runtime_rubrics.get(variant_id, rubrics[family])
+                community_score = round((community[family]["active_contributors"] + community[family]["update_cadence"]) / 2.0, 2)
+                supported_tasks = set(spec.get("supported_tasks", []))
+                for size_index, size in enumerate(sizes):
+                    cases.append({
+                        "sort_key": (task_index, architecture_index, variant_index_order, size_index),
+                        "task": task,
+                        "variant_id": variant_id,
+                        "runtime_key": _runtime_key(variant_id, architecture),
+                        "architecture": architecture,
+                        "spec": spec,
+                        "size": size,
+                        "implementation": implementation,
+                        "rubric": rubric,
+                        "community_score": community_score,
+                        "supported_tasks": supported_tasks,
+                        "execution_mode": args.execution_mode,
+                    })
 
     rows = []
     total_cases = len(cases)
@@ -274,6 +291,7 @@ def cmd_run(args) -> int:
         "tasks": task_selector,
         "langs": lang_selector,
         "sizes": sizes,
+        "architectures": architectures,
         "iterations": iterations,
         "warmups": warmups,
         "jobs": jobs,
@@ -353,6 +371,7 @@ def cmd_publish_bundle(args) -> int:
             dry_run=args.dry_run,
             jobs=args.jobs,
             execution_mode=args.execution_mode,
+            architectures=getattr(args, "architectures", None),
         )
         cmd_run(run_args)
         raw_path = ROOT / "results" / "latest" / "raw_results.json"
@@ -477,21 +496,53 @@ def _image_tag(variant_id: str) -> str:
     return f"languages-benchmark:{variant_id}"
 
 
-def _collect_runtime_matrix(engine: ContainerEngine, variants: list[tuple[str, dict]], dry_run: bool) -> list[dict]:
+def _select_architectures(selector, configured: list[str], host_arch: str) -> list[str]:
+    selected = configured if selector is None else selector
+    tokens = [selected] if isinstance(selected, str) else list(selected)
+    output: list[str] = []
+    for token in tokens:
+        for part in str(token).split(","):
+            value = part.strip()
+            if not value:
+                continue
+            if value == "all":
+                for configured_value in configured:
+                    arch = host_arch if configured_value == "host" else normalize_architecture(configured_value)
+                    if arch not in output:
+                        output.append(arch)
+                continue
+            arch = host_arch if value == "host" else normalize_architecture(value)
+            if arch not in output:
+                output.append(arch)
+    return output or [host_arch]
+
+
+def _runtime_key(variant_id: str, architecture: str) -> str:
+    return f"{variant_id}@{architecture}"
+
+
+def _runtime_label(spec: dict, variant_id: str, architecture: str) -> str:
+    return f"{spec.get('label', variant_id)} [{architecture}]"
+
+
+def _collect_runtime_matrix(engine: ContainerEngine, variants: list[tuple[str, dict]], dry_run: bool, architectures: list[str]) -> list[dict]:
     runtimes = []
-    for variant_id, spec in variants:
-        reported = spec.get("version")
-        command = spec.get("runtime_version_command")
-        if not dry_run and command:
-            reported = engine.inspect_runtime(_image_tag(variant_id), command) or reported
-        runtimes.append({
-            "language": variant_id,
-            "language_family": spec["family"],
-            "language_label": spec.get("label", variant_id),
-            "configured_version": spec.get("version"),
-            "reported_version": reported,
-            "image": _image_tag(variant_id),
-        })
+    for architecture in architectures:
+        for variant_id, spec in variants:
+            reported = spec.get("version")
+            command = spec.get("runtime_version_command")
+            if not dry_run and command:
+                reported = engine.inspect_runtime(_image_tag(variant_id), command) or reported
+            runtimes.append({
+                "language": _runtime_key(variant_id, architecture),
+                "runtime_id": variant_id,
+                "architecture": architecture,
+                "language_family": spec["family"],
+                "language_label": _runtime_label(spec, variant_id, architecture),
+                "configured_version": spec.get("version"),
+                "reported_version": reported,
+                "image": _image_tag(variant_id),
+            })
     return runtimes
 
 
@@ -660,13 +711,16 @@ def _run_native_single(*, command_template: str, task_id: str, size: str, fixtur
     })()
 
 
-def _base_row(run_id, task_id, language, spec, size, iteration, status, loc, community_score, rubric, stdout="", stderr="", repeat_count=1, notes=""):
+def _base_row(run_id, task_id, language, spec, size, iteration, status, loc, community_score, rubric, stdout="", stderr="", repeat_count=1, notes="", architecture="unknown", runtime_id=None):
+    runtime_id = runtime_id or language
     return {
         "run_id": run_id,
         "task_id": task_id,
         "language": language,
+        "runtime_id": runtime_id,
+        "architecture": architecture,
         "language_family": spec["family"],
-        "language_label": spec.get("label", language),
+        "language_label": _runtime_label(spec, runtime_id, architecture),
         "language_version": spec.get("version"),
         "size": size,
         "iteration": iteration,
@@ -695,6 +749,8 @@ def _base_row(run_id, task_id, language, spec, size, iteration, status, loc, com
 def _run_case(*, case, run_id, iterations, warmups, variant_order, engine, config, dry_run):
     task = case["task"]
     variant_id = case["variant_id"]
+    runtime_key = case.get("runtime_key", variant_id)
+    architecture = case.get("architecture", "unknown")
     spec = case["spec"]
     size = case["size"]
     implementation = case["implementation"]
@@ -704,10 +760,10 @@ def _run_case(*, case, run_id, iterations, warmups, variant_order, engine, confi
     execution_mode = case.get("execution_mode", "container")
     if not task.executable or (supported_tasks and task.id not in supported_tasks):
         skip_note = "Catalog scaffold only" if not task.executable else "Variant does not support this task"
-        return [_base_row(run_id, task.id, variant_id, spec, size, 0, "skipped", count_loc(ROOT, implementation, task.id), community_score, rubric, notes=skip_note)]
+        return [_base_row(run_id, task.id, runtime_key, spec, size, 0, "skipped", count_loc(ROOT, implementation, task.id), community_score, rubric, notes=skip_note, architecture=architecture, runtime_id=variant_id)]
     native_template = spec.get("native_command_template")
     if execution_mode == "native-host" and not native_template:
-        return [_base_row(run_id, task.id, variant_id, spec, size, 0, "skipped", count_loc(ROOT, implementation, task.id), community_score, rubric, notes="Experimental native-host mode is not configured for this variant")]
+        return [_base_row(run_id, task.id, runtime_key, spec, size, 0, "skipped", count_loc(ROOT, implementation, task.id), community_score, rubric, notes="Experimental native-host mode is not configured for this variant", architecture=architecture, runtime_id=variant_id)]
 
     rows = []
     repeat_count = 1
@@ -727,7 +783,7 @@ def _run_case(*, case, run_id, iterations, warmups, variant_order, engine, confi
     for iteration in range(0, warmups + iterations):
         status = "warmup" if iteration < warmups else "ok"
         if dry_run:
-            row = _base_row(run_id, task.id, variant_id, spec, size, iteration, status, count_loc(ROOT, implementation, task.id), community_score, rubric, repeat_count=repeat_count)
+            row = _base_row(run_id, task.id, runtime_key, spec, size, iteration, status, count_loc(ROOT, implementation, task.id), community_score, rubric, repeat_count=repeat_count, architecture=architecture, runtime_id=variant_id)
             multiplier = {"s": 1.0, "m": 2.0, "l": 4.0}[size]
             lang_factor = (variant_order.get(variant_id, 0) + 1) / 10.0
             row.update({
@@ -778,7 +834,7 @@ def _run_case(*, case, run_id, iterations, warmups, variant_order, engine, confi
         row = _base_row(
             run_id,
             task.id,
-            variant_id,
+            runtime_key,
             spec,
             size,
             iteration,
@@ -790,6 +846,8 @@ def _run_case(*, case, run_id, iterations, warmups, variant_order, engine, confi
             stderr=metrics.stderr,
             repeat_count=repeat_count,
             notes=f"repeat_count={metrics.repeat_count}; host_wall_seconds={metrics.host_wall_seconds:.6f}",
+            architecture=architecture,
+            runtime_id=variant_id,
         )
         row.update({
             "cpu_seconds": metrics.cpu_seconds,
