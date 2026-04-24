@@ -20,37 +20,37 @@
 <line x1='72' y1='390' x2='932' y2='390' stroke='black'/>
 <rect x='146' y='289' width='41' height='101' rx='3' fill='#4f46e5'/>
 <rect x='193' y='323' width='41' height='67' rx='3' fill='#0f766e'/>
-<text x='198.0' y='430' transform='rotate(-30 198.0 430)' text-anchor='end' font-size='11' fill='#222'>node-22@x86_64</text>
+<text x='198.0' y='430' transform='rotate(-30 198.0 430)' text-anchor='end' font-size='11' fill='#222'>Node.js 22 [x86_64]</text>
 <text x='166.5' y='281' text-anchor='middle' font-size='11'>1.64x</text>
 <text x='213.5' y='315' text-anchor='middle' font-size='11'>1.09x</text>
 <rect x='250' y='278' width='41' height='112' rx='3' fill='#4f46e5'/>
 <rect x='297' y='322' width='41' height='68' rx='3' fill='#0f766e'/>
-<text x='302.0' y='430' transform='rotate(-30 302.0 430)' text-anchor='end' font-size='11' fill='#222'>python-3.12@x86_64</text>
+<text x='302.0' y='430' transform='rotate(-30 302.0 430)' text-anchor='end' font-size='11' fill='#222'>Python 3.12 [x86_64]</text>
 <text x='270.5' y='270' text-anchor='middle' font-size='11'>1.81x</text>
 <text x='317.5' y='314' text-anchor='middle' font-size='11'>1.11x</text>
 <rect x='354' y='273' width='41' height='117' rx='3' fill='#4f46e5'/>
 <rect x='401' y='323' width='41' height='67' rx='3' fill='#0f766e'/>
-<text x='406.0' y='430' transform='rotate(-30 406.0 430)' text-anchor='end' font-size='11' fill='#222'>java-21@x86_64</text>
+<text x='406.0' y='430' transform='rotate(-30 406.0 430)' text-anchor='end' font-size='11' fill='#222'>Java 21 [x86_64]</text>
 <text x='374.5' y='265' text-anchor='middle' font-size='11'>1.90x</text>
 <text x='421.5' y='315' text-anchor='middle' font-size='11'>1.09x</text>
 <rect x='458' y='252' width='41' height='138' rx='3' fill='#4f46e5'/>
 <rect x='505' y='325' width='41' height='65' rx='3' fill='#0f766e'/>
-<text x='510.0' y='430' transform='rotate(-30 510.0 430)' text-anchor='end' font-size='11' fill='#222'>php-8.4@x86_64</text>
+<text x='510.0' y='430' transform='rotate(-30 510.0 430)' text-anchor='end' font-size='11' fill='#222'>PHP 8.4 [x86_64]</text>
 <text x='478.5' y='244' text-anchor='middle' font-size='11'>2.24x</text>
 <text x='525.5' y='317' text-anchor='middle' font-size='11'>1.06x</text>
 <rect x='562' y='231' width='41' height='159' rx='3' fill='#4f46e5'/>
 <rect x='609' y='318' width='41' height='72' rx='3' fill='#0f766e'/>
-<text x='614.0' y='430' transform='rotate(-30 614.0 430)' text-anchor='end' font-size='11' fill='#222'>rust-1.82@x86_64</text>
+<text x='614.0' y='430' transform='rotate(-30 614.0 430)' text-anchor='end' font-size='11' fill='#222'>Rust 1.82 [x86_64]</text>
 <text x='582.5' y='223' text-anchor='middle' font-size='11'>2.56x</text>
 <text x='629.5' y='310' text-anchor='middle' font-size='11'>1.17x</text>
 <rect x='666' y='202' width='41' height='188' rx='3' fill='#4f46e5'/>
 <rect x='713' y='326' width='41' height='64' rx='3' fill='#0f766e'/>
-<text x='718.0' y='430' transform='rotate(-30 718.0 430)' text-anchor='end' font-size='11' fill='#222'>cpp-14@x86_64</text>
+<text x='718.0' y='430' transform='rotate(-30 718.0 430)' text-anchor='end' font-size='11' fill='#222'>C++ (GCC 14) [x86_64]</text>
 <text x='686.5' y='194' text-anchor='middle' font-size='11'>3.05x</text>
 <text x='733.5' y='318' text-anchor='middle' font-size='11'>1.04x</text>
 <rect x='770' y='157' width='41' height='233' rx='3' fill='#4f46e5'/>
 <rect x='817' y='314' width='41' height='76' rx='3' fill='#0f766e'/>
-<text x='822.0' y='430' transform='rotate(-30 822.0 430)' text-anchor='end' font-size='11' fill='#222'>go-1.23@x86_64</text>
+<text x='822.0' y='430' transform='rotate(-30 822.0 430)' text-anchor='end' font-size='11' fill='#222'>Go 1.23 [x86_64]</text>
 <text x='790.5' y='149' text-anchor='middle' font-size='11'>3.77x</text>
 <text x='837.5' y='306' text-anchor='middle' font-size='11'>1.24x</text>
 <rect x='752' y='356' width='180' height='30' rx='8' fill='#f8fafc' stroke='#e5e7eb'/>

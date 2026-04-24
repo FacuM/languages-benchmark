@@ -244,7 +244,7 @@ def test_sync_readme_embeds_dual_plot_sets_table_explanations_and_code(tmp_path)
     assert "| Runtime | Objective | CPU | Wall | Memory | LOC | Tasks |" in content
     assert "| Runtime | Opinionated | Scalability | Ease | Community | Debugging | Docs | Libraries | Concurrency | Tasks |" in content
     assert "canonical-order" in content
-    assert "Raw-unit plots for this 2-task published snapshot" in content
+    assert "Global raw-unit plots for this 2-task published snapshot" in content
     assert "Runtime versions present in this published snapshot" in content
     assert "Objective / unopinionated score plots" in content
     assert "Opinionated / interpretive score plots" in content

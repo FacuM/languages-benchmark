@@ -380,6 +380,7 @@ def generate_report(results_path: Path, output_dir: Path) -> Path:
             meta["subtitle"],
             footer="Language families sorted by the best tested version for this metric.",
         )
+    _write_architecture_plot_sets(output_dir, aggregate, medians, raw_unit_rows, category_rows)
     task_rows = _task_score_rows(medians, weights or load_weights())
     for task_id, task_score_rows in sorted(task_rows.items()):
         task_name = _task_names().get(task_id, task_id)
@@ -631,6 +632,154 @@ def _ordered_rows(
     )
 
 
+def _architecture_groups(rows: list[dict]) -> dict[str, list[dict]]:
+    grouped: dict[str, list[dict]] = defaultdict(list)
+    for row in rows:
+        architecture = row.get("architecture")
+        if architecture and architecture != "unknown":
+            grouped[str(architecture)].append(row)
+    return dict(sorted(grouped.items()))
+
+
+def _architecture_plot_stem(architecture: str, stem: str) -> str:
+    safe_architecture = "".join(ch if ch.isalnum() else "_" for ch in architecture).strip("_") or "unknown"
+    return f"arch_{safe_architecture}_{stem}"
+
+
+def _write_architecture_plot_sets(
+    output_dir: Path,
+    aggregate: list[dict],
+    medians: list[dict],
+    raw_unit_rows: list[dict],
+    category_rows: dict[str, list[dict]],
+) -> None:
+    aggregate_by_architecture = _architecture_groups(aggregate)
+    if not aggregate_by_architecture:
+        return
+    medians_by_architecture = _architecture_groups(medians)
+    raw_by_architecture = _architecture_groups(raw_unit_rows)
+    objective_by_architecture = _architecture_groups(category_rows.get("objective", []))
+    opinionated_by_architecture = _architecture_groups(category_rows.get("opinionated", []))
+    for architecture, arch_aggregate in aggregate_by_architecture.items():
+        arch_medians = medians_by_architecture.get(architecture, [])
+        arch_raw = raw_by_architecture.get(architecture, [])
+        arch_objective = objective_by_architecture.get(architecture, [])
+        arch_opinionated = opinionated_by_architecture.get(architecture, [])
+        title_suffix = f"on {architecture}"
+        for stem, meta in RAW_UNIT_PLOT_META.items():
+            metric = meta["metric"]
+            error_metric = _error_metric_for_raw(stem)
+            arch_stem = _architecture_plot_stem(architecture, stem)
+            _write_svg_raw_bar(
+                output_dir / f"{arch_stem}.svg",
+                _ordered_rows(arch_raw),
+                metric,
+                f"{meta['title']} — {title_suffix}",
+                meta["subtitle"],
+                footer=f"Per-architecture canonical runtime order for {architecture}. " + meta["footer"],
+                better=meta["better"],
+                unit_kind=meta["unit_kind"],
+                error_metric=error_metric,
+            )
+            _write_svg_raw_bar(
+                output_dir / f"{arch_stem}_ranked.svg",
+                _ordered_rows(arch_raw, metric=metric, ranked=True, reverse_for_ranking=False),
+                metric,
+                f"{meta['title']} — {title_suffix} — ranked best to worst",
+                meta["subtitle"],
+                footer=f"Only {architecture} runtime rows are included; sorted by this raw measurement.",
+                better=meta["better"],
+                unit_kind=meta["unit_kind"],
+                error_metric=error_metric,
+            )
+        for stem, meta in BAR_PLOT_META.items():
+            metric = meta["metric"]
+            arch_stem = _architecture_plot_stem(architecture, stem)
+            _write_svg_bar(
+                output_dir / f"{arch_stem}.svg",
+                _ordered_rows(arch_aggregate),
+                metric,
+                f"{meta['title']} — {title_suffix}",
+                meta["subtitle"],
+                footer=f"Only {architecture} runtime rows are included; canonical runtime order is preserved.",
+            )
+            _write_svg_bar(
+                output_dir / f"{arch_stem}_ranked.svg",
+                _ordered_rows(arch_aggregate, metric=metric, ranked=True),
+                metric,
+                f"{meta['title']} — {title_suffix} — ranked best to worst",
+                meta["subtitle"],
+                footer=f"Only {architecture} runtime rows are included; sorted best to worst for this metric.",
+            )
+        if arch_objective:
+            arch_stem = _architecture_plot_stem(architecture, "objective")
+            _write_svg_bar(
+                output_dir / f"{arch_stem}.svg",
+                _ordered_rows(arch_objective),
+                "objective_score",
+                f"Objective benchmark score (0-100, higher is better) — {title_suffix}",
+                "Recomputed only from CPU, wall time, memory, and LOC for this architecture.",
+                footer=f"Only {architecture} runtime rows are included; canonical runtime order is preserved.",
+            )
+            _write_svg_bar(
+                output_dir / f"{arch_stem}_ranked.svg",
+                _ordered_rows(arch_objective, metric="objective_score", ranked=True),
+                "objective_score",
+                f"Objective benchmark score — {title_suffix} — ranked best to worst",
+                "Recomputed only from CPU, wall time, memory, and LOC for this architecture.",
+                footer=f"Only {architecture} runtime rows are included; sorted by objective-only score.",
+            )
+        if arch_opinionated:
+            arch_stem = _architecture_plot_stem(architecture, "opinionated")
+            _write_svg_bar(
+                output_dir / f"{arch_stem}.svg",
+                _ordered_rows(arch_opinionated),
+                "opinionated_score",
+                f"Opinionated benchmark score (0-100, higher is better) — {title_suffix}",
+                "Recomputed only from scalability and rubric/community-style metrics for this architecture.",
+                footer=f"Only {architecture} runtime rows are included; canonical runtime order is preserved.",
+            )
+            _write_svg_bar(
+                output_dir / f"{arch_stem}_ranked.svg",
+                _ordered_rows(arch_opinionated, metric="opinionated_score", ranked=True),
+                "opinionated_score",
+                f"Opinionated benchmark score — {title_suffix} — ranked best to worst",
+                "Recomputed only from scalability and rubric/community-style metrics for this architecture.",
+                footer=f"Only {architecture} runtime rows are included; sorted by opinionated-only score.",
+            )
+        if arch_medians:
+            order = _ordered_rows(arch_aggregate)
+            language_order = [str(row.get("language")) for row in order]
+            _write_scalability_curve(
+                output_dir / f"{_architecture_plot_stem(architecture, 'scalability_curve')}.svg",
+                arch_medians,
+                language_order,
+                f"Wall-time growth by input size — {title_suffix}",
+                "S baseline = 1.0x. Lower M/L growth means better scaling within this architecture.",
+                footer=f"Only {architecture} runtime rows are included.",
+                metric_key="wall_seconds",
+                ranked=False,
+            )
+            _write_scalability_curve(
+                output_dir / f"{_architecture_plot_stem(architecture, 'scalability_curve')}_ranked.svg",
+                arch_medians,
+                _growth_ranked_languages(arch_medians, "wall_seconds"),
+                f"Wall-time growth by input size — {title_suffix} — ranked legend",
+                "S baseline = 1.0x. Legend is ordered from best to worst L/S wall-time growth within this architecture.",
+                footer=f"Only {architecture} runtime rows are included.",
+                metric_key="wall_seconds",
+                ranked=True,
+            )
+            _write_growth_ratio_bar(
+                output_dir / f"{_architecture_plot_stem(architecture, 'scalability_growth_ratios')}_ranked.svg",
+                arch_medians,
+                _growth_ranked_languages(arch_medians, "combined"),
+                f"L/S growth ratio summary — {title_suffix} — ranked best to worst",
+                "Side-by-side bars compare each runtime's average L/S wall-time and memory growth ratios within this architecture.",
+                footer=f"Only {architecture} runtime rows are included.",
+            )
+
+
 def _bar_chart_width(base_width: int, count: int, margin_left: int, margin_right: int, gap: int, min_bar_width: int = 34) -> int:
     if count <= 0:
         return base_width
@@ -831,6 +980,7 @@ def _write_scalability_curve(path: Path, medians: list[dict], language_order: li
     margin_top = 24 + len(title_lines) * 22 + len(subtitle_lines) * 16 + 18
     margin_bottom = 28 + len(footer_lines) * 14
     curve_data = _growth_curve_rows(medians, metric_key)
+    label_map = _label_map(medians)
     colors = _language_colors(curve_data.keys())
     ordered_languages = [language for language in language_order if language in curve_data]
     ordered_languages.extend(sorted(language for language in curve_data if language not in ordered_languages))
@@ -840,7 +990,7 @@ def _write_scalability_curve(path: Path, medians: list[dict], language_order: li
     legend_font_size = 12
     legend_title_size = 13
     legend_line_height = 22
-    legend_text_width = max([len(legend_title) * 8] + [len(language) * 7 for language in ordered_languages] or [140])
+    legend_text_width = max([len(legend_title) * 8] + [len(label_map.get(language, language)) * 7 for language in ordered_languages] or [140])
     legend_width = max(210, legend_text_width + 56)
     legend_height = 18 + len(ordered_languages) * legend_line_height + 16
     margin_right = legend_width + 48
@@ -878,14 +1028,14 @@ def _write_scalability_curve(path: Path, medians: list[dict], language_order: li
         )
         for x, y, value in coords:
             parts.append(f"<circle cx='{x}' cy='{y}' r='4' fill='{colors[language]}'/>")
-            parts.append(f"<title>{escape(language)} {value:.2f}x</title>")
+            parts.append(f"<title>{escape(label_map.get(language, language))} {value:.2f}x</title>")
     legend_x = margin_left + plot_width + 24
     parts.append(f"<rect x='{legend_x - 12}' y='{margin_top}' width='{legend_width}' height='{legend_height}' rx='8' fill='#f8fafc' stroke='#e5e7eb'/>")
     parts.append(f"<text x='{legend_x}' y='{margin_top + 18}' font-size='{legend_title_size}' font-weight='bold'>{legend_title}</text>")
     for idx, language in enumerate(ordered_languages):
         y = margin_top + 40 + idx * legend_line_height
         parts.append(f"<line x1='{legend_x}' y1='{y - 4}' x2='{legend_x + 18}' y2='{y - 4}' stroke='{colors[language]}' stroke-width='4' stroke-linecap='round'/>")
-        parts.append(f"<text x='{legend_x + 28}' y='{y}' font-size='{legend_font_size}'>{escape(language)}</text>")
+        parts.append(f"<text x='{legend_x + 28}' y='{y}' font-size='{legend_font_size}'>{escape(label_map.get(language, language))}</text>")
     _svg_text_block(parts, x=width / 2, y=_footer_block_y(height, footer_lines), lines=footer_lines, font_size=11, line_height=14, fill="#555")
     parts.append("</svg>")
     path.write_text("\n".join(parts), encoding="utf-8")
@@ -922,7 +1072,20 @@ def _language_colors(languages) -> dict[str, str]:
 
 
 def _display_label(row: dict) -> str:
+    if row.get("best_variant_label"):
+        family = str(row.get("language_label") or row.get("language_family") or row.get("language") or "")
+        return f"{family} ({row['best_variant_label']})"
     return str(row.get("language_label") or row.get("language") or "")
+
+
+def _label_map(rows: list[dict]) -> dict[str, str]:
+    labels: dict[str, str] = {}
+    for row in rows:
+        language = row.get("language")
+        label = row.get("language_label")
+        if language and label:
+            labels[str(language)] = str(label)
+    return labels
 
 
 def _family_label(family: str) -> str:
@@ -1074,12 +1237,13 @@ def _write_growth_ratio_bar(path: Path, medians: list[dict], language_order: lis
     rows = []
     wall = _growth_curve_rows(medians, "wall_seconds")
     mem = _growth_curve_rows(medians, "max_rss_mb")
+    label_map = _label_map(medians)
     for language in language_order:
         if language not in wall and language not in mem:
             continue
         rows.append({
             "language": language,
-            "language_label": language,
+            "language_label": label_map.get(language, language),
             "wall_l": wall.get(language, {}).get("l", 0.0),
             "memory_l": mem.get(language, {}).get("l", 0.0),
         })
@@ -1129,11 +1293,14 @@ def _write_history_line(path: Path, history_rows: list[dict], title: str, subtit
     if not history_rows:
         return
     languages = []
+    label_map: dict[str, str] = {}
     for item in history_rows:
         for row in item.get("aggregate", []):
             language = row.get("language")
             if language and language not in languages:
                 languages.append(language)
+            if language and row.get("language_label"):
+                label_map[str(language)] = str(row.get("language_label"))
     colors = _language_colors(languages)
     width, height = 980, max(460, 380 + len(languages) * 4)
     title_lines = _wrap_svg_lines(title, 72)
@@ -1172,13 +1339,14 @@ def _write_history_line(path: Path, history_rows: list[dict], title: str, subtit
             parts.append(f"<polyline points='{' '.join(f'{x},{y}' for x, y, _ in coords)}' fill='none' stroke='{colors[language]}' stroke-width='3' stroke-linecap='round'/>")
         for x, y, value in coords:
             parts.append(f"<circle cx='{x}' cy='{y}' r='4' fill='{colors[language]}'/>")
-            parts.append(f"<title>{escape(language)} {value:.2f}</title>")
+            parts.append(f"<title>{escape(label_map.get(language, language))} {value:.2f}</title>")
     legend_x = margin_left + plot_width + 24
     parts.append(f"<rect x='{legend_x - 12}' y='{margin_top}' width='168' height='{max(40, 24 + len(languages) * 18)}' rx='8' fill='#f8fafc' stroke='#e5e7eb'/>")
     for idx, language in enumerate(languages):
         y = margin_top + 20 + idx * 18
         parts.append(f"<line x1='{legend_x}' y1='{y}' x2='{legend_x + 18}' y2='{y}' stroke='{colors[language]}' stroke-width='4' stroke-linecap='round'/>")
-        parts.append(f"<text x='{legend_x + 28}' y='{y + 4}' font-size='11'>{escape(_family_label(language) if '-' not in language else language)}</text>")
+        label = label_map.get(language) or (_family_label(language) if "-" not in language and "@" not in language else language)
+        parts.append(f"<text x='{legend_x + 28}' y='{y + 4}' font-size='11'>{escape(label)}</text>")
     parts.append("</svg>")
     path.write_text("\n".join(parts), encoding="utf-8")
 

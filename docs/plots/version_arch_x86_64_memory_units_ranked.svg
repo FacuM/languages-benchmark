@@ -1,0 +1,70 @@
+<svg xmlns='http://www.w3.org/2000/svg' width='906' height='520' viewBox='0 0 906 520'>
+<rect x='0' y='0' width='906' height='520' fill='#ffffff'/>
+<rect x='0.5' y='0.5' width='905' height='519' fill='none' stroke='#d1d5db'/>
+<text x='453.0' y='28' text-anchor='middle' font-size='20' fill='#000'>
+<tspan x='453.0' dy='0'>Average peak memory across the full suite — on x86_64 —</tspan>
+<tspan x='453.0' dy='22'>ranked best to worst (MB, lower is better)</tspan>
+</text>
+<text x='453.0' y='72' text-anchor='middle' font-size='12' fill='#555'>
+<tspan x='453.0' dy='0'>Average of per-task/per-size median peak RSS values for each language. Lower is better.</tspan>
+</text>
+<line x1='72' y1='390' x2='858' y2='390' stroke='#e5e7eb' stroke-width='1'/>
+<text x='62' y='394' text-anchor='end' font-size='11' fill='#555'>0.0</text>
+<line x1='72' y1='318' x2='858' y2='318' stroke='#e5e7eb' stroke-width='1'/>
+<text x='62' y='322' text-anchor='end' font-size='11' fill='#555'>25.0</text>
+<line x1='72' y1='246' x2='858' y2='246' stroke='#e5e7eb' stroke-width='1'/>
+<text x='62' y='250' text-anchor='end' font-size='11' fill='#555'>50.0</text>
+<line x1='72' y1='174' x2='858' y2='174' stroke='#e5e7eb' stroke-width='1'/>
+<text x='62' y='178' text-anchor='end' font-size='11' fill='#555'>75.0</text>
+<line x1='72' y1='102' x2='858' y2='102' stroke='#e5e7eb' stroke-width='1'/>
+<text x='62' y='106' text-anchor='end' font-size='11' fill='#555'>100.0</text>
+<line x1='72' y1='390' x2='858' y2='390' stroke='black'/>
+<rect x='76' y='375' width='35' height='15' rx='4' fill='#0f766e'/>
+<text x='101.5' y='430' transform='rotate(-30 101.5 430)' text-anchor='end' font-size='11' fill='#222'>Rust 1.82 [x86_64]</text>
+<text x='93.5' y='367' text-anchor='middle' font-size='12'>5.4 MB</text>
+<rect x='129' y='374' width='35' height='16' rx='4' fill='#0f766e'/>
+<text x='154.5' y='430' transform='rotate(-30 154.5 430)' text-anchor='end' font-size='11' fill='#222'>C++ (GCC 14) [x86_64]</text>
+<text x='146.5' y='366' text-anchor='middle' font-size='12'>5.8 MB</text>
+<rect x='182' y='358' width='35' height='32' rx='4' fill='#0f766e'/>
+<text x='207.5' y='430' transform='rotate(-30 207.5 430)' text-anchor='end' font-size='11' fill='#222'>Go 1.23 [x86_64]</text>
+<text x='199.5' y='350' text-anchor='middle' font-size='12'>11.4 MB</text>
+<rect x='235' y='355' width='35' height='35' rx='4' fill='#0f766e'/>
+<text x='260.5' y='430' transform='rotate(-30 260.5 430)' text-anchor='end' font-size='11' fill='#222'>Python 2.7 [x86_64]</text>
+<text x='252.5' y='347' text-anchor='middle' font-size='12'>12.5 MB</text>
+<rect x='288' y='348' width='35' height='42' rx='4' fill='#0f766e'/>
+<text x='313.5' y='430' transform='rotate(-30 313.5 430)' text-anchor='end' font-size='11' fill='#222'>Python 3.8 [x86_64]</text>
+<text x='305.5' y='340' text-anchor='middle' font-size='12'>14.9 MB</text>
+<rect x='341' y='339' width='35' height='51' rx='4' fill='#0f766e'/>
+<text x='366.5' y='430' transform='rotate(-30 366.5 430)' text-anchor='end' font-size='11' fill='#222'>Python 3.11 [x86_64]</text>
+<text x='358.5' y='331' text-anchor='middle' font-size='12'>17.8 MB</text>
+<rect x='394' y='338' width='35' height='52' rx='4' fill='#0f766e'/>
+<text x='419.5' y='430' transform='rotate(-30 419.5 430)' text-anchor='end' font-size='11' fill='#222'>Python 3.12 [x86_64]</text>
+<text x='411.5' y='330' text-anchor='middle' font-size='12'>18.3 MB</text>
+<rect x='447' y='326' width='35' height='64' rx='4' fill='#0f766e'/>
+<text x='472.5' y='430' transform='rotate(-30 472.5 430)' text-anchor='end' font-size='11' fill='#222'>PHP 7.4 [x86_64]</text>
+<text x='464.5' y='318' text-anchor='middle' font-size='12'>22.3 MB</text>
+<rect x='500' y='325' width='35' height='65' rx='4' fill='#0f766e'/>
+<text x='525.5' y='430' transform='rotate(-30 525.5 430)' text-anchor='end' font-size='11' fill='#222'>PHP 5.6 [x86_64]</text>
+<text x='517.5' y='317' text-anchor='middle' font-size='12'>22.9 MB</text>
+<rect x='553' y='323' width='35' height='67' rx='4' fill='#0f766e'/>
+<text x='578.5' y='430' transform='rotate(-30 578.5 430)' text-anchor='end' font-size='11' fill='#222'>PHP 7.2 [x86_64]</text>
+<text x='570.5' y='315' text-anchor='middle' font-size='12'>23.4 MB</text>
+<rect x='606' y='321' width='35' height='69' rx='4' fill='#0f766e'/>
+<text x='631.5' y='430' transform='rotate(-30 631.5 430)' text-anchor='end' font-size='11' fill='#222'>PHP 8.4 [x86_64]</text>
+<text x='623.5' y='313' text-anchor='middle' font-size='12'>24.1 MB</text>
+<rect x='659' y='266' width='35' height='124' rx='4' fill='#0f766e'/>
+<text x='684.5' y='430' transform='rotate(-30 684.5 430)' text-anchor='end' font-size='11' fill='#222'>Bun 1.3.12 [x86_64]</text>
+<text x='676.5' y='258' text-anchor='middle' font-size='12'>43.4 MB</text>
+<rect x='712' y='264' width='35' height='126' rx='4' fill='#0f766e'/>
+<text x='737.5' y='430' transform='rotate(-30 737.5 430)' text-anchor='end' font-size='11' fill='#222'>Node.js 22 [x86_64]</text>
+<text x='729.5' y='256' text-anchor='middle' font-size='12'>43.9 MB</text>
+<rect x='765' y='257' width='35' height='133' rx='4' fill='#0f766e'/>
+<text x='790.5' y='430' transform='rotate(-30 790.5 430)' text-anchor='end' font-size='11' fill='#222'>Java 21 [x86_64]</text>
+<text x='782.5' y='249' text-anchor='middle' font-size='12'>46.3 MB</text>
+<rect x='818' y='204' width='35' height='186' rx='4' fill='#0f766e'/>
+<text x='843.5' y='430' transform='rotate(-30 843.5 430)' text-anchor='end' font-size='11' fill='#222'>Deno 2.7.6 [x86_64]</text>
+<text x='835.5' y='196' text-anchor='middle' font-size='12'>64.8 MB</text>
+<text x='453.0' y='508' text-anchor='middle' font-size='11' fill='#555'>
+<tspan x='453.0' dy='0'>Only x86_64 runtime rows are included; sorted by this raw measurement.</tspan>
+</text>
+</svg>

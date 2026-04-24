@@ -171,6 +171,8 @@ No previous publish manifest was available, so no regression baseline could be c
 ### How to read these plots
 
 - The README now contains both **snapshot-scoped plots** and **language best-case plots**.
+- **Global comparison plots** rank every runtime/version/architecture row in the active comparison artifact against every other row.
+- **Per-architecture plots** filter to one CPU architecture at a time so `x86_64`, `aarch64`, and future architectures can each have their own native truth set.
 - The README now contains both **raw-unit plots** and **normalized score plots**.
 - **Snapshot-scoped** plots show exactly the runtimes present in the published artifact used to generate this README.
 - **Language best-case** plots collapse each language family down to whichever tested version performed best for that specific metric.
@@ -1250,9 +1252,54 @@ Sources:
 </details>
 
 
-### Raw-unit plots for the supplemental per-version runtime comparison (`20260423T043938Z`)
+### Per-architecture plots for the supplemental per-version runtime comparison (`20260423T043938Z`)
 
-These plots use real units rather than internal normalized scores. CPU and wall time are shown as total median time across the active comparison view, memory is shown as average median peak RSS, and LOC is shown as average lines per task.
+These plots filter the active comparison artifact to one CPU architecture at a time. Use them when you want the native truth for a specific architecture without mixing it with other machines. The global sections below still compare every runtime/version/architecture row together.
+
+<details>
+<summary><strong>x86_64</strong> native-only plots</summary>
+
+These charts include only runtime rows whose normalized architecture is `x86_64`.
+
+![x86_64 overall ranked score chart](docs/plots/version_arch_x86_64_overall_ranked.svg)
+
+![x86_64 objective ranked score chart](docs/plots/version_arch_x86_64_objective_ranked.svg)
+
+![x86_64 opinionated ranked score chart](docs/plots/version_arch_x86_64_opinionated_ranked.svg)
+
+![x86_64 CPU raw-unit ranked chart](docs/plots/version_arch_x86_64_cpu_units_ranked.svg)
+
+![x86_64 wall raw-unit ranked chart](docs/plots/version_arch_x86_64_wall_units_ranked.svg)
+
+![x86_64 memory raw-unit ranked chart](docs/plots/version_arch_x86_64_memory_units_ranked.svg)
+
+![x86_64 scalability growth ranked chart](docs/plots/version_arch_x86_64_scalability_growth_ratios_ranked.svg)
+
+<details>
+<summary><strong>Show canonical-order x86_64 plots</strong></summary>
+
+![x86_64 overall canonical score chart](docs/plots/version_arch_x86_64_overall.svg)
+
+![x86_64 objective canonical score chart](docs/plots/version_arch_x86_64_objective.svg)
+
+![x86_64 opinionated canonical score chart](docs/plots/version_arch_x86_64_opinionated.svg)
+
+![x86_64 CPU raw-unit canonical chart](docs/plots/version_arch_x86_64_cpu_units.svg)
+
+![x86_64 wall raw-unit canonical chart](docs/plots/version_arch_x86_64_wall_units.svg)
+
+![x86_64 memory raw-unit canonical chart](docs/plots/version_arch_x86_64_memory_units.svg)
+
+![x86_64 wall-time growth curve](docs/plots/version_arch_x86_64_scalability_curve.svg)
+
+</details>
+
+</details>
+
+
+### Global raw-unit plots for the supplemental per-version runtime comparison (`20260423T043938Z`)
+
+These global plots use real units rather than internal normalized scores and compare every runtime/version/architecture row in the active comparison view against every other row. CPU and wall time are shown as total median time, memory is shown as average median peak RSS, and LOC is shown as average lines per task.
 
 **CPU time (ranked):** raw total CPU time across the suite; **lower is better**.
 

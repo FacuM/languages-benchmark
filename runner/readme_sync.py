@@ -544,7 +544,13 @@ def sync_readme(results_path: Path, readme_path: Path, docs_dir: Path) -> Path:
 def _copy_report_plots(results_path: Path, plot_dir: Path, prefix: str = "") -> None:
     report_dir = results_path.parent / "report"
     expected = [report_dir / name for name in PLOT_FILES]
-    if not report_dir.exists() or not any(report_dir.glob("*.svg")) or any(not path.exists() for path in expected):
+    needs_architecture_plots = False
+    if report_dir.exists() and not any(report_dir.glob("arch_*.svg")):
+        try:
+            needs_architecture_plots = bool(_payload_architectures(read_json(results_path)))
+        except Exception:
+            needs_architecture_plots = False
+    if not report_dir.exists() or not any(report_dir.glob("*.svg")) or any(not path.exists() for path in expected) or needs_architecture_plots:
         from runner.reporting import generate_report
 
         generate_report(results_path, report_dir)
@@ -552,7 +558,13 @@ def _copy_report_plots(results_path: Path, plot_dir: Path, prefix: str = "") -> 
         src = report_dir / name
         if src.exists():
             shutil.copyfile(src, plot_dir / f"{prefix}{name}")
-    for src in sorted(list(report_dir.glob("task_*.svg")) + list(report_dir.glob("best_case_task_*.svg")) + list(report_dir.glob("task_baseline_*.svg"))):
+    dynamic_plots = (
+        list(report_dir.glob("task_*.svg"))
+        + list(report_dir.glob("best_case_task_*.svg"))
+        + list(report_dir.glob("task_baseline_*.svg"))
+        + list(report_dir.glob("arch_*.svg"))
+    )
+    for src in sorted(dynamic_plots):
         shutil.copyfile(src, plot_dir / f"{prefix}{src.name}")
 
 
@@ -683,6 +695,8 @@ def _build_section(payload: dict, plot_rel_dir: Path, docs_dir: Path, previous_m
         "### How to read these plots",
         "",
         "- The README now contains both **snapshot-scoped plots** and **language best-case plots**.",
+        "- **Global comparison plots** rank every runtime/version/architecture row in the active comparison artifact against every other row.",
+        "- **Per-architecture plots** filter to one CPU architecture at a time so `x86_64`, `aarch64`, and future architectures can each have their own native truth set.",
         "- The README now contains both **raw-unit plots** and **normalized score plots**.",
         "- **Snapshot-scoped** plots show exactly the runtimes present in the published artifact used to generate this README.",
         "- **Language best-case** plots collapse each language family down to whichever tested version performed best for that specific metric.",
@@ -917,11 +931,12 @@ def _build_section(payload: dict, plot_rel_dir: Path, docs_dir: Path, previous_m
         "",
     ])
     lines.extend(_rubric_evidence_lines(rubrics))
+    lines.extend(_architecture_plot_lines(comparison_payload, plot_rel_dir, docs_dir, comparison_prefix, comparison_label))
     lines.extend([
         "",
-        f"### Raw-unit plots for {comparison_label}",
+        f"### Global raw-unit plots for {comparison_label}",
         "",
-        "These plots use real units rather than internal normalized scores. CPU and wall time are shown as total median time across the active comparison view, memory is shown as average median peak RSS, and LOC is shown as average lines per task.",
+        "These global plots use real units rather than internal normalized scores and compare every runtime/version/architecture row in the active comparison view against every other row. CPU and wall time are shown as total median time, memory is shown as average median peak RSS, and LOC is shown as average lines per task.",
         "",
         "**CPU time (ranked):** raw total CPU time across the suite; **lower is better**.",
         "",
@@ -1531,6 +1546,81 @@ def _version_matrix_plot_lines(payload: dict, plot_rel_dir: Path, docs_dir: Path
         "</details>",
         "",
     ]
+
+
+def _safe_architecture_stem(architecture: str, stem: str) -> str:
+    safe_architecture = "".join(ch if ch.isalnum() else "_" for ch in architecture).strip("_") or "unknown"
+    return f"arch_{safe_architecture}_{stem}"
+
+
+def _architecture_plot_lines(payload: dict, plot_rel_dir: Path, docs_dir: Path, prefix: str, comparison_label: str) -> list[str]:
+    architectures = sorted({
+        str(row.get("architecture"))
+        for row in payload.get("aggregate", [])
+        if row.get("architecture") and row.get("architecture") != "unknown"
+    })
+    if not architectures:
+        return []
+    plot_dir = docs_dir / "plots"
+    sections: list[str] = [
+        "",
+        f"### Per-architecture plots for {comparison_label}",
+        "",
+        "These plots filter the active comparison artifact to one CPU architecture at a time. Use them when you want the native truth for a specific architecture without mixing it with other machines. The global sections below still compare every runtime/version/architecture row together.",
+        "",
+    ]
+    rendered_any = False
+    for architecture in architectures:
+        def plot_name(stem: str) -> str:
+            return f"{prefix}{_safe_architecture_stem(architecture, stem)}"
+
+        required = plot_dir / f"{plot_name('overall')}_ranked.svg"
+        if not required.exists():
+            continue
+        rendered_any = True
+        sections.extend([
+            "<details>",
+            f"<summary><strong>{architecture}</strong> native-only plots</summary>",
+            "",
+            f"These charts include only runtime rows whose normalized architecture is `{architecture}`.",
+            "",
+            f"![{architecture} overall ranked score chart]({plot_rel_dir.as_posix()}/{plot_name('overall')}_ranked.svg)",
+            "",
+            f"![{architecture} objective ranked score chart]({plot_rel_dir.as_posix()}/{plot_name('objective')}_ranked.svg)",
+            "",
+            f"![{architecture} opinionated ranked score chart]({plot_rel_dir.as_posix()}/{plot_name('opinionated')}_ranked.svg)",
+            "",
+            f"![{architecture} CPU raw-unit ranked chart]({plot_rel_dir.as_posix()}/{plot_name('cpu_units')}_ranked.svg)",
+            "",
+            f"![{architecture} wall raw-unit ranked chart]({plot_rel_dir.as_posix()}/{plot_name('wall_units')}_ranked.svg)",
+            "",
+            f"![{architecture} memory raw-unit ranked chart]({plot_rel_dir.as_posix()}/{plot_name('memory_units')}_ranked.svg)",
+            "",
+            f"![{architecture} scalability growth ranked chart]({plot_rel_dir.as_posix()}/{plot_name('scalability_growth_ratios')}_ranked.svg)",
+            "",
+            "<details>",
+            f"<summary><strong>Show canonical-order {architecture} plots</strong></summary>",
+            "",
+            f"![{architecture} overall canonical score chart]({plot_rel_dir.as_posix()}/{plot_name('overall')}.svg)",
+            "",
+            f"![{architecture} objective canonical score chart]({plot_rel_dir.as_posix()}/{plot_name('objective')}.svg)",
+            "",
+            f"![{architecture} opinionated canonical score chart]({plot_rel_dir.as_posix()}/{plot_name('opinionated')}.svg)",
+            "",
+            f"![{architecture} CPU raw-unit canonical chart]({plot_rel_dir.as_posix()}/{plot_name('cpu_units')}.svg)",
+            "",
+            f"![{architecture} wall raw-unit canonical chart]({plot_rel_dir.as_posix()}/{plot_name('wall_units')}.svg)",
+            "",
+            f"![{architecture} memory raw-unit canonical chart]({plot_rel_dir.as_posix()}/{plot_name('memory_units')}.svg)",
+            "",
+            f"![{architecture} wall-time growth curve]({plot_rel_dir.as_posix()}/{plot_name('scalability_curve')}.svg)",
+            "",
+            "</details>",
+            "",
+            "</details>",
+            "",
+        ])
+    return sections if rendered_any else []
 
 
 def _supplemental_version_payload(payload: dict, docs_dir: Path | None = None) -> dict | None:

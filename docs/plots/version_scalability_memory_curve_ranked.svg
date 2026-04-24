@@ -26,141 +26,141 @@
 <text x='624' y='508' text-anchor='middle' font-size='12'>L</text>
 <polyline points='169,294 397,288 624,284' fill='none' stroke='#0891b2' stroke-width='3' stroke-linecap='round'/>
 <circle cx='169' cy='294' r='4' fill='#0891b2'/>
-<title>cpp-14 1.00x</title>
+<title>C++ (GCC 14) [x86_64] 1.00x</title>
 <circle cx='397' cy='288' r='4' fill='#0891b2'/>
-<title>cpp-14 1.03x</title>
+<title>C++ (GCC 14) [x86_64] 1.03x</title>
 <circle cx='624' cy='284' r='4' fill='#0891b2'/>
-<title>cpp-14 1.06x</title>
+<title>C++ (GCC 14) [x86_64] 1.06x</title>
 <polyline points='169,294 397,286 624,279' fill='none' stroke='#4f46e5' stroke-width='3' stroke-linecap='round'/>
 <circle cx='169' cy='294' r='4' fill='#4f46e5'/>
-<title>php-8.4 1.00x</title>
+<title>PHP 8.4 [x86_64] 1.00x</title>
 <circle cx='397' cy='286' r='4' fill='#4f46e5'/>
-<title>php-8.4 1.04x</title>
+<title>PHP 8.4 [x86_64] 1.04x</title>
 <circle cx='624' cy='279' r='4' fill='#4f46e5'/>
-<title>php-8.4 1.08x</title>
+<title>PHP 8.4 [x86_64] 1.08x</title>
 <polyline points='169,294 397,288 624,277' fill='none' stroke='#9333ea' stroke-width='3' stroke-linecap='round'/>
 <circle cx='169' cy='294' r='4' fill='#9333ea'/>
-<title>java-21 1.00x</title>
+<title>Java 21 [x86_64] 1.00x</title>
 <circle cx='397' cy='288' r='4' fill='#9333ea'/>
-<title>java-21 1.03x</title>
+<title>Java 21 [x86_64] 1.03x</title>
 <circle cx='624' cy='277' r='4' fill='#9333ea'/>
-<title>java-21 1.09x</title>
+<title>Java 21 [x86_64] 1.09x</title>
 <polyline points='169,294 397,284 624,276' fill='none' stroke='#ea580c' stroke-width='3' stroke-linecap='round'/>
 <circle cx='169' cy='294' r='4' fill='#ea580c'/>
-<title>node-22 1.00x</title>
+<title>Node.js 22 [x86_64] 1.00x</title>
 <circle cx='397' cy='284' r='4' fill='#ea580c'/>
-<title>node-22 1.06x</title>
+<title>Node.js 22 [x86_64] 1.06x</title>
 <circle cx='624' cy='276' r='4' fill='#ea580c'/>
-<title>node-22 1.09x</title>
+<title>Node.js 22 [x86_64] 1.09x</title>
 <polyline points='169,294 397,288 624,274' fill='none' stroke='#0f766e' stroke-width='3' stroke-linecap='round'/>
 <circle cx='169' cy='294' r='4' fill='#0f766e'/>
-<title>php-7.2 1.00x</title>
+<title>PHP 7.2 [x86_64] 1.00x</title>
 <circle cx='397' cy='288' r='4' fill='#0f766e'/>
-<title>php-7.2 1.03x</title>
+<title>PHP 7.2 [x86_64] 1.03x</title>
 <circle cx='624' cy='274' r='4' fill='#0f766e'/>
-<title>php-7.2 1.11x</title>
+<title>PHP 7.2 [x86_64] 1.11x</title>
 <polyline points='169,294 397,287 624,273' fill='none' stroke='#dc2626' stroke-width='3' stroke-linecap='round'/>
 <circle cx='169' cy='294' r='4' fill='#dc2626'/>
-<title>python-3.12 1.00x</title>
+<title>Python 3.12 [x86_64] 1.00x</title>
 <circle cx='397' cy='287' r='4' fill='#dc2626'/>
-<title>python-3.12 1.04x</title>
+<title>Python 3.12 [x86_64] 1.04x</title>
 <circle cx='624' cy='273' r='4' fill='#dc2626'/>
-<title>python-3.12 1.11x</title>
+<title>Python 3.12 [x86_64] 1.11x</title>
 <polyline points='169,294 397,287 624,271' fill='none' stroke='#ca8a04' stroke-width='3' stroke-linecap='round'/>
 <circle cx='169' cy='294' r='4' fill='#ca8a04'/>
-<title>php-7.4 1.00x</title>
+<title>PHP 7.4 [x86_64] 1.00x</title>
 <circle cx='397' cy='287' r='4' fill='#ca8a04'/>
-<title>php-7.4 1.04x</title>
+<title>PHP 7.4 [x86_64] 1.04x</title>
 <circle cx='624' cy='271' r='4' fill='#ca8a04'/>
-<title>php-7.4 1.12x</title>
+<title>PHP 7.4 [x86_64] 1.12x</title>
 <polyline points='169,294 397,285 624,270' fill='none' stroke='#16a34a' stroke-width='3' stroke-linecap='round'/>
 <circle cx='169' cy='294' r='4' fill='#16a34a'/>
-<title>deno-2.7.6 1.00x</title>
+<title>Deno 2.7.6 [x86_64] 1.00x</title>
 <circle cx='397' cy='285' r='4' fill='#16a34a'/>
-<title>deno-2.7.6 1.05x</title>
+<title>Deno 2.7.6 [x86_64] 1.05x</title>
 <circle cx='624' cy='270' r='4' fill='#16a34a'/>
-<title>deno-2.7.6 1.13x</title>
+<title>Deno 2.7.6 [x86_64] 1.13x</title>
 <polyline points='169,294 397,288 624,270' fill='none' stroke='#9333ea' stroke-width='3' stroke-linecap='round'/>
 <circle cx='169' cy='294' r='4' fill='#9333ea'/>
-<title>python-3.8 1.00x</title>
+<title>Python 3.8 [x86_64] 1.00x</title>
 <circle cx='397' cy='288' r='4' fill='#9333ea'/>
-<title>python-3.8 1.03x</title>
+<title>Python 3.8 [x86_64] 1.03x</title>
 <circle cx='624' cy='270' r='4' fill='#9333ea'/>
-<title>python-3.8 1.13x</title>
+<title>Python 3.8 [x86_64] 1.13x</title>
 <polyline points='169,294 397,284 624,266' fill='none' stroke='#16a34a' stroke-width='3' stroke-linecap='round'/>
 <circle cx='169' cy='294' r='4' fill='#16a34a'/>
-<title>python-3.11 1.00x</title>
+<title>Python 3.11 [x86_64] 1.00x</title>
 <circle cx='397' cy='284' r='4' fill='#16a34a'/>
-<title>python-3.11 1.06x</title>
+<title>Python 3.11 [x86_64] 1.06x</title>
 <circle cx='624' cy='266' r='4' fill='#16a34a'/>
-<title>python-3.11 1.15x</title>
+<title>Python 3.11 [x86_64] 1.15x</title>
 <polyline points='169,294 397,288 624,262' fill='none' stroke='#ea580c' stroke-width='3' stroke-linecap='round'/>
 <circle cx='169' cy='294' r='4' fill='#ea580c'/>
-<title>rust-1.82 1.00x</title>
+<title>Rust 1.82 [x86_64] 1.00x</title>
 <circle cx='397' cy='288' r='4' fill='#ea580c'/>
-<title>rust-1.82 1.04x</title>
+<title>Rust 1.82 [x86_64] 1.04x</title>
 <circle cx='624' cy='262' r='4' fill='#ea580c'/>
-<title>rust-1.82 1.17x</title>
+<title>Rust 1.82 [x86_64] 1.17x</title>
 <polyline points='169,294 397,282 624,257' fill='none' stroke='#4f46e5' stroke-width='3' stroke-linecap='round'/>
 <circle cx='169' cy='294' r='4' fill='#4f46e5'/>
-<title>bun-1.3.12 1.00x</title>
+<title>Bun 1.3.12 [x86_64] 1.00x</title>
 <circle cx='397' cy='282' r='4' fill='#4f46e5'/>
-<title>bun-1.3.12 1.07x</title>
+<title>Bun 1.3.12 [x86_64] 1.07x</title>
 <circle cx='624' cy='257' r='4' fill='#4f46e5'/>
-<title>bun-1.3.12 1.19x</title>
+<title>Bun 1.3.12 [x86_64] 1.19x</title>
 <polyline points='169,294 397,262 624,239' fill='none' stroke='#dc2626' stroke-width='3' stroke-linecap='round'/>
 <circle cx='169' cy='294' r='4' fill='#dc2626'/>
-<title>go-1.23 1.00x</title>
+<title>Go 1.23 [x86_64] 1.00x</title>
 <circle cx='397' cy='262' r='4' fill='#dc2626'/>
-<title>go-1.23 1.17x</title>
+<title>Go 1.23 [x86_64] 1.17x</title>
 <circle cx='624' cy='239' r='4' fill='#dc2626'/>
-<title>go-1.23 1.29x</title>
+<title>Go 1.23 [x86_64] 1.29x</title>
 <polyline points='169,294 397,272 624,237' fill='none' stroke='#475569' stroke-width='3' stroke-linecap='round'/>
 <circle cx='169' cy='294' r='4' fill='#475569'/>
-<title>php-5.6 1.00x</title>
+<title>PHP 5.6 [x86_64] 1.00x</title>
 <circle cx='397' cy='272' r='4' fill='#475569'/>
-<title>php-5.6 1.12x</title>
+<title>PHP 5.6 [x86_64] 1.12x</title>
 <circle cx='624' cy='237' r='4' fill='#475569'/>
-<title>php-5.6 1.30x</title>
+<title>PHP 5.6 [x86_64] 1.30x</title>
 <polyline points='169,294 397,272 624,234' fill='none' stroke='#0891b2' stroke-width='3' stroke-linecap='round'/>
 <circle cx='169' cy='294' r='4' fill='#0891b2'/>
-<title>python-2.7 1.00x</title>
+<title>Python 2.7 [x86_64] 1.00x</title>
 <circle cx='397' cy='272' r='4' fill='#0891b2'/>
-<title>python-2.7 1.12x</title>
+<title>Python 2.7 [x86_64] 1.12x</title>
 <circle cx='624' cy='234' r='4' fill='#0891b2'/>
-<title>python-2.7 1.31x</title>
+<title>Python 2.7 [x86_64] 1.31x</title>
 <rect x='734' y='102' width='210' height='364' rx='8' fill='#f8fafc' stroke='#e5e7eb'/>
 <text x='746' y='120' font-size='13' font-weight='bold'>Ranked legend</text>
 <line x1='746' y1='138' x2='764' y2='138' stroke='#0891b2' stroke-width='4' stroke-linecap='round'/>
-<text x='774' y='142' font-size='12'>cpp-14</text>
+<text x='774' y='142' font-size='12'>C++ (GCC 14) [x86_64]</text>
 <line x1='746' y1='160' x2='764' y2='160' stroke='#4f46e5' stroke-width='4' stroke-linecap='round'/>
-<text x='774' y='164' font-size='12'>php-8.4</text>
+<text x='774' y='164' font-size='12'>PHP 8.4 [x86_64]</text>
 <line x1='746' y1='182' x2='764' y2='182' stroke='#9333ea' stroke-width='4' stroke-linecap='round'/>
-<text x='774' y='186' font-size='12'>java-21</text>
+<text x='774' y='186' font-size='12'>Java 21 [x86_64]</text>
 <line x1='746' y1='204' x2='764' y2='204' stroke='#ea580c' stroke-width='4' stroke-linecap='round'/>
-<text x='774' y='208' font-size='12'>node-22</text>
+<text x='774' y='208' font-size='12'>Node.js 22 [x86_64]</text>
 <line x1='746' y1='226' x2='764' y2='226' stroke='#0f766e' stroke-width='4' stroke-linecap='round'/>
-<text x='774' y='230' font-size='12'>php-7.2</text>
+<text x='774' y='230' font-size='12'>PHP 7.2 [x86_64]</text>
 <line x1='746' y1='248' x2='764' y2='248' stroke='#dc2626' stroke-width='4' stroke-linecap='round'/>
-<text x='774' y='252' font-size='12'>python-3.12</text>
+<text x='774' y='252' font-size='12'>Python 3.12 [x86_64]</text>
 <line x1='746' y1='270' x2='764' y2='270' stroke='#ca8a04' stroke-width='4' stroke-linecap='round'/>
-<text x='774' y='274' font-size='12'>php-7.4</text>
+<text x='774' y='274' font-size='12'>PHP 7.4 [x86_64]</text>
 <line x1='746' y1='292' x2='764' y2='292' stroke='#16a34a' stroke-width='4' stroke-linecap='round'/>
-<text x='774' y='296' font-size='12'>deno-2.7.6</text>
+<text x='774' y='296' font-size='12'>Deno 2.7.6 [x86_64]</text>
 <line x1='746' y1='314' x2='764' y2='314' stroke='#9333ea' stroke-width='4' stroke-linecap='round'/>
-<text x='774' y='318' font-size='12'>python-3.8</text>
+<text x='774' y='318' font-size='12'>Python 3.8 [x86_64]</text>
 <line x1='746' y1='336' x2='764' y2='336' stroke='#16a34a' stroke-width='4' stroke-linecap='round'/>
-<text x='774' y='340' font-size='12'>python-3.11</text>
+<text x='774' y='340' font-size='12'>Python 3.11 [x86_64]</text>
 <line x1='746' y1='358' x2='764' y2='358' stroke='#ea580c' stroke-width='4' stroke-linecap='round'/>
-<text x='774' y='362' font-size='12'>rust-1.82</text>
+<text x='774' y='362' font-size='12'>Rust 1.82 [x86_64]</text>
 <line x1='746' y1='380' x2='764' y2='380' stroke='#4f46e5' stroke-width='4' stroke-linecap='round'/>
-<text x='774' y='384' font-size='12'>bun-1.3.12</text>
+<text x='774' y='384' font-size='12'>Bun 1.3.12 [x86_64]</text>
 <line x1='746' y1='402' x2='764' y2='402' stroke='#dc2626' stroke-width='4' stroke-linecap='round'/>
-<text x='774' y='406' font-size='12'>go-1.23</text>
+<text x='774' y='406' font-size='12'>Go 1.23 [x86_64]</text>
 <line x1='746' y1='424' x2='764' y2='424' stroke='#475569' stroke-width='4' stroke-linecap='round'/>
-<text x='774' y='428' font-size='12'>php-5.6</text>
+<text x='774' y='428' font-size='12'>PHP 5.6 [x86_64]</text>
 <line x1='746' y1='446' x2='764' y2='446' stroke='#0891b2' stroke-width='4' stroke-linecap='round'/>
-<text x='774' y='450' font-size='12'>python-2.7</text>
+<text x='774' y='450' font-size='12'>Python 2.7 [x86_64]</text>
 <text x='490.0' y='516' text-anchor='middle' font-size='11' fill='#555'>
 <tspan x='490.0' dy='0'>Legend sorted by memory growth from best to worst. Lower lines indicate better scaling behavior.</tspan>
 </text>

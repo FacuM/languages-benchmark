@@ -9,8 +9,8 @@ def test_generate_report_writes_canonical_and_ranked_plot_variants(tmp_path):
         "run_id": "run-1",
         "host": {"hostname": "bench-host", "cpu_model": "Test CPU"},
         "runtimes": [
-            {"language": "php-8.4", "language_label": "PHP 8.4", "language_family": "php", "configured_version": "8.4", "reported_version": "PHP 8.4.0", "image": "languages-benchmark:php-8.4"},
-            {"language": "rust-1.82", "language_label": "Rust 1.82", "language_family": "rust", "configured_version": "1.82", "reported_version": "Rust 1.82", "image": "languages-benchmark:rust-1.82"},
+            {"language": "php-8.4@x86_64", "runtime_id": "php-8.4", "architecture": "x86_64", "language_label": "PHP 8.4 [x86_64]", "language_family": "php", "configured_version": "8.4", "reported_version": "PHP 8.4.0", "image": "languages-benchmark:php-8.4"},
+            {"language": "rust-1.82@x86_64", "runtime_id": "rust-1.82", "architecture": "x86_64", "language_label": "Rust 1.82 [x86_64]", "language_family": "rust", "configured_version": "1.82", "reported_version": "Rust 1.82", "image": "languages-benchmark:rust-1.82"},
         ],
         "weights": {
             "cpu": 0.14,
@@ -27,8 +27,10 @@ def test_generate_report_writes_canonical_and_ranked_plot_variants(tmp_path):
         },
         "aggregate": [
             {
-                "language": "rust",
-                "language_label": "Rust 1.82",
+                "language": "rust-1.82@x86_64",
+                "runtime_id": "rust-1.82",
+                "architecture": "x86_64",
+                "language_label": "Rust 1.82 [x86_64]",
                 "language_family": "rust",
                 "overall_score": 95.0,
                 "cpu_score": 93.0,
@@ -39,8 +41,10 @@ def test_generate_report_writes_canonical_and_ranked_plot_variants(tmp_path):
                 "skipped_tasks": 0,
             },
             {
-                "language": "php",
-                "language_label": "PHP 8.4",
+                "language": "php-8.4@x86_64",
+                "runtime_id": "php-8.4",
+                "architecture": "x86_64",
+                "language_label": "PHP 8.4 [x86_64]",
                 "language_family": "php",
                 "overall_score": 40.0,
                 "cpu_score": 35.0,
@@ -52,20 +56,20 @@ def test_generate_report_writes_canonical_and_ranked_plot_variants(tmp_path):
             },
         ],
         "medians": [
-            {"language": "php", "language_label": "PHP 8.4", "language_family": "php", "task_id": "sort_integers", "size": "s", "cpu_seconds": 2.0, "wall_seconds": 2.1, "max_rss_mb": 30.0, "loc": 20, "ease_score": 7, "community_score": 70, "debugging_score": 7, "docs_score": 7, "libraries_score": 7, "concurrency_score": 6, "scalability_score": 40.0},
-            {"language": "php", "language_label": "PHP 8.4", "language_family": "php", "task_id": "sort_integers", "size": "m", "cpu_seconds": 3.0, "wall_seconds": 3.2, "max_rss_mb": 32.0, "loc": 20, "ease_score": 7, "community_score": 70, "debugging_score": 7, "docs_score": 7, "libraries_score": 7, "concurrency_score": 6, "scalability_score": 38.0},
-            {"language": "php", "language_label": "PHP 8.4", "language_family": "php", "task_id": "sort_integers", "size": "l", "cpu_seconds": 4.0, "wall_seconds": 4.4, "max_rss_mb": 35.0, "loc": 20, "ease_score": 7, "community_score": 70, "debugging_score": 7, "docs_score": 7, "libraries_score": 7, "concurrency_score": 6, "scalability_score": 35.0},
-            {"language": "rust", "language_label": "Rust 1.82", "language_family": "rust", "task_id": "sort_integers", "size": "s", "cpu_seconds": 1.0, "wall_seconds": 1.1, "max_rss_mb": 20.0, "loc": 16, "ease_score": 8, "community_score": 80, "debugging_score": 8, "docs_score": 8, "libraries_score": 8, "concurrency_score": 7, "scalability_score": 95.0},
-            {"language": "rust", "language_label": "Rust 1.82", "language_family": "rust", "task_id": "sort_integers", "size": "m", "cpu_seconds": 1.4, "wall_seconds": 1.5, "max_rss_mb": 21.0, "loc": 16, "ease_score": 8, "community_score": 80, "debugging_score": 8, "docs_score": 8, "libraries_score": 8, "concurrency_score": 7, "scalability_score": 93.0},
-            {"language": "rust", "language_label": "Rust 1.82", "language_family": "rust", "task_id": "sort_integers", "size": "l", "cpu_seconds": 1.9, "wall_seconds": 2.0, "max_rss_mb": 22.0, "loc": 16, "ease_score": 8, "community_score": 80, "debugging_score": 8, "docs_score": 8, "libraries_score": 8, "concurrency_score": 7, "scalability_score": 90.0},
+            {"language": "php-8.4@x86_64", "runtime_id": "php-8.4", "architecture": "x86_64", "language_label": "PHP 8.4 [x86_64]", "language_family": "php", "task_id": "sort_integers", "size": "s", "cpu_seconds": 2.0, "wall_seconds": 2.1, "max_rss_mb": 30.0, "loc": 20, "ease_score": 7, "community_score": 70, "debugging_score": 7, "docs_score": 7, "libraries_score": 7, "concurrency_score": 6, "scalability_score": 40.0},
+            {"language": "php-8.4@x86_64", "runtime_id": "php-8.4", "architecture": "x86_64", "language_label": "PHP 8.4 [x86_64]", "language_family": "php", "task_id": "sort_integers", "size": "m", "cpu_seconds": 3.0, "wall_seconds": 3.2, "max_rss_mb": 32.0, "loc": 20, "ease_score": 7, "community_score": 70, "debugging_score": 7, "docs_score": 7, "libraries_score": 7, "concurrency_score": 6, "scalability_score": 38.0},
+            {"language": "php-8.4@x86_64", "runtime_id": "php-8.4", "architecture": "x86_64", "language_label": "PHP 8.4 [x86_64]", "language_family": "php", "task_id": "sort_integers", "size": "l", "cpu_seconds": 4.0, "wall_seconds": 4.4, "max_rss_mb": 35.0, "loc": 20, "ease_score": 7, "community_score": 70, "debugging_score": 7, "docs_score": 7, "libraries_score": 7, "concurrency_score": 6, "scalability_score": 35.0},
+            {"language": "rust-1.82@x86_64", "runtime_id": "rust-1.82", "architecture": "x86_64", "language_label": "Rust 1.82 [x86_64]", "language_family": "rust", "task_id": "sort_integers", "size": "s", "cpu_seconds": 1.0, "wall_seconds": 1.1, "max_rss_mb": 20.0, "loc": 16, "ease_score": 8, "community_score": 80, "debugging_score": 8, "docs_score": 8, "libraries_score": 8, "concurrency_score": 7, "scalability_score": 95.0},
+            {"language": "rust-1.82@x86_64", "runtime_id": "rust-1.82", "architecture": "x86_64", "language_label": "Rust 1.82 [x86_64]", "language_family": "rust", "task_id": "sort_integers", "size": "m", "cpu_seconds": 1.4, "wall_seconds": 1.5, "max_rss_mb": 21.0, "loc": 16, "ease_score": 8, "community_score": 80, "debugging_score": 8, "docs_score": 8, "libraries_score": 8, "concurrency_score": 7, "scalability_score": 93.0},
+            {"language": "rust-1.82@x86_64", "runtime_id": "rust-1.82", "architecture": "x86_64", "language_label": "Rust 1.82 [x86_64]", "language_family": "rust", "task_id": "sort_integers", "size": "l", "cpu_seconds": 1.9, "wall_seconds": 2.0, "max_rss_mb": 22.0, "loc": 16, "ease_score": 8, "community_score": 80, "debugging_score": 8, "docs_score": 8, "libraries_score": 8, "concurrency_score": 7, "scalability_score": 90.0},
         ],
         "rows": [
-            {"language": "php", "language_label": "PHP 8.4", "language_family": "php", "task_id": "sort_integers", "size": "s", "status": "ok", "cpu_seconds": 2.0, "wall_seconds": 2.1, "max_rss_mb": 30.0, "loc": 20, "ease_score": 7, "community_score": 70, "debugging_score": 7, "docs_score": 7, "libraries_score": 7, "concurrency_score": 6, "stdout": "1"},
-            {"language": "php", "language_label": "PHP 8.4", "language_family": "php", "task_id": "sort_integers", "size": "m", "status": "ok", "cpu_seconds": 3.0, "wall_seconds": 3.2, "max_rss_mb": 32.0, "loc": 20, "ease_score": 7, "community_score": 70, "debugging_score": 7, "docs_score": 7, "libraries_score": 7, "concurrency_score": 6, "stdout": "2"},
-            {"language": "php", "language_label": "PHP 8.4", "language_family": "php", "task_id": "sort_integers", "size": "l", "status": "ok", "cpu_seconds": 4.0, "wall_seconds": 4.4, "max_rss_mb": 35.0, "loc": 20, "ease_score": 7, "community_score": 70, "debugging_score": 7, "docs_score": 7, "libraries_score": 7, "concurrency_score": 6, "stdout": "3"},
-            {"language": "rust", "language_label": "Rust 1.82", "language_family": "rust", "task_id": "sort_integers", "size": "s", "status": "ok", "cpu_seconds": 1.0, "wall_seconds": 1.1, "max_rss_mb": 20.0, "loc": 16, "ease_score": 8, "community_score": 80, "debugging_score": 8, "docs_score": 8, "libraries_score": 8, "concurrency_score": 7, "stdout": "4"},
-            {"language": "rust", "language_label": "Rust 1.82", "language_family": "rust", "task_id": "sort_integers", "size": "m", "status": "ok", "cpu_seconds": 1.4, "wall_seconds": 1.5, "max_rss_mb": 21.0, "loc": 16, "ease_score": 8, "community_score": 80, "debugging_score": 8, "docs_score": 8, "libraries_score": 8, "concurrency_score": 7, "stdout": "5"},
-            {"language": "rust", "language_label": "Rust 1.82", "language_family": "rust", "task_id": "sort_integers", "size": "l", "status": "ok", "cpu_seconds": 1.9, "wall_seconds": 2.0, "max_rss_mb": 22.0, "loc": 16, "ease_score": 8, "community_score": 80, "debugging_score": 8, "docs_score": 8, "libraries_score": 8, "concurrency_score": 7, "stdout": "6"},
+            {"language": "php-8.4@x86_64", "runtime_id": "php-8.4", "architecture": "x86_64", "language_label": "PHP 8.4 [x86_64]", "language_family": "php", "task_id": "sort_integers", "size": "s", "status": "ok", "cpu_seconds": 2.0, "wall_seconds": 2.1, "max_rss_mb": 30.0, "loc": 20, "ease_score": 7, "community_score": 70, "debugging_score": 7, "docs_score": 7, "libraries_score": 7, "concurrency_score": 6, "stdout": "1"},
+            {"language": "php-8.4@x86_64", "runtime_id": "php-8.4", "architecture": "x86_64", "language_label": "PHP 8.4 [x86_64]", "language_family": "php", "task_id": "sort_integers", "size": "m", "status": "ok", "cpu_seconds": 3.0, "wall_seconds": 3.2, "max_rss_mb": 32.0, "loc": 20, "ease_score": 7, "community_score": 70, "debugging_score": 7, "docs_score": 7, "libraries_score": 7, "concurrency_score": 6, "stdout": "2"},
+            {"language": "php-8.4@x86_64", "runtime_id": "php-8.4", "architecture": "x86_64", "language_label": "PHP 8.4 [x86_64]", "language_family": "php", "task_id": "sort_integers", "size": "l", "status": "ok", "cpu_seconds": 4.0, "wall_seconds": 4.4, "max_rss_mb": 35.0, "loc": 20, "ease_score": 7, "community_score": 70, "debugging_score": 7, "docs_score": 7, "libraries_score": 7, "concurrency_score": 6, "stdout": "3"},
+            {"language": "rust-1.82@x86_64", "runtime_id": "rust-1.82", "architecture": "x86_64", "language_label": "Rust 1.82 [x86_64]", "language_family": "rust", "task_id": "sort_integers", "size": "s", "status": "ok", "cpu_seconds": 1.0, "wall_seconds": 1.1, "max_rss_mb": 20.0, "loc": 16, "ease_score": 8, "community_score": 80, "debugging_score": 8, "docs_score": 8, "libraries_score": 8, "concurrency_score": 7, "stdout": "4"},
+            {"language": "rust-1.82@x86_64", "runtime_id": "rust-1.82", "architecture": "x86_64", "language_label": "Rust 1.82 [x86_64]", "language_family": "rust", "task_id": "sort_integers", "size": "m", "status": "ok", "cpu_seconds": 1.4, "wall_seconds": 1.5, "max_rss_mb": 21.0, "loc": 16, "ease_score": 8, "community_score": 80, "debugging_score": 8, "docs_score": 8, "libraries_score": 8, "concurrency_score": 7, "stdout": "5"},
+            {"language": "rust-1.82@x86_64", "runtime_id": "rust-1.82", "architecture": "x86_64", "language_label": "Rust 1.82 [x86_64]", "language_family": "rust", "task_id": "sort_integers", "size": "l", "status": "ok", "cpu_seconds": 1.9, "wall_seconds": 2.0, "max_rss_mb": 22.0, "loc": 16, "ease_score": 8, "community_score": 80, "debugging_score": 8, "docs_score": 8, "libraries_score": 8, "concurrency_score": 7, "stdout": "6"},
         ],
     })
     report_dir = tmp_path / "report"
@@ -74,14 +78,17 @@ def test_generate_report_writes_canonical_and_ranked_plot_variants(tmp_path):
     canonical = (report_dir / "overall.svg").read_text(encoding="utf-8")
     ranked = (report_dir / "overall_ranked.svg").read_text(encoding="utf-8")
     html = report_path.read_text(encoding="utf-8")
-    assert canonical.index("PHP 8.4") < canonical.index("Rust 1.82")
-    assert ranked.index("Rust 1.82") < ranked.index("PHP 8.4")
+    assert canonical.index("PHP 8.4 [x86_64]") < canonical.index("Rust 1.82 [x86_64]")
+    assert ranked.index("Rust 1.82 [x86_64]") < ranked.index("PHP 8.4 [x86_64]")
     assert "fill='#ffffff'" in canonical
     assert (report_dir / "cpu_units.svg").exists()
     assert (report_dir / "cpu_units_ranked.svg").exists()
     assert (report_dir / "best_case_cpu_units_ranked.svg").exists()
     assert (report_dir / "objective.svg").exists()
     assert (report_dir / "objective_ranked.svg").exists()
+    assert (report_dir / "arch_x86_64_overall_ranked.svg").exists()
+    assert (report_dir / "arch_x86_64_cpu_units_ranked.svg").exists()
+    assert (report_dir / "arch_x86_64_scalability_growth_ratios_ranked.svg").exists()
     assert (report_dir / "best_case_objective_ranked.svg").exists()
     assert (report_dir / "cpu_geomean.svg").exists()
     assert (report_dir / "cpu_geomean_ranked.svg").exists()

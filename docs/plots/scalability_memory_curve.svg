@@ -26,69 +26,69 @@
 <text x='624' y='440' text-anchor='middle' font-size='12'>L</text>
 <polyline points='169,257 397,258 624,251' fill='none' stroke='#4f46e5' stroke-width='3' stroke-linecap='round'/>
 <circle cx='169' cy='257' r='4' fill='#4f46e5'/>
-<title>cpp-14@x86_64 1.00x</title>
+<title>C++ (GCC 14) [x86_64] 1.00x</title>
 <circle cx='397' cy='258' r='4' fill='#4f46e5'/>
-<title>cpp-14@x86_64 1.00x</title>
+<title>C++ (GCC 14) [x86_64] 1.00x</title>
 <circle cx='624' cy='251' r='4' fill='#4f46e5'/>
-<title>cpp-14@x86_64 1.04x</title>
+<title>C++ (GCC 14) [x86_64] 1.04x</title>
 <polyline points='169,257 397,237 624,219' fill='none' stroke='#0891b2' stroke-width='3' stroke-linecap='round'/>
 <circle cx='169' cy='257' r='4' fill='#0891b2'/>
-<title>go-1.23@x86_64 1.00x</title>
+<title>Go 1.23 [x86_64] 1.00x</title>
 <circle cx='397' cy='237' r='4' fill='#0891b2'/>
-<title>go-1.23@x86_64 1.13x</title>
+<title>Go 1.23 [x86_64] 1.13x</title>
 <circle cx='624' cy='219' r='4' fill='#0891b2'/>
-<title>go-1.23@x86_64 1.24x</title>
+<title>Go 1.23 [x86_64] 1.24x</title>
 <polyline points='169,257 397,254 624,243' fill='none' stroke='#16a34a' stroke-width='3' stroke-linecap='round'/>
 <circle cx='169' cy='257' r='4' fill='#16a34a'/>
-<title>java-21@x86_64 1.00x</title>
+<title>Java 21 [x86_64] 1.00x</title>
 <circle cx='397' cy='254' r='4' fill='#16a34a'/>
-<title>java-21@x86_64 1.02x</title>
+<title>Java 21 [x86_64] 1.02x</title>
 <circle cx='624' cy='243' r='4' fill='#16a34a'/>
-<title>java-21@x86_64 1.09x</title>
+<title>Java 21 [x86_64] 1.09x</title>
 <polyline points='169,257 397,250 624,242' fill='none' stroke='#dc2626' stroke-width='3' stroke-linecap='round'/>
 <circle cx='169' cy='257' r='4' fill='#dc2626'/>
-<title>node-22@x86_64 1.00x</title>
+<title>Node.js 22 [x86_64] 1.00x</title>
 <circle cx='397' cy='250' r='4' fill='#dc2626'/>
-<title>node-22@x86_64 1.05x</title>
+<title>Node.js 22 [x86_64] 1.05x</title>
 <circle cx='624' cy='242' r='4' fill='#dc2626'/>
-<title>node-22@x86_64 1.09x</title>
+<title>Node.js 22 [x86_64] 1.09x</title>
 <polyline points='169,257 397,255 624,248' fill='none' stroke='#9333ea' stroke-width='3' stroke-linecap='round'/>
 <circle cx='169' cy='257' r='4' fill='#9333ea'/>
-<title>php-8.4@x86_64 1.00x</title>
+<title>PHP 8.4 [x86_64] 1.00x</title>
 <circle cx='397' cy='255' r='4' fill='#9333ea'/>
-<title>php-8.4@x86_64 1.02x</title>
+<title>PHP 8.4 [x86_64] 1.02x</title>
 <circle cx='624' cy='248' r='4' fill='#9333ea'/>
-<title>php-8.4@x86_64 1.06x</title>
+<title>PHP 8.4 [x86_64] 1.06x</title>
 <polyline points='169,257 397,253 624,240' fill='none' stroke='#ea580c' stroke-width='3' stroke-linecap='round'/>
 <circle cx='169' cy='257' r='4' fill='#ea580c'/>
-<title>python-3.12@x86_64 1.00x</title>
+<title>Python 3.12 [x86_64] 1.00x</title>
 <circle cx='397' cy='253' r='4' fill='#ea580c'/>
-<title>python-3.12@x86_64 1.03x</title>
+<title>Python 3.12 [x86_64] 1.03x</title>
 <circle cx='624' cy='240' r='4' fill='#ea580c'/>
-<title>python-3.12@x86_64 1.11x</title>
+<title>Python 3.12 [x86_64] 1.11x</title>
 <polyline points='169,257 397,250 624,230' fill='none' stroke='#475569' stroke-width='3' stroke-linecap='round'/>
 <circle cx='169' cy='257' r='4' fill='#475569'/>
-<title>rust-1.82@x86_64 1.00x</title>
+<title>Rust 1.82 [x86_64] 1.00x</title>
 <circle cx='397' cy='250' r='4' fill='#475569'/>
-<title>rust-1.82@x86_64 1.05x</title>
+<title>Rust 1.82 [x86_64] 1.05x</title>
 <circle cx='624' cy='230' r='4' fill='#475569'/>
-<title>rust-1.82@x86_64 1.17x</title>
+<title>Rust 1.82 [x86_64] 1.17x</title>
 <rect x='734' y='96' width='210' height='188' rx='8' fill='#f8fafc' stroke='#e5e7eb'/>
 <text x='746' y='114' font-size='13' font-weight='bold'>Legend order</text>
 <line x1='746' y1='132' x2='764' y2='132' stroke='#4f46e5' stroke-width='4' stroke-linecap='round'/>
-<text x='774' y='136' font-size='12'>cpp-14@x86_64</text>
+<text x='774' y='136' font-size='12'>C++ (GCC 14) [x86_64]</text>
 <line x1='746' y1='154' x2='764' y2='154' stroke='#0891b2' stroke-width='4' stroke-linecap='round'/>
-<text x='774' y='158' font-size='12'>go-1.23@x86_64</text>
+<text x='774' y='158' font-size='12'>Go 1.23 [x86_64]</text>
 <line x1='746' y1='176' x2='764' y2='176' stroke='#16a34a' stroke-width='4' stroke-linecap='round'/>
-<text x='774' y='180' font-size='12'>java-21@x86_64</text>
+<text x='774' y='180' font-size='12'>Java 21 [x86_64]</text>
 <line x1='746' y1='198' x2='764' y2='198' stroke='#dc2626' stroke-width='4' stroke-linecap='round'/>
-<text x='774' y='202' font-size='12'>node-22@x86_64</text>
+<text x='774' y='202' font-size='12'>Node.js 22 [x86_64]</text>
 <line x1='746' y1='220' x2='764' y2='220' stroke='#9333ea' stroke-width='4' stroke-linecap='round'/>
-<text x='774' y='224' font-size='12'>php-8.4@x86_64</text>
+<text x='774' y='224' font-size='12'>PHP 8.4 [x86_64]</text>
 <line x1='746' y1='242' x2='764' y2='242' stroke='#ea580c' stroke-width='4' stroke-linecap='round'/>
-<text x='774' y='246' font-size='12'>python-3.12@x86_64</text>
+<text x='774' y='246' font-size='12'>Python 3.12 [x86_64]</text>
 <line x1='746' y1='264' x2='764' y2='264' stroke='#475569' stroke-width='4' stroke-linecap='round'/>
-<text x='774' y='268' font-size='12'>rust-1.82@x86_64</text>
+<text x='774' y='268' font-size='12'>Rust 1.82 [x86_64]</text>
 <text x='490.0' y='448' text-anchor='middle' font-size='11' fill='#555'>
 <tspan x='490.0' dy='0'>Legend keeps the canonical language order from benchmark.yaml. Lower lines indicate better scaling behavior.</tspan>
 </text>

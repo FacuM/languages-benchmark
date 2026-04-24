@@ -1,0 +1,72 @@
+<svg xmlns='http://www.w3.org/2000/svg' width='898' height='520' viewBox='0 0 898 520'>
+<rect x='0' y='0' width='898' height='520' fill='#ffffff'/>
+<rect x='0.5' y='0.5' width='897' height='519' fill='none' stroke='#d1d5db'/>
+<text x='449.0' y='28' text-anchor='middle' font-size='20' fill='#000'>
+<tspan x='449.0' dy='0'>Scalability score (0-100, higher is better) — on x86_64 —</tspan>
+<tspan x='449.0' dy='22'>ranked best to worst</tspan>
+</text>
+<text x='449.0' y='72' text-anchor='middle' font-size='12' fill='#555'>
+<tspan x='449.0' dy='0'>Aggregate scalability score derived from how gracefully runtime and memory grow from S to M</tspan>
+<tspan x='449.0' dy='16'>to L.</tspan>
+</text>
+<line x1='64' y1='376' x2='850' y2='376' stroke='#e5e7eb' stroke-width='1'/>
+<text x='54' y='380' text-anchor='end' font-size='11' fill='#555'>0</text>
+<line x1='64' y1='312' x2='850' y2='312' stroke='#e5e7eb' stroke-width='1'/>
+<text x='54' y='316' text-anchor='end' font-size='11' fill='#555'>25</text>
+<line x1='64' y1='247' x2='850' y2='247' stroke='#e5e7eb' stroke-width='1'/>
+<text x='54' y='251' text-anchor='end' font-size='11' fill='#555'>50</text>
+<line x1='64' y1='183' x2='850' y2='183' stroke='#e5e7eb' stroke-width='1'/>
+<text x='54' y='187' text-anchor='end' font-size='11' fill='#555'>75</text>
+<line x1='64' y1='118' x2='850' y2='118' stroke='#e5e7eb' stroke-width='1'/>
+<text x='54' y='122' text-anchor='end' font-size='11' fill='#555'>100</text>
+<line x1='64' y1='376' x2='850' y2='376' stroke='black'/>
+<rect x='68' y='162' width='35' height='214' rx='4' fill='#4f46e5'/>
+<text x='93.5' y='416' transform='rotate(-30 93.5 416)' text-anchor='end' font-size='11' fill='#222'>Bun 1.3.12 [x86_64]</text>
+<text x='85.5' y='154' text-anchor='middle' font-size='12'>83.0</text>
+<rect x='121' y='162' width='35' height='214' rx='4' fill='#4f46e5'/>
+<text x='146.5' y='416' transform='rotate(-30 146.5 416)' text-anchor='end' font-size='11' fill='#222'>Node.js 22 [x86_64]</text>
+<text x='138.5' y='154' text-anchor='middle' font-size='12'>83.0</text>
+<rect x='174' y='165' width='35' height='211' rx='4' fill='#4f46e5'/>
+<text x='199.5' y='416' transform='rotate(-30 199.5 416)' text-anchor='end' font-size='11' fill='#222'>Deno 2.7.6 [x86_64]</text>
+<text x='191.5' y='157' text-anchor='middle' font-size='12'>81.9</text>
+<rect x='227' y='168' width='35' height='208' rx='4' fill='#4f46e5'/>
+<text x='252.5' y='416' transform='rotate(-30 252.5 416)' text-anchor='end' font-size='11' fill='#222'>Python 3.12 [x86_64]</text>
+<text x='244.5' y='160' text-anchor='middle' font-size='12'>80.8</text>
+<rect x='280' y='171' width='35' height='205' rx='4' fill='#4f46e5'/>
+<text x='305.5' y='416' transform='rotate(-30 305.5 416)' text-anchor='end' font-size='11' fill='#222'>Python 3.11 [x86_64]</text>
+<text x='297.5' y='163' text-anchor='middle' font-size='12'>79.7</text>
+<rect x='333' y='171' width='35' height='205' rx='4' fill='#4f46e5'/>
+<text x='358.5' y='416' transform='rotate(-30 358.5 416)' text-anchor='end' font-size='11' fill='#222'>Java 21 [x86_64]</text>
+<text x='350.5' y='163' text-anchor='middle' font-size='12'>79.5</text>
+<rect x='386' y='172' width='35' height='204' rx='4' fill='#4f46e5'/>
+<text x='411.5' y='416' transform='rotate(-30 411.5 416)' text-anchor='end' font-size='11' fill='#222'>PHP 8.4 [x86_64]</text>
+<text x='403.5' y='164' text-anchor='middle' font-size='12'>79.1</text>
+<rect x='439' y='175' width='35' height='201' rx='4' fill='#4f46e5'/>
+<text x='464.5' y='416' transform='rotate(-30 464.5 416)' text-anchor='end' font-size='11' fill='#222'>PHP 7.2 [x86_64]</text>
+<text x='456.5' y='167' text-anchor='middle' font-size='12'>78.2</text>
+<rect x='492' y='175' width='35' height='201' rx='4' fill='#4f46e5'/>
+<text x='517.5' y='416' transform='rotate(-30 517.5 416)' text-anchor='end' font-size='11' fill='#222'>Python 3.8 [x86_64]</text>
+<text x='509.5' y='167' text-anchor='middle' font-size='12'>78.1</text>
+<rect x='545' y='176' width='35' height='200' rx='4' fill='#4f46e5'/>
+<text x='570.5' y='416' transform='rotate(-30 570.5 416)' text-anchor='end' font-size='11' fill='#222'>PHP 7.4 [x86_64]</text>
+<text x='562.5' y='168' text-anchor='middle' font-size='12'>77.6</text>
+<rect x='598' y='180' width='35' height='196' rx='4' fill='#4f46e5'/>
+<text x='623.5' y='416' transform='rotate(-30 623.5 416)' text-anchor='end' font-size='11' fill='#222'>Rust 1.82 [x86_64]</text>
+<text x='615.5' y='172' text-anchor='middle' font-size='12'>76.1</text>
+<rect x='651' y='185' width='35' height='191' rx='4' fill='#4f46e5'/>
+<text x='676.5' y='416' transform='rotate(-30 676.5 416)' text-anchor='end' font-size='11' fill='#222'>C++ (GCC 14) [x86_64]</text>
+<text x='668.5' y='177' text-anchor='middle' font-size='12'>74.4</text>
+<rect x='704' y='189' width='35' height='187' rx='4' fill='#4f46e5'/>
+<text x='729.5' y='416' transform='rotate(-30 729.5 416)' text-anchor='end' font-size='11' fill='#222'>Python 2.7 [x86_64]</text>
+<text x='721.5' y='181' text-anchor='middle' font-size='12'>72.6</text>
+<rect x='757' y='192' width='35' height='184' rx='4' fill='#4f46e5'/>
+<text x='782.5' y='416' transform='rotate(-30 782.5 416)' text-anchor='end' font-size='11' fill='#222'>Go 1.23 [x86_64]</text>
+<text x='774.5' y='184' text-anchor='middle' font-size='12'>71.4</text>
+<rect x='810' y='199' width='35' height='177' rx='4' fill='#4f46e5'/>
+<text x='835.5' y='416' transform='rotate(-30 835.5 416)' text-anchor='end' font-size='11' fill='#222'>PHP 5.6 [x86_64]</text>
+<text x='827.5' y='191' text-anchor='middle' font-size='12'>68.8</text>
+<text x='449.0' y='494' text-anchor='middle' font-size='11' fill='#555'>
+<tspan x='449.0' dy='0'>Only x86_64 runtime rows are included; sorted best to worst for this metric. All bars are normalized scores from 0 to</tspan>
+<tspan x='449.0' dy='14'>100, so higher bars are better.</tspan>
+</text>
+</svg>
