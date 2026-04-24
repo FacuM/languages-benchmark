@@ -380,7 +380,6 @@ def generate_report(results_path: Path, output_dir: Path) -> Path:
             meta["subtitle"],
             footer="Language families sorted by the best tested version for this metric.",
         )
-    _write_architecture_plot_sets(output_dir, aggregate, medians, raw_unit_rows, category_rows)
     task_rows = _task_score_rows(medians, weights or load_weights())
     for task_id, task_score_rows in sorted(task_rows.items()):
         task_name = _task_names().get(task_id, task_id)
@@ -517,6 +516,7 @@ def generate_report(results_path: Path, output_dir: Path) -> Path:
             message = f"{title} is unavailable for this artifact because no startup/workload split timings were recorded."
             _write_placeholder_svg(output_dir / f"{stem}.svg", title, message)
             _write_placeholder_svg(output_dir / f"{stem}_ranked.svg", f"{title} — ranked best to worst", message)
+    _write_architecture_plot_sets(output_dir, aggregate, medians, raw_unit_rows, category_rows, service_split_rows)
     config = load_app_config()
     baseline_runtime = str(profile.get("baseline_runtime") or config.baseline_runtime)
     effective_profile = {
@@ -652,12 +652,14 @@ def _write_architecture_plot_sets(
     medians: list[dict],
     raw_unit_rows: list[dict],
     category_rows: dict[str, list[dict]],
+    service_split_rows: list[dict],
 ) -> None:
     aggregate_by_architecture = _architecture_groups(aggregate)
     if not aggregate_by_architecture:
         return
     medians_by_architecture = _architecture_groups(medians)
     raw_by_architecture = _architecture_groups(raw_unit_rows)
+    service_by_architecture = _architecture_groups(service_split_rows)
     objective_by_architecture = _architecture_groups(category_rows.get("objective", []))
     opinionated_by_architecture = _architecture_groups(category_rows.get("opinionated", []))
     for architecture, arch_aggregate in aggregate_by_architecture.items():
@@ -665,6 +667,7 @@ def _write_architecture_plot_sets(
         arch_raw = raw_by_architecture.get(architecture, [])
         arch_objective = objective_by_architecture.get(architecture, [])
         arch_opinionated = opinionated_by_architecture.get(architecture, [])
+        arch_service = service_by_architecture.get(architecture, [])
         title_suffix = f"on {architecture}"
         for stem, meta in RAW_UNIT_PLOT_META.items():
             metric = meta["metric"]
@@ -777,6 +780,35 @@ def _write_architecture_plot_sets(
                 f"L/S growth ratio summary — {title_suffix} — ranked best to worst",
                 "Side-by-side bars compare each runtime's average L/S wall-time and memory growth ratios within this architecture.",
                 footer=f"Only {architecture} runtime rows are included.",
+            )
+        for stem, metric, title in [
+            ("startup_units", "startup_wall_avg", "Average startup time across service/UI workloads"),
+            ("workload_units", "workload_wall_avg", "Average steady-state workload time across service/UI workloads"),
+        ]:
+            if not arch_service:
+                continue
+            arch_stem = _architecture_plot_stem(architecture, stem)
+            _write_svg_raw_bar(
+                output_dir / f"{arch_stem}.svg",
+                _ordered_rows(arch_service),
+                metric,
+                f"{title} — {title_suffix}",
+                "Average across service/UI task-size medians. Lower is better.",
+                footer=f"Only {architecture} runtime rows are included; canonical runtime order is preserved.",
+                better="lower",
+                unit_kind="seconds",
+                error_metric=f"{metric}_ci95",
+            )
+            _write_svg_raw_bar(
+                output_dir / f"{arch_stem}_ranked.svg",
+                _ordered_rows(arch_service, metric=metric, ranked=True, reverse_for_ranking=False),
+                metric,
+                f"{title} — {title_suffix} — ranked best to worst",
+                "Average across service/UI task-size medians. Lower is better.",
+                footer=f"Only {architecture} runtime rows are included; sorted by the corresponding average service/UI timing.",
+                better="lower",
+                unit_kind="seconds",
+                error_metric=f"{metric}_ci95",
             )
 
 

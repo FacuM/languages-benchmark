@@ -1273,6 +1273,10 @@ These charts include only runtime rows whose normalized architecture is `x86_64`
 
 ![x86_64 memory raw-unit ranked chart](docs/plots/version_arch_x86_64_memory_units_ranked.svg)
 
+![x86_64 service/UI startup ranked chart](docs/plots/version_arch_x86_64_startup_units_ranked.svg)
+
+![x86_64 service/UI workload ranked chart](docs/plots/version_arch_x86_64_workload_units_ranked.svg)
+
 ![x86_64 scalability growth ranked chart](docs/plots/version_arch_x86_64_scalability_growth_ratios_ranked.svg)
 
 <details>
@@ -1289,6 +1293,10 @@ These charts include only runtime rows whose normalized architecture is `x86_64`
 ![x86_64 wall raw-unit canonical chart](docs/plots/version_arch_x86_64_wall_units.svg)
 
 ![x86_64 memory raw-unit canonical chart](docs/plots/version_arch_x86_64_memory_units.svg)
+
+![x86_64 service/UI startup canonical chart](docs/plots/version_arch_x86_64_startup_units.svg)
+
+![x86_64 service/UI workload canonical chart](docs/plots/version_arch_x86_64_workload_units.svg)
 
 ![x86_64 wall-time growth curve](docs/plots/version_arch_x86_64_scalability_curve.svg)
 
